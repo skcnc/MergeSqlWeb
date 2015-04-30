@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="DYNAMIC_DETAIL" EntityType="Model.Store.DYNAMIC_DETAIL" store:Type="Tables" store:Schema="TPOS_DB" store:Name="DYNAMIC_DETAIL">
+      <DefiningQuery>SELECT 
+      "DYNAMIC_DETAIL"."REC_NO" AS "REC_NO", 
+      "DYNAMIC_DETAIL"."STEP" AS "STEP", 
+      "DYNAMIC_DETAIL"."ITEM_NAME" AS "ITEM_NAME", 
+      "DYNAMIC_DETAIL"."ITEM_VALUE" AS "ITEM_VALUE", 
+      "DYNAMIC_DETAIL"."STATUS" AS "STATUS", 
+      "DYNAMIC_DETAIL"."TRANS_CODE" AS "TRANS_CODE", 
+      "DYNAMIC_DETAIL"."RSV" AS "RSV", 
+      "DYNAMIC_DETAIL"."VERIFIED" AS "VERIFIED", 
+      "DYNAMIC_DETAIL"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "DYNAMIC_DETAIL"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "DYNAMIC_DETAIL"."CREATEDATE" AS "CREATEDATE", 
+      "DYNAMIC_DETAIL"."CREATER" AS "CREATER", 
+      "DYNAMIC_DETAIL"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "DYNAMIC_DETAIL"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "DYNAMIC_DETAIL"."NEED_INPUT" AS "NEED_INPUT"
+      FROM "TPOS_DB"."DYNAMIC_DETAIL" "DYNAMIC_DETAIL"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DYNAMIC_ITEM" EntityType="Model.Store.DYNAMIC_ITEM" store:Type="Tables" store:Schema="TPOS_DB" store:Name="DYNAMIC_ITEM">
+      <DefiningQuery>SELECT 
+      "DYNAMIC_ITEM"."RECNO" AS "RECNO", 
+      "DYNAMIC_ITEM"."TITLE" AS "TITLE", 
+      "DYNAMIC_ITEM"."DESCRIBE" AS "DESCRIBE", 
+      "DYNAMIC_ITEM"."ITEM_NUM" AS "ITEM_NUM", 
+      "DYNAMIC_ITEM"."DATA_RULE" AS "DATA_RULE", 
+      "DYNAMIC_ITEM"."VERIFIED" AS "VERIFIED", 
+      "DYNAMIC_ITEM"."MARKS" AS "MARKS", 
+      "DYNAMIC_ITEM"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "DYNAMIC_ITEM"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "DYNAMIC_ITEM"."CREATEDATE" AS "CREATEDATE", 
+      "DYNAMIC_ITEM"."CREATER" AS "CREATER", 
+      "DYNAMIC_ITEM"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "DYNAMIC_ITEM"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "DYNAMIC_ITEM"."DATA_SCR_TYPE" AS "DATA_SCR_TYPE", 
+      "DYNAMIC_ITEM"."VARIABLE" AS "VARIABLE"
+      FROM "TPOS_DB"."DYNAMIC_ITEM" "DYNAMIC_ITEM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DYNAMIC_VALID" EntityType="Model.Store.DYNAMIC_VALID" store:Type="Tables" store:Schema="TPOS_DB" store:Name="DYNAMIC_VALID">
+      <DefiningQuery>SELECT 
+      "DYNAMIC_VALID"."REC_NO" AS "REC_NO", 
+      "DYNAMIC_VALID"."MINLEN" AS "MINLEN", 
+      "DYNAMIC_VALID"."MAXLEN" AS "MAXLEN", 
+      "DYNAMIC_VALID"."MINVAL" AS "MINVAL", 
+      "DYNAMIC_VALID"."MAXVAL" AS "MAXVAL", 
+      "DYNAMIC_VALID"."INPUT_FLAG" AS "INPUT_FLAG", 
+      "DYNAMIC_VALID"."INPUT_TYPE" AS "INPUT_TYPE", 
+      "DYNAMIC_VALID"."RSV" AS "RSV", 
+      "DYNAMIC_VALID"."VERIFIED" AS "VERIFIED", 
+      "DYNAMIC_VALID"."ADD_DATE" AS "ADD_DATE", 
+      "DYNAMIC_VALID"."OPTNUM1" AS "OPTNUM1", 
+      "DYNAMIC_VALID"."OPTNUM2" AS "OPTNUM2", 
+      "DYNAMIC_VALID"."OPTCODE" AS "OPTCODE", 
+      "DYNAMIC_VALID"."INPUT_NAME" AS "INPUT_NAME", 
+      "DYNAMIC_VALID"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "DYNAMIC_VALID"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "DYNAMIC_VALID"."CREATEDATE" AS "CREATEDATE", 
+      "DYNAMIC_VALID"."CREATER" AS "CREATER", 
+      "DYNAMIC_VALID"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "DYNAMIC_VALID"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."DYNAMIC_VALID" "DYNAMIC_VALID"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FIELD_MESSAGE" EntityType="Model.Store.FIELD_MESSAGE" store:Type="Tables" store:Schema="TPOS_DB" store:Name="FIELD_MESSAGE">
+      <DefiningQuery>SELECT 
+      "FIELD_MESSAGE"."TPOS_CODE" AS "TPOS_CODE", 
+      "FIELD_MESSAGE"."FBSKD" AS "FBSKD", 
+      "FIELD_MESSAGE"."FIELD1" AS "FIELD1", 
+      "FIELD_MESSAGE"."FIELD3" AS "FIELD3", 
+      "FIELD_MESSAGE"."FIELD22" AS "FIELD22", 
+      "FIELD_MESSAGE"."FIELD25" AS "FIELD25", 
+      "FIELD_MESSAGE"."FIELD54" AS "FIELD54", 
+      "FIELD_MESSAGE"."FIELD48_REQ" AS "FIELD48_REQ", 
+      "FIELD_MESSAGE"."FIELD48_RESP" AS "FIELD48_RESP", 
+      "FIELD_MESSAGE"."FLAG" AS "FLAG", 
+      "FIELD_MESSAGE"."TRN_TYPE" AS "TRN_TYPE", 
+      "FIELD_MESSAGE"."TRN_NAME" AS "TRN_NAME", 
+      "FIELD_MESSAGE"."MSG_TYPE" AS "MSG_TYPE", 
+      "FIELD_MESSAGE"."MSG48_TYPE" AS "MSG48_TYPE", 
+      "FIELD_MESSAGE"."APP_ID" AS "APP_ID", 
+      "FIELD_MESSAGE"."RESV3" AS "RESV3", 
+      "FIELD_MESSAGE"."SUBFIELD" AS "SUBFIELD", 
+      "FIELD_MESSAGE"."FIELD4" AS "FIELD4", 
+      "FIELD_MESSAGE"."FIELD60" AS "FIELD60", 
+      "FIELD_MESSAGE"."VERIFIED" AS "VERIFIED", 
+      "FIELD_MESSAGE"."DISPINFO" AS "DISPINFO", 
+      "FIELD_MESSAGE"."ZFINFO" AS "ZFINFO", 
+      "FIELD_MESSAGE"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "FIELD_MESSAGE"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "FIELD_MESSAGE"."FILL_FBSKD" AS "FILL_FBSKD", 
+      "FIELD_MESSAGE"."CREATEDATE" AS "CREATEDATE", 
+      "FIELD_MESSAGE"."CREATER" AS "CREATER", 
+      "FIELD_MESSAGE"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "FIELD_MESSAGE"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "FIELD_MESSAGE"."MSG_SPEC_VER" AS "MSG_SPEC_VER", 
+      "FIELD_MESSAGE"."FIELD48_REQ_PREFIX" AS "FIELD48_REQ_PREFIX", 
+      "FIELD_MESSAGE"."FIELD48_REQ_SUFFIX" AS "FIELD48_REQ_SUFFIX", 
+      "FIELD_MESSAGE"."FIELD48_RESP_PREFIX" AS "FIELD48_RESP_PREFIX", 
+      "FIELD_MESSAGE"."FIELD48_RESP_SUFFIX" AS "FIELD48_RESP_SUFFIX", 
+      "FIELD_MESSAGE"."FIELD63_REQ" AS "FIELD63_REQ", 
+      "FIELD_MESSAGE"."FIELD63_RESP" AS "FIELD63_RESP", 
+      "FIELD_MESSAGE"."FIELD57_REQ" AS "FIELD57_REQ", 
+      "FIELD_MESSAGE"."FIELD57_RESP" AS "FIELD57_RESP", 
+      "FIELD_MESSAGE"."FIELD62_REQ" AS "FIELD62_REQ", 
+      "FIELD_MESSAGE"."FIELD62_RESP" AS "FIELD62_RESP", 
+      "FIELD_MESSAGE"."FIELD2" AS "FIELD2", 
+      "FIELD_MESSAGE"."REQ_MIN_BITMAP" AS "REQ_MIN_BITMAP", 
+      "FIELD_MESSAGE"."REQ_MAX_BITMAP" AS "REQ_MAX_BITMAP", 
+      "FIELD_MESSAGE"."RES_MIN_BITMAP" AS "RES_MIN_BITMAP", 
+      "FIELD_MESSAGE"."RES_MAX_BITMAP" AS "RES_MAX_BITMAP", 
+      "FIELD_MESSAGE"."PRONAME" AS "PRONAME", 
+      "FIELD_MESSAGE"."PRODETAIL" AS "PRODETAIL", 
+      "FIELD_MESSAGE"."BACK" AS "BACK", 
+      "FIELD_MESSAGE"."NEED_DIGITAL_SIGN" AS "NEED_DIGITAL_SIGN", 
+      "FIELD_MESSAGE"."TIDCNV_FLAG" AS "TIDCNV_FLAG", 
+      "FIELD_MESSAGE"."CNV_NO" AS "CNV_NO"
+      FROM "TPOS_DB"."FIELD_MESSAGE" "FIELD_MESSAGE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FUNCTION_INFO" EntityType="Model.Store.FUNCTION_INFO" store:Type="Tables" store:Schema="TPOS_DB" store:Name="FUNCTION_INFO">
+      <DefiningQuery>SELECT 
+      "FUNCTION_INFO"."FUNC_INDEX" AS "FUNC_INDEX", 
+      "FUNCTION_INFO"."OP_FLAG" AS "OP_FLAG", 
+      "FUNCTION_INFO"."MODULE_NUM" AS "MODULE_NUM", 
+      "FUNCTION_INFO"."INFO1_FORMAT" AS "INFO1_FORMAT", 
+      "FUNCTION_INFO"."INFO1" AS "INFO1", 
+      "FUNCTION_INFO"."INFO2_FORMAT" AS "INFO2_FORMAT", 
+      "FUNCTION_INFO"."INFO2" AS "INFO2", 
+      "FUNCTION_INFO"."INFO3_FORMAT" AS "INFO3_FORMAT", 
+      "FUNCTION_INFO"."INFO3" AS "INFO3", 
+      "FUNCTION_INFO"."UPDATE_DATE" AS "UPDATE_DATE", 
+      "FUNCTION_INFO"."VERIFIED" AS "VERIFIED", 
+      "FUNCTION_INFO"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "FUNCTION_INFO"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "FUNCTION_INFO"."CREATEDATE" AS "CREATEDATE", 
+      "FUNCTION_INFO"."CREATER" AS "CREATER", 
+      "FUNCTION_INFO"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "FUNCTION_INFO"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."FUNCTION_INFO" "FUNCTION_INFO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OPERATION_INFO" EntityType="Model.Store.OPERATION_INFO" store:Type="Tables" store:Schema="TPOS_DB" store:Name="OPERATION_INFO">
+      <DefiningQuery>SELECT 
+      "OPERATION_INFO"."OPER_INDEX" AS "OPER_INDEX", 
+      "OPERATION_INFO"."OP_FLAG" AS "OP_FLAG", 
+      "OPERATION_INFO"."MODULE_NUM" AS "MODULE_NUM", 
+      "OPERATION_INFO"."INFO1_FORMAT" AS "INFO1_FORMAT", 
+      "OPERATION_INFO"."INFO1" AS "INFO1", 
+      "OPERATION_INFO"."INFO2_FORMAT" AS "INFO2_FORMAT", 
+      "OPERATION_INFO"."INFO2" AS "INFO2", 
+      "OPERATION_INFO"."INFO3_FORMAT" AS "INFO3_FORMAT", 
+      "OPERATION_INFO"."INFO3" AS "INFO3", 
+      "OPERATION_INFO"."UPDATE_DATE" AS "UPDATE_DATE", 
+      "OPERATION_INFO"."VERIFIED" AS "VERIFIED", 
+      "OPERATION_INFO"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "OPERATION_INFO"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "OPERATION_INFO"."CREATEDATE" AS "CREATEDATE", 
+      "OPERATION_INFO"."CREATER" AS "CREATER", 
+      "OPERATION_INFO"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "OPERATION_INFO"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."OPERATION_INFO" "OPERATION_INFO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRINT_MODULE_GROUP" EntityType="Model.Store.PRINT_MODULE_GROUP" store:Type="Tables" store:Schema="TPOS_DB" store:Name="PRINT_MODULE_GROUP">
+      <DefiningQuery>SELECT 
+      "PRINT_MODULE_GROUP"."GROUP_ID" AS "GROUP_ID", 
+      "PRINT_MODULE_GROUP"."GROUP_NAME" AS "GROUP_NAME", 
+      "PRINT_MODULE_GROUP"."VERIFIED" AS "VERIFIED", 
+      "PRINT_MODULE_GROUP"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "PRINT_MODULE_GROUP"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "PRINT_MODULE_GROUP"."CREATEDATE" AS "CREATEDATE", 
+      "PRINT_MODULE_GROUP"."CREATER" AS "CREATER", 
+      "PRINT_MODULE_GROUP"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "PRINT_MODULE_GROUP"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "PRINT_MODULE_GROUP"."DEPT_NO" AS "DEPT_NO"
+      FROM "TPOS_DB"."PRINT_MODULE_GROUP" "PRINT_MODULE_GROUP"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRINT_MODULE_GROUP_MEMBER" EntityType="Model.Store.PRINT_MODULE_GROUP_MEMBER" store:Type="Tables" store:Schema="TPOS_DB" store:Name="PRINT_MODULE_GROUP_MEMBER">
+      <DefiningQuery>SELECT 
+      "PRINT_MODULE_GROUP_MEMBER"."GROUP_ID" AS "GROUP_ID", 
+      "PRINT_MODULE_GROUP_MEMBER"."MODULE" AS "MODULE", 
+      "PRINT_MODULE_GROUP_MEMBER"."RETURN_CODE" AS "RETURN_CODE", 
+      "PRINT_MODULE_GROUP_MEMBER"."VERIFIED" AS "VERIFIED", 
+      "PRINT_MODULE_GROUP_MEMBER"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "PRINT_MODULE_GROUP_MEMBER"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "PRINT_MODULE_GROUP_MEMBER"."CREATEDATE" AS "CREATEDATE", 
+      "PRINT_MODULE_GROUP_MEMBER"."CREATER" AS "CREATER", 
+      "PRINT_MODULE_GROUP_MEMBER"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "PRINT_MODULE_GROUP_MEMBER"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "PRINT_MODULE_GROUP_MEMBER"."STYLUS_PRINTER_FLAG" AS "STYLUS_PRINTER_FLAG", 
+      "PRINT_MODULE_GROUP_MEMBER"."ID" AS "ID", 
+      "PRINT_MODULE_GROUP_MEMBER"."DEPT_NO" AS "DEPT_NO", 
+      "PRINT_MODULE_GROUP_MEMBER"."TMIS_PRINTER_FLAG" AS "TMIS_PRINTER_FLAG"
+      FROM "TPOS_DB"."PRINT_MODULE_GROUP_MEMBER" "PRINT_MODULE_GROUP_MEMBER"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBL_DISP_CONTENT" EntityType="Model.Store.TBL_DISP_CONTENT" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TBL_DISP_CONTENT">
+      <DefiningQuery>SELECT 
+      "TBL_DISP_CONTENT"."DATA_INDEX" AS "DATA_INDEX", 
+      "TBL_DISP_CONTENT"."LINES" AS "LINES", 
+      "TBL_DISP_CONTENT"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TBL_DISP_CONTENT"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TBL_DISP_CONTENT"."CREATEDATE" AS "CREATEDATE", 
+      "TBL_DISP_CONTENT"."CREATER" AS "CREATER", 
+      "TBL_DISP_CONTENT"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TBL_DISP_CONTENT"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TBL_DISP_CONTENT"."VERIFIED" AS "VERIFIED", 
+      "TBL_DISP_CONTENT"."TIMEOUT" AS "TIMEOUT", 
+      "TBL_DISP_CONTENT"."CTRL_BITMAP" AS "CTRL_BITMAP", 
+      "TBL_DISP_CONTENT"."REFRESH_MODE" AS "REFRESH_MODE"
+      FROM "TPOS_DB"."TBL_DISP_CONTENT" "TBL_DISP_CONTENT"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBL_EXCHANGE" EntityType="Model.Store.TBL_EXCHANGE" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TBL_EXCHANGE">
+      <DefiningQuery>SELECT 
+      "TBL_EXCHANGE"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TBL_EXCHANGE"."BEFORE" AS "BEFORE", 
+      "TBL_EXCHANGE"."AFTER" AS "AFTER", 
+      "TBL_EXCHANGE"."VERIFIED" AS "VERIFIED", 
+      "TBL_EXCHANGE"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TBL_EXCHANGE"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TBL_EXCHANGE"."CREATEDATE" AS "CREATEDATE", 
+      "TBL_EXCHANGE"."CREATER" AS "CREATER", 
+      "TBL_EXCHANGE"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TBL_EXCHANGE"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."TBL_EXCHANGE" "TBL_EXCHANGE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBL_PRINT_MODULE" EntityType="Model.Store.TBL_PRINT_MODULE" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TBL_PRINT_MODULE">
+      <DefiningQuery>SELECT 
+      "TBL_PRINT_MODULE"."MODULE" AS "MODULE", 
+      "TBL_PRINT_MODULE"."DESCRIBE" AS "DESCRIBE", 
+      "TBL_PRINT_MODULE"."PRINT_NUM" AS "PRINT_NUM", 
+      "TBL_PRINT_MODULE"."TITLE1" AS "TITLE1", 
+      "TBL_PRINT_MODULE"."TITLE2" AS "TITLE2", 
+      "TBL_PRINT_MODULE"."TITLE3" AS "TITLE3", 
+      "TBL_PRINT_MODULE"."SIGN1" AS "SIGN1", 
+      "TBL_PRINT_MODULE"."SIGN2" AS "SIGN2", 
+      "TBL_PRINT_MODULE"."SIGN3" AS "SIGN3", 
+      "TBL_PRINT_MODULE"."REC_NUM" AS "REC_NUM", 
+      "TBL_PRINT_MODULE"."REC_NO" AS "REC_NO", 
+      "TBL_PRINT_MODULE"."VERIFIED" AS "VERIFIED", 
+      "TBL_PRINT_MODULE"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TBL_PRINT_MODULE"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TBL_PRINT_MODULE"."CREATEDATE" AS "CREATEDATE", 
+      "TBL_PRINT_MODULE"."CREATER" AS "CREATER", 
+      "TBL_PRINT_MODULE"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TBL_PRINT_MODULE"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TBL_PRINT_MODULE"."LOGO_FLAG" AS "LOGO_FLAG", 
+      "TBL_PRINT_MODULE"."DEPT_NO" AS "DEPT_NO"
+      FROM "TPOS_DB"."TBL_PRINT_MODULE" "TBL_PRINT_MODULE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TRANS_AUTO" EntityType="Model.Store.TRANS_AUTO" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TRANS_AUTO">
+      <DefiningQuery>SELECT 
+      "TRANS_AUTO"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_AUTO"."NEXT_TRANS_TYPE" AS "NEXT_TRANS_TYPE", 
+      "TRANS_AUTO"."VERIFIED" AS "VERIFIED", 
+      "TRANS_AUTO"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_AUTO"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_AUTO"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_AUTO"."CREATER" AS "CREATER", 
+      "TRANS_AUTO"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_AUTO"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."TRANS_AUTO" "TRANS_AUTO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TRANS_COMMANDS" EntityType="Model.Store.TRANS_COMMANDS" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TRANS_COMMANDS">
+      <DefiningQuery>SELECT 
+      "TRANS_COMMANDS"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_COMMANDS"."STEP" AS "STEP", 
+      "TRANS_COMMANDS"."FLAG" AS "FLAG", 
+      "TRANS_COMMANDS"."COMMAND" AS "COMMAND", 
+      "TRANS_COMMANDS"."FUNC_INDEX" AS "FUNC_INDEX", 
+      "TRANS_COMMANDS"."ALOG" AS "ALOG", 
+      "TRANS_COMMANDS"."COMMAND_NAME" AS "COMMAND_NAME", 
+      "TRANS_COMMANDS"."ORGCOMMAND" AS "ORGCOMMAND", 
+      "TRANS_COMMANDS"."DATA_INDEX" AS "DATA_INDEX", 
+      "TRANS_COMMANDS"."VERIFIED" AS "VERIFIED", 
+      "TRANS_COMMANDS"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_COMMANDS"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_COMMANDS"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_COMMANDS"."CREATER" AS "CREATER", 
+      "TRANS_COMMANDS"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_COMMANDS"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."TRANS_COMMANDS" "TRANS_COMMANDS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TRANS_DEF" EntityType="Model.Store.TRANS_DEF" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TRANS_DEF">
+      <DefiningQuery>SELECT 
+      "TRANS_DEF"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_DEF"."TRANS_CODE" AS "TRANS_CODE", 
+      "TRANS_DEF"."NEXT_TRANS_CODE" AS "NEXT_TRANS_CODE", 
+      "TRANS_DEF"."AUTOVOID" AS "AUTOVOID", 
+      "TRANS_DEF"."PIN_BLOCK" AS "PIN_BLOCK", 
+      "TRANS_DEF"."FUNCTION_INDEX" AS "FUNCTION_INDEX", 
+      "TRANS_DEF"."TRANS_NAME" AS "TRANS_NAME", 
+      "TRANS_DEF"."TELEPHONE_NO" AS "TELEPHONE_NO", 
+      "TRANS_DEF"."DISP_TYPE" AS "DISP_TYPE", 
+      "TRANS_DEF"."NII" AS "NII", 
+      "TRANS_DEF"."SERVER_CODE" AS "SERVER_CODE", 
+      "TRANS_DEF"."VERIFIED" AS "VERIFIED", 
+      "TRANS_DEF"."DEPTNO" AS "DEPTNO", 
+      "TRANS_DEF"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_DEF"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_DEF"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_DEF"."CREATER" AS "CREATER", 
+      "TRANS_DEF"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_DEF"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TRANS_DEF"."REMARK" AS "REMARK", 
+      "TRANS_DEF"."CASHIERBILLAD_RECNO" AS "CASHIERBILLAD_RECNO"
+      FROM "TPOS_DB"."TRANS_DEF" "TRANS_DEF"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TRANS_SPLIT" EntityType="Model.Store.TRANS_SPLIT" store:Type="Tables" store:Schema="TPOS_DB" store:Name="TRANS_SPLIT">
+      <DefiningQuery>SELECT 
+      "TRANS_SPLIT"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_SPLIT"."COND_NEXT_TRANS_TYPES" AS "COND_NEXT_TRANS_TYPES", 
+      "TRANS_SPLIT"."VERIFIED" AS "VERIFIED", 
+      "TRANS_SPLIT"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_SPLIT"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_SPLIT"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_SPLIT"."CREATER" AS "CREATER", 
+      "TRANS_SPLIT"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_SPLIT"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TRANS_SPLIT"."FLAG" AS "FLAG"
+      FROM "TPOS_DB"."TRANS_SPLIT" "TRANS_SPLIT"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VOID_CONFIG" EntityType="Model.Store.VOID_CONFIG" store:Type="Tables" store:Schema="TPOS_DB" store:Name="VOID_CONFIG">
+      <DefiningQuery>SELECT 
+      "VOID_CONFIG"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "VOID_CONFIG"."VERIFIED" AS "VERIFIED", 
+      "VOID_CONFIG"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "VOID_CONFIG"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "VOID_CONFIG"."CREATEDATE" AS "CREATEDATE", 
+      "VOID_CONFIG"."CREATER" AS "CREATER", 
+      "VOID_CONFIG"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "VOID_CONFIG"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "TPOS_DB"."VOID_CONFIG" "VOID_CONFIG"</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.DYNAMIC_DETAIL”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="DYNAMIC_DETAIL">
+    <Key>
+      <PropertyRef Name="REC_NO" />
+      <PropertyRef Name="STEP" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="ITEM_VALUE" />
+      <PropertyRef Name="STATUS" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="REC_NO" Type="number" Nullable="false" />
+    <Property Name="STEP" Type="number" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" Nullable="false" MaxLength="40" />
+    <Property Name="ITEM_VALUE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="STATUS" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="TRANS_CODE" Type="char" MaxLength="8" />
+    <Property Name="RSV" Type="char" MaxLength="20" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="NEED_INPUT" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.DYNAMIC_ITEM”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="DYNAMIC_ITEM">
+    <Key>
+      <PropertyRef Name="RECNO" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+      <PropertyRef Name="DATA_SCR_TYPE" />
+    </Key>
+    <Property Name="RECNO" Type="number" Nullable="false" />
+    <Property Name="TITLE" Type="char" MaxLength="30" />
+    <Property Name="DESCRIBE" Type="char" MaxLength="40" />
+    <Property Name="ITEM_NUM" Type="number" />
+    <Property Name="DATA_RULE" Type="char" MaxLength="1" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="MARKS" Type="char" MaxLength="2" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="DATA_SCR_TYPE" Type="number" Nullable="false" />
+    <Property Name="VARIABLE" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.DYNAMIC_VALID”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="DYNAMIC_VALID">
+    <Key>
+      <PropertyRef Name="REC_NO" />
+      <PropertyRef Name="INPUT_FLAG" />
+      <PropertyRef Name="INPUT_TYPE" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="REC_NO" Type="number" Nullable="false" />
+    <Property Name="MINLEN" Type="number" />
+    <Property Name="MAXLEN" Type="number" />
+    <Property Name="MINVAL" Type="number" />
+    <Property Name="MAXVAL" Type="number" />
+    <Property Name="INPUT_FLAG" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="INPUT_TYPE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="RSV" Type="char" MaxLength="10" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="ADD_DATE" Type="char" MaxLength="8" />
+    <Property Name="OPTNUM1" Type="number" />
+    <Property Name="OPTNUM2" Type="number" />
+    <Property Name="OPTCODE" Type="char" MaxLength="2" />
+    <Property Name="INPUT_NAME" Type="char" MaxLength="10" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.FIELD_MESSAGE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="FIELD_MESSAGE">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+      <PropertyRef Name="MSG_SPEC_VER" />
+      <PropertyRef Name="PRONAME" />
+      <PropertyRef Name="BACK" />
+    </Key>
+    <Property Name="TPOS_CODE" Type="number" Precision="15" />
+    <Property Name="FBSKD" Type="varchar2" MaxLength="7" />
+    <Property Name="FIELD1" Type="varchar2" MaxLength="5" />
+    <Property Name="FIELD3" Type="varchar2" MaxLength="7" />
+    <Property Name="FIELD22" Type="varchar2" MaxLength="4" />
+    <Property Name="FIELD25" Type="varchar2" MaxLength="3" />
+    <Property Name="FIELD54" Type="varchar2" MaxLength="4" />
+    <Property Name="FIELD48_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD48_RESP" Type="varchar2" MaxLength="256" />
+    <Property Name="FLAG" Type="number" />
+    <Property Name="TRN_TYPE" Type="varchar2" MaxLength="1" />
+    <Property Name="TRN_NAME" Type="varchar2" MaxLength="40" />
+    <Property Name="MSG_TYPE" Type="number" />
+    <Property Name="MSG48_TYPE" Type="varchar2" MaxLength="2" />
+    <Property Name="APP_ID" Type="number" />
+    <Property Name="RESV3" Type="varchar2" MaxLength="100" />
+    <Property Name="SUBFIELD" Type="varchar2" MaxLength="50" />
+    <Property Name="FIELD4" Type="varchar2" MaxLength="2" />
+    <Property Name="FIELD60" Type="varchar2" MaxLength="20" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="DISPINFO" Type="varchar2" MaxLength="20" />
+    <Property Name="ZFINFO" Type="varchar2" MaxLength="4" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="FILL_FBSKD" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="MSG_SPEC_VER" Type="number" Nullable="false" />
+    <Property Name="FIELD48_REQ_PREFIX" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD48_REQ_SUFFIX" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD48_RESP_PREFIX" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD48_RESP_SUFFIX" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD63_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD63_RESP" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD57_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD57_RESP" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD62_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD62_RESP" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD2" Type="varchar2" MaxLength="19" />
+    <Property Name="REQ_MIN_BITMAP" Type="varchar2" MaxLength="32" />
+    <Property Name="REQ_MAX_BITMAP" Type="varchar2" MaxLength="32" />
+    <Property Name="RES_MIN_BITMAP" Type="varchar2" MaxLength="32" />
+    <Property Name="RES_MAX_BITMAP" Type="varchar2" MaxLength="32" />
+    <Property Name="PRONAME" Type="varchar2" Nullable="false" MaxLength="32" />
+    <Property Name="PRODETAIL" Type="varchar2" MaxLength="32" />
+    <Property Name="BACK" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="NEED_DIGITAL_SIGN" Type="char" MaxLength="1" />
+    <Property Name="TIDCNV_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CNV_NO" Type="number" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.FUNCTION_INFO”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="FUNCTION_INFO">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="FUNC_INDEX" Type="number" />
+    <Property Name="OP_FLAG" Type="char" MaxLength="1" />
+    <Property Name="MODULE_NUM" Type="number" />
+    <Property Name="INFO1_FORMAT" Type="varchar2" MaxLength="2" />
+    <Property Name="INFO1" Type="varchar2" MaxLength="100" />
+    <Property Name="INFO2_FORMAT" Type="varchar2" MaxLength="2" />
+    <Property Name="INFO2" Type="varchar2" MaxLength="100" />
+    <Property Name="INFO3_FORMAT" Type="varchar2" MaxLength="2" />
+    <Property Name="INFO3" Type="varchar2" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="char" MaxLength="8" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.OPERATION_INFO”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="OPERATION_INFO">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="OPER_INDEX" Type="number" />
+    <Property Name="OP_FLAG" Type="char" MaxLength="1" />
+    <Property Name="MODULE_NUM" Type="number" />
+    <Property Name="INFO1_FORMAT" Type="char" MaxLength="2" />
+    <Property Name="INFO1" Type="char" MaxLength="40" />
+    <Property Name="INFO2_FORMAT" Type="char" MaxLength="2" />
+    <Property Name="INFO2" Type="char" MaxLength="40" />
+    <Property Name="INFO3_FORMAT" Type="char" MaxLength="2" />
+    <Property Name="INFO3" Type="char" MaxLength="40" />
+    <Property Name="UPDATE_DATE" Type="char" MaxLength="8" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.PRINT_MODULE_GROUP”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="PRINT_MODULE_GROUP">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="GROUP_ID" Type="number" />
+    <Property Name="GROUP_NAME" Type="varchar2" MaxLength="50" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="DEPT_NO" Type="varchar2" MaxLength="15" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.PRINT_MODULE_GROUP_MEMBER”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="PRINT_MODULE_GROUP_MEMBER">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="GROUP_ID" Type="number" />
+    <Property Name="MODULE" Type="number" />
+    <Property Name="RETURN_CODE" Type="varchar2" MaxLength="2" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="STYLUS_PRINTER_FLAG" Type="char" MaxLength="1" />
+    <Property Name="ID" Type="varchar2" MaxLength="32" />
+    <Property Name="DEPT_NO" Type="varchar2" MaxLength="15" />
+    <Property Name="TMIS_PRINTER_FLAG" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TBL_DISP_CONTENT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBL_DISP_CONTENT">
+    <Key>
+      <PropertyRef Name="DATA_INDEX" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+      <PropertyRef Name="VERIFIED" />
+      <PropertyRef Name="TIMEOUT" />
+      <PropertyRef Name="CTRL_BITMAP" />
+    </Key>
+    <Property Name="DATA_INDEX" Type="number" Nullable="false" />
+    <Property Name="LINES" Type="varchar2" MaxLength="512" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="VERIFIED" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="TIMEOUT" Type="number" Nullable="false" />
+    <Property Name="CTRL_BITMAP" Type="number" Nullable="false" />
+    <Property Name="REFRESH_MODE" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TBL_EXCHANGE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBL_EXCHANGE">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" />
+    <Property Name="BEFORE" Type="varchar2" MaxLength="1024" />
+    <Property Name="AFTER" Type="varchar2" MaxLength="1024" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TBL_PRINT_MODULE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBL_PRINT_MODULE">
+    <Key>
+      <PropertyRef Name="VERIFIED" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="MODULE" Type="number" />
+    <Property Name="DESCRIBE" Type="varchar2" MaxLength="40" />
+    <Property Name="PRINT_NUM" Type="number" />
+    <Property Name="TITLE1" Type="number" />
+    <Property Name="TITLE2" Type="number" />
+    <Property Name="TITLE3" Type="number" />
+    <Property Name="SIGN1" Type="number" />
+    <Property Name="SIGN2" Type="number" />
+    <Property Name="SIGN3" Type="number" />
+    <Property Name="REC_NUM" Type="number" />
+    <Property Name="REC_NO" Type="varchar2" MaxLength="2048" />
+    <Property Name="VERIFIED" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="LOGO_FLAG" Type="char" MaxLength="1" />
+    <Property Name="DEPT_NO" Type="varchar2" MaxLength="15" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TRANS_AUTO”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TRANS_AUTO">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" />
+    <Property Name="NEXT_TRANS_TYPE" Type="number" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TRANS_COMMANDS”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TRANS_COMMANDS">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" />
+    <Property Name="STEP" Type="number" />
+    <Property Name="FLAG" Type="char" MaxLength="1" />
+    <Property Name="COMMAND" Type="char" MaxLength="4" />
+    <Property Name="FUNC_INDEX" Type="number" />
+    <Property Name="ALOG" Type="char" MaxLength="8" />
+    <Property Name="COMMAND_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="ORGCOMMAND" Type="char" MaxLength="4" />
+    <Property Name="DATA_INDEX" Type="number" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TRANS_DEF”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TRANS_DEF">
+    <Key>
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+      <PropertyRef Name="CASHIERBILLAD_RECNO" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" />
+    <Property Name="TRANS_CODE" Type="char" MaxLength="8" />
+    <Property Name="NEXT_TRANS_CODE" Type="char" MaxLength="8" />
+    <Property Name="AUTOVOID" Type="char" MaxLength="1" />
+    <Property Name="PIN_BLOCK" Type="char" MaxLength="1" />
+    <Property Name="FUNCTION_INDEX" Type="number" />
+    <Property Name="TRANS_NAME" Type="varchar2" MaxLength="40" />
+    <Property Name="TELEPHONE_NO" Type="number" />
+    <Property Name="DISP_TYPE" Type="char" MaxLength="1" />
+    <Property Name="NII" Type="char" MaxLength="3" />
+    <Property Name="SERVER_CODE" Type="char" MaxLength="2" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="DEPTNO" Type="varchar2" MaxLength="15" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="REMARK" Type="varchar2" MaxLength="80" />
+    <Property Name="CASHIERBILLAD_RECNO" Type="number" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.TRANS_SPLIT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TRANS_SPLIT">
+    <Key>
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" />
+    <Property Name="COND_NEXT_TRANS_TYPES" Type="varchar2" MaxLength="500" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="64" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="64" />
+    <Property Name="FLAG" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“TPOS_DB.VOID_CONFIG”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="VOID_CONFIG">
+    <Key>
+      <PropertyRef Name="TRANS_TYPE" />
+      <PropertyRef Name="SYNC_STATUS" />
+      <PropertyRef Name="CREATEDATE" />
+      <PropertyRef Name="LASTMODIFIED" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+    <Property Name="VERIFIED" Type="char" MaxLength="1" />
+    <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+    <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+    <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+  </EntityType>
+</Schema>
