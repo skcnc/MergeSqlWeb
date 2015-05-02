@@ -12,9 +12,9 @@ namespace WebToolsBox.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            QueryEntity qe = new QueryEntity();
-            CalCode cc = new CalCode();
-            cc.GetSQL("10654|220714|220715", ref qe);
+            //QueryEntity qe = new QueryEntity();
+            //CalCode cc = new CalCode();
+            //cc.GetSQL("10654|220714|220715", ref qe);
             return View();
         }
 
