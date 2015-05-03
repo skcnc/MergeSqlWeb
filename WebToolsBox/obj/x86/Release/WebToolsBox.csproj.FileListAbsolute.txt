@@ -189,3 +189,4 @@ D:\projects\Githubs\MergeSqlWeb\WebToolsBox\bin\zh-Hans\System.Spatial.resources
 D:\projects\Githubs\MergeSqlWeb\WebToolsBox\bin\zh-Hant\System.Spatial.resources.dll
 D:\projects\Githubs\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.dll
 D:\projects\Githubs\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.pdb
+D:\projects\Githubs\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.csprojResolveAssemblyReference.cache
