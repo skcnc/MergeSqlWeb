@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="webtools" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DataLocalEntities-Web.config Connection String" description="" value="metadata=res://*/EntityFramework.DataLocalEntities.DataLocalEntities.csdl|res://*/EntityFramework.DataLocalEntities.DataLocalEntities.ssdl|res://*/EntityFramework.DataLocalEntities.DataLocalEntities.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;data source=tpos_db234;password=tpos_db;persist security info=True;user id=TPOS_DB&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataLocalEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DataOnlineEntity2-Web.config Connection String" description="" value="metadata=res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.csdl|res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.ssdl|res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;data source=std_tpos;password=prd_tposdb;persist security info=True;user id=PRD_TPOSDB&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataOnlineEntity2']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="DefaultConnection_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -8,8 +8,6 @@ namespace WebToolsBox
 {
     public class session
     {
-        EntityFramework.DataLocalEntities.DataLocalEntities DataLocalObject;
-        EntityFramework.DataLocalEntities.DataOnlineEntity2 DataOnlineObject;
 
         private session() { }
         private static readonly session instance = new session();

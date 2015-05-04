@@ -195,7 +195,6 @@ E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\WebToolsBox.pdb
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Antlr3.Runtime.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.AspNet.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.Core.dll
-E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OAuth.Consumer.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OAuth.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OpenId.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
@@ -206,6 +205,7 @@ E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Microsoft.Web.Infrastructure.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Microsoft.Web.WebPages.OAuth.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Newtonsoft.Json.dll
+E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Oracle.Management.Omo.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\System.Spatial.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\System.Web.Helpers.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\System.Web.Http.OData.dll
@@ -231,7 +231,6 @@ E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\Microsoft.Web.WebPages.OAuth.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\WebMatrix.WebData.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.AspNet.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.Core.xml
-E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OAuth.Consumer.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OAuth.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OpenId.xml
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
@@ -280,4 +279,3 @@ E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\zh-Hans\System.Spatial.resources.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\bin\zh-Hant\System.Spatial.resources.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.dll
 E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.pdb
-E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\WebToolsBox.csprojResolveAssemblyReference.cache
