@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WebToolsBox.QueryEntity
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -12,15 +13,21 @@
 
 <div class="container-fluid">
     <div class="form-group">
-        <div class="col-sm-10">
-            <label class="sr-only" for="code_input">请输入查询交易代码（'|'分割）</label>
-            <input type="text" class="form-control"  id="code_input" placeholder="请输入查询交易代码（'|'分割）">
-        </div>
-        <div class="col-sm-2">
-            <button type="submit" class="btn btn-primary">
-                <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;生成
-            </button>
-        </div>
+            @using(Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <div class="col-sm-10">
+                    <label class="sr-only" for="code_input">请输入查询交易代码（'|'分割）</label>
+                    <input type="text" name="searchText" class="form-control" id="code_input" placeholder="请输入查询交易代码（'|'分割）">
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;生成
+                    </button>
+                </div>
+            }
     </div>
 </div>
 
@@ -32,11 +39,276 @@
         <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">嵌入日志</a></li>
     </ul>
     <div id="InsetClause" class="tab-content">
-        <div class="tab-pane fade active in" id="home">
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        @if(Model != null)
+        {
+            <div class="tab-pane fade active in" id="home">
+            <div>
+                @if (Model.DynamicDetailQuery.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicDetailQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.DynamicItemQuery.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicItemQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.DynamicValidQuery.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicValidQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.FieldMessageQuery.Count() > 0)
+                {
+                    foreach (string str in Model.FieldMessageQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.FunctionInfoQuery.Count() > 0)
+                {
+                    foreach (string str in Model.FunctionInfoQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.OperationInfoQuery.Count() > 0)
+                {
+                    foreach (string str in Model.OperationInfoQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.PrintModuleGroupMemberQuery.Count() > 0)
+                {
+                    foreach (string str in Model.PrintModuleGroupMemberQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.PrintModuleGroupQuery.Count() > 0)
+                {
+                    foreach (string str in Model.PrintModuleGroupQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TblDispContentQuery.Count() > 0)
+                {
+                    foreach (string str in Model.TblDispContentQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TblExchangeQuery.Count() > 0)
+                {
+                    foreach (string str in Model.TblExchangeQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TBLPrintModuleQuery.Count() > 0)
+                {
+                    foreach (string str in Model.TBLPrintModuleQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TransAutoQuery.Count() > 0)
+                {
+                    foreach (string str in Model.TransAutoQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TransDefQuerys.Count() > 0)
+                {
+                    foreach (string str in Model.TransDefQuerys)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TransSplitQuery.Count() > 0)
+                {
+                    foreach (string str in Model.TransSplitQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.VoidConfigQuery.Count() > 0)
+                {
+                    foreach (string str in Model.VoidConfigQuery)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+            </div>
         </div>
-        <div class="tab-pane fade" id="profile">
-            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            <div class="tab-pane fade" id="profile">
+            <div>
+                @if (Model.DynamicDetailAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicDetailAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.DynamicItemAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicItemAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.DynamicValidAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.DynamicValidAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.FieldMessageAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.FieldMessageAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.FunctionInfoAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.FunctionInfoAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.OperationInfoAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.OperationInfoAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.PrintModuleGroupMemberAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.PrintModuleGroupMemberAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.PrintModuleGroupAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.PrintModuleGroupAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TblDispContentAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.TblDispContentAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TblExchangeAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.TblExchangeAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TBLPrintModuleAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.TBLPrintModuleAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.TransAutoAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.TransAutoAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+           
+                @if (Model.TransSplitAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.TransSplitAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+
+                @if (Model.VoidConfigAddRecord.Count() > 0)
+                {
+                    foreach (string str in Model.VoidConfigAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />
+               }
+                }
+            </div>
         </div>
+        }
     </div>
 </div>

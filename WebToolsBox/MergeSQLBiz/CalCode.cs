@@ -4,9 +4,28 @@ using System.Linq;
 using System.Web;
 using WebToolsBox;
 using WebToolsBox.EntityFramework;
+using System.Data.Objects;
 
 namespace WebToolsBox
 {
+    /// <summary>
+    /// 针对Q0001问题的临时方案的数据结构
+    /// </summary>
+    class commandItem
+    {
+        public string FLAG { get; set; }
+        public int STEP { get; set; }        
+    }
+
+    /// <summary>
+    /// 针对Q0001问题的临时方案的数据结构
+    /// </summary>
+    class printmodulemember
+    {
+        public int GroupId { get; set; }
+        public int Module { get; set; }
+        public string ReturnCode { get; set; }
+    }
 
     /// <summary>
     /// 系统级参数定义
@@ -42,7 +61,7 @@ namespace WebToolsBox
             }
 
             //PRDTPOSDB.FUNCTION_INFORow fiRow = (from item in session.Instance.TPOSDB.FUNCTION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == func_index select item).ToList()[0];
-            FUNCTION_INFO fiRow = (from item in session.Instance.LocalDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == func_index select item).ToList()[0];
+            EntityFramework.DataLocalEntities.FUNCTION_INFO fiRow = (from item in session.Instance.LocalDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == func_index select item).ToList()[0];
 
             //if ((from item in session.Instance.ONLINEDB.FUNCTION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.FUNC_INDEX == fiRow.FUNC_INDEX && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
             if ((from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.FUNC_INDEX == fiRow.FUNC_INDEX && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
@@ -133,7 +152,7 @@ namespace WebToolsBox
         void parseFieldMessage(int Origin_trans_type, int New_trans_type, ref QueryEntity qEntity)
         {
             //PRDTPOSDB.FIELD_MESSAGERow fieldMessageRow = (from item in session.Instance.TPOSDB.FIELD_MESSAGETableAdapter.GetData() where (item.TPOS_CODE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0") select item).ToList()[0];
-            FIELD_MESSAGE fieldMessageRow = (from item in session.Instance.LocalDataHandle.FIELD_MESSAGE where (item.TPOS_CODE == Origin_trans_type && item.DELETE_FLAG == "0") select item).ToList()[0];
+            EntityFramework.DataLocalEntities.FIELD_MESSAGE fieldMessageRow = (from item in session.Instance.LocalDataHandle.FIELD_MESSAGE where (item.TPOS_CODE == Origin_trans_type && item.DELETE_FLAG == "0") select item).ToList()[0];
 
             //qEntity.FieldMessageQuery.Add(TransQuery.FieldMessageQuery(New_trans_type, fieldMessageRow.FBSKD, fieldMessageRow.FIELD1, fieldMessageRow.FIELD3, fieldMessageRow.FIELD22, fieldMessageRow.FIELD25, fieldMessageRow.FIELD54, fieldMessageRow.FIELD48_REQ, fieldMessageRow.FIELD48_RESP, fieldMessageRow.FLAG.ToString(), fieldMessageRow.TRN_TYPE, fieldMessageRow.TRN_NAME, fieldMessageRow.MSG_TYPE.ToString(), fieldMessageRow.MSG48_TYPE, fieldMessageRow.APP_ID.ToString(), fieldMessageRow.RESV3, fieldMessageRow.SUBFIELD, fieldMessageRow.FIELD4, fieldMessageRow.FIELD60, fieldMessageRow.DISPINFO, fieldMessageRow.ZFINFO, fieldMessageRow.FILL_FBSKD, fieldMessageRow.MSG_SPEC_VER.ToString(), fieldMessageRow.FIELD48_REQ_PREFIX, fieldMessageRow.FIELD48_REQ_SUFFIX, fieldMessageRow.FIELD48_RESP_PREFIX, fieldMessageRow.FIELD48_RESP_SUFFIX, fieldMessageRow.FIELD63_REQ, fieldMessageRow.FIELD63_RESP, fieldMessageRow.FIELD57_REQ, fieldMessageRow.FIELD57_RESP, fieldMessageRow.FIELD62_REQ, fieldMessageRow.FIELD62_RESP, fieldMessageRow.FIELD2, fieldMessageRow.REQ_MIN_BITMAP, fieldMessageRow.REQ_MAX_BITMAP, fieldMessageRow.RES_MIN_BITMAP, fieldMessageRow.RES_MAX_BITMAP, fieldMessageRow.PRONAME, fieldMessageRow.PRODETAIL, fieldMessageRow.BACK, fieldMessageRow.NEED_DIGITAL_SIGN, fieldMessageRow.TIDCNV_FLAG, fieldMessageRow.CNV_NO.ToString()));
             qEntity.FieldMessageQuery.Add(TransQuery.FieldMessageQuery(New_trans_type.ToString(), fieldMessageRow.FBSKD, fieldMessageRow.FIELD1, fieldMessageRow.FIELD3, fieldMessageRow.FIELD22, fieldMessageRow.FIELD25, fieldMessageRow.FIELD54, fieldMessageRow.FIELD48_REQ, fieldMessageRow.FIELD48_RESP, fieldMessageRow.FLAG.ToString(), fieldMessageRow.TRN_TYPE, fieldMessageRow.TRN_NAME, fieldMessageRow.MSG_TYPE.ToString(), fieldMessageRow.MSG48_TYPE, fieldMessageRow.APP_ID.ToString(), fieldMessageRow.RESV3, fieldMessageRow.SUBFIELD, fieldMessageRow.FIELD4, fieldMessageRow.FIELD60, fieldMessageRow.DISPINFO, fieldMessageRow.ZFINFO, fieldMessageRow.FILL_FBSKD, fieldMessageRow.MSG_SPEC_VER.ToString(), fieldMessageRow.FIELD48_REQ_PREFIX, fieldMessageRow.FIELD48_REQ_SUFFIX, fieldMessageRow.FIELD48_RESP_PREFIX, fieldMessageRow.FIELD48_RESP_SUFFIX, fieldMessageRow.FIELD63_REQ, fieldMessageRow.FIELD63_RESP, fieldMessageRow.FIELD57_REQ, fieldMessageRow.FIELD57_RESP, fieldMessageRow.FIELD62_REQ, fieldMessageRow.FIELD62_RESP, fieldMessageRow.FIELD2, fieldMessageRow.REQ_MIN_BITMAP, fieldMessageRow.REQ_MAX_BITMAP, fieldMessageRow.RES_MIN_BITMAP, fieldMessageRow.RES_MAX_BITMAP, fieldMessageRow.PRONAME, fieldMessageRow.PRODETAIL, fieldMessageRow.BACK, fieldMessageRow.NEED_DIGITAL_SIGN, fieldMessageRow.TIDCNV_FLAG, fieldMessageRow.CNV_NO.ToString()));
@@ -147,7 +166,7 @@ namespace WebToolsBox
             {
                 //PRDTPOSDB.TRANS_SPLITRow transSplitRow = (from item in session.Instance.TPOSDB.TRANS_SPLITTableAdapter.GetData() where item.TRANS_TYPE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
 
-                TRANS_SPLIT transSplitRow = (from item in session.Instance.LocalDataHandle.TRANS_SPLIT where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
+                EntityFramework.DataLocalEntities.TRANS_SPLIT transSplitRow = (from item in session.Instance.LocalDataHandle.TRANS_SPLIT where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
 
                 if (transSplitRow.COND_NEXT_TRANS_TYPES != null && transSplitRow.COND_NEXT_TRANS_TYPES != string.Empty)
                 {
@@ -167,7 +186,7 @@ namespace WebToolsBox
         }
 
         //void parseTransCommands(string new_trans_type, List<string> AddRecord, PRDTPOSDB.TRANS_COMMANDSRow commandsRow)
-        void parseTransCommands(int new_trans_type, List<string> AddRecord, TRANS_COMMANDS commandsRow, ref QueryEntity qEntity)
+        void parseTransCommands(int new_trans_type, List<string> AddRecord, EntityFramework.DataLocalEntities.TRANS_COMMANDS commandsRow, ref QueryEntity qEntity)
         {
             if (AddRecord == null) AddRecord = new List<string>();
 
@@ -223,7 +242,7 @@ namespace WebToolsBox
             }
 
             //PRDTPOSDB.TBL_DISP_CONTENTRow tdcRow = (from item in session.Instance.TPOSDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).ToList()[0];
-            TBL_DISP_CONTENT tdcRow = (from item in session.Instance.LocalDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).ToList()[0];
+            EntityFramework.DataLocalEntities.TBL_DISP_CONTENT tdcRow = (from item in session.Instance.LocalDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).ToList()[0];
 
             //if ((from item in session.Instance.ONLINEDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.DATA_INDEX == tdcRow.DATA_INDEX && item.LINES == tdcRow.LINES select item).Count() > 0)
             if ((from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.DATA_INDEX == tdcRow.DATA_INDEX && item.LINES == tdcRow.LINES select item).Count() > 0)
@@ -292,7 +311,7 @@ namespace WebToolsBox
             }
 
             //PRDTPOSDB.DYNAMIC_VALIDRow dvRow = (from item in session.Instance.TPOSDB.DYNAMIC_VALIDTableAdapter.GetData() where item.DELETE_FLAG == "0" && (int)item.REC_NO == Data_index select item).ToList()[0];
-            DYNAMIC_VALID dvRow = (from item in session.Instance.LocalDataHandle.DYNAMIC_VALID where item.DELETE_FLAG == "0" && (int)item.REC_NO == Data_index select item).ToList()[0];
+            EntityFramework.DataLocalEntities.DYNAMIC_VALID dvRow = (from item in session.Instance.LocalDataHandle.DYNAMIC_VALID where item.DELETE_FLAG == "0" && (int)item.REC_NO == Data_index select item).ToList()[0];
 
             //if ((from item in session.Instance.ONLINEDB.DYNAMIC_VALIDTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.REC_NO == dvRow.REC_NO && item.INPUT_NAME == dvRow.INPUT_NAME select item).Count() > 0)
             if ((from item in session.Instance.OnlineDataHandle.DYNAMIC_VALID where item.DELETE_FLAG == "0" && item.REC_NO == dvRow.REC_NO && item.INPUT_NAME == dvRow.INPUT_NAME select item).Count() > 0)
@@ -347,7 +366,7 @@ namespace WebToolsBox
             if ((from item in session.Instance.LocalDataHandle.TBL_EXCHANGE where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).Count() != 0)
             {
                 //PRDTPOSDB.TBL_EXCHANGERow exchangeRow = (from item in session.Instance.TPOSDB.TBL_EXCHANGETableAdapter.GetData() where item.TRANS_TYPE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
-                TBL_EXCHANGE exchangeRow = (from item in session.Instance.LocalDataHandle.TBL_EXCHANGE where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
+                EntityFramework.DataLocalEntities.TBL_EXCHANGE exchangeRow = (from item in session.Instance.LocalDataHandle.TBL_EXCHANGE where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
 
                 qEntity.TblExchangeQuery.Add(TransQuery.TblExchangeQuery(New_trans_type, exchangeRow.BEFORE, exchangeRow.AFTER));
 
@@ -361,7 +380,7 @@ namespace WebToolsBox
             if ((from item in session.Instance.LocalDataHandle.TRANS_AUTO where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).Count() > 0)
             {
                 //PRDTPOSDB.TRANS_AUTORow transAutoRow = (from item in session.Instance.TPOSDB.TRANS_AUTOTableAdapter.GetData() where item.TRANS_TYPE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
-                TRANS_AUTO transAutoRow = (from item in session.Instance.LocalDataHandle.TRANS_AUTO where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
+                EntityFramework.DataLocalEntities.TRANS_AUTO transAutoRow = (from item in session.Instance.LocalDataHandle.TRANS_AUTO where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
 
                 for (int j = 0; j < Origin_trans_type_list.Count(); j++)
                 {
@@ -382,7 +401,7 @@ namespace WebToolsBox
             if ((from item in session.Instance.LocalDataHandle.VOID_CONFIG where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).Count() > 0)
             {
                 //PRDTPOSDB.VOID_CONFIGRow voidConfigRow = (from item in session.Instance.TPOSDB.VOID_CONFIGTableAdapter.GetData() where item.TRANS_TYPE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
-                VOID_CONFIG voidConfigRow = (from item in session.Instance.LocalDataHandle.VOID_CONFIG where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
+                EntityFramework.DataLocalEntities.VOID_CONFIG voidConfigRow = (from item in session.Instance.LocalDataHandle.VOID_CONFIG where item.TRANS_TYPE == Origin_trans_type && item.DELETE_FLAG == "0" select item).ToList()[0];
 
                 qEntity.VoidConfigQuery.Add(TransQuery.VoidConfigQuery(New_trans_type));
                 qEntity.VoidConfigAddRecord.Add("A" + New_trans_type);
@@ -416,7 +435,7 @@ namespace WebToolsBox
 
             //PRDTPOSDB.PRINT_MODULE_GROUPRow pmgRow = (from item in session.Instance.TPOSDB.PRINT_MODULE_GROUPTableAdapter.GetData() where (int)item.GROUP_ID == origin_print_module_group select item).ToList()[0];
 
-            PRINT_MODULE_GROUP pmgRow = (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP where (int)item.GROUP_ID == origin_print_module_group select item).ToList()[0];
+            EntityFramework.DataLocalEntities.PRINT_MODULE_GROUP pmgRow = (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP where (int)item.GROUP_ID == origin_print_module_group select item).ToList()[0];
 
             //if ((from item in session.Instance.ONLINEDB.PRINT_MODULE_GROUPTableAdapter.GetData() where (int)item.GROUP_ID == origin_print_module_group && item.GROUP_NAME == pmgRow.GROUP_NAME select item).Count() > 0)
             if ((from item in session.Instance.OnlineDataHandle.PRINT_MODULE_GROUP where (int)item.GROUP_ID == origin_print_module_group && item.GROUP_NAME == pmgRow.GROUP_NAME select item).Count() > 0)
@@ -502,7 +521,7 @@ namespace WebToolsBox
             for (int k = 0; k < origin_tbl_print_module.Count; k++)
             {
                 //PRDTPOSDB.TBL_PRINT_MODULERow tpmRow = (from item in session.Instance.TPOSDB.TBL_PRINT_MODULETableAdapter.GetData() where (int)item.MODULE == origin_tbl_print_module[k] select item).ToList()[0];
-                TBL_PRINT_MODULE tpmRow = (from item in session.Instance.LocalDataHandle.TBL_PRINT_MODULE where (int)item.MODULE == origin_tbl_print_module[k] select item).ToList()[0];
+                EntityFramework.DataLocalEntities.TBL_PRINT_MODULE tpmRow = (from item in session.Instance.LocalDataHandle.TBL_PRINT_MODULE where (int)item.MODULE == origin_tbl_print_module[k] select item).ToList()[0];
 
                 //if ((from item in session.Instance.ONLINEDB.TBL_PRINT_MODULETableAdapter.GetData() where item.MODULE == tpmRow.MODULE && item.DESCRIBE == tpmRow.DESCRIBE && item.DELETE_FLAG == "0" select item).Count() > 0)
                 if ((from item in session.Instance.OnlineDataHandle.TBL_PRINT_MODULE where item.MODULE == tpmRow.MODULE && item.DESCRIBE == tpmRow.DESCRIBE && item.DELETE_FLAG == "0" select item).Count() > 0)
@@ -562,11 +581,26 @@ namespace WebToolsBox
             //至此打印组所使用的打印模版，均一一对应的包含在origin_tbl_print_module 和 new_tbl_print_module
             //List<PRDTPOSDB.PRINT_MODULE_GROUP_MEMBERRow> pmgmRow = (from item in session.Instance.TPOSDB.PRINT_MODULE_GROUP_MEMBERTableAdapter.GetData() where item.GROUP_ID == pmgRow.GROUP_ID && item.DELETE_FLAG == "0" select item).ToList();
 
-            List<PRINT_MODULE_GROUP_MEMBER> pmgmRow = (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP_MEMBER where item.GROUP_ID == pmgRow.GROUP_ID && item.DELETE_FLAG == "0" select item).ToList();
+            //List<EntityFramework.DataLocalEntities.PRINT_MODULE_GROUP_MEMBER> pmgmRow = (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP_MEMBER where item.GROUP_ID == pmgRow.GROUP_ID && item.DELETE_FLAG == "0" select item).ToList();
+
+            List<printmodulemember> pmms =
+                (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP_MEMBER
+                 where item.GROUP_ID == pmgRow.GROUP_ID && item.DELETE_FLAG == "0"
+                 select new printmodulemember
+                 {
+                     GroupId = (int)item.GROUP_ID,
+                     Module = (int)item.MODULE,
+                     ReturnCode = item.RETURN_CODE
+                 }).ToList();
 
             //foreach (PRDTPOSDB.PRINT_MODULE_GROUP_MEMBERRow row in pmgmRow)
-            foreach (PRINT_MODULE_GROUP_MEMBER row in pmgmRow)
+            foreach (printmodulemember pmm in pmms)
             {
+                EntityFramework.DataLocalEntities.PRINT_MODULE_GROUP_MEMBER row =
+                    (from item in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP_MEMBER
+                     where (int)item.GROUP_ID == pmm.GroupId && (int)item.MODULE == pmm.Module && item.RETURN_CODE == pmm.ReturnCode
+                     select item).First() as EntityFramework.DataLocalEntities.PRINT_MODULE_GROUP_MEMBER;
+
                 for (int j = 0; j < new_tbl_print_module.Count; j++)
                 {
                     if ((int)row.MODULE == origin_tbl_print_module[j])
@@ -710,7 +744,7 @@ namespace WebToolsBox
             {
                 //PRDTPOSDB.DYNAMIC_ITEMRow dynamicItemRow = (from item in session.Instance.TPOSDB.DYNAMIC_ITEMTableAdapter.GetData() where (int)item.RECNO == Data_index select item).ToList()[0];
 
-                DYNAMIC_ITEM dynamicItemRow = (from item in session.Instance.LocalDataHandle.DYNAMIC_ITEM where (int)item.RECNO == Data_index select item).ToList()[0];
+                EntityFramework.DataLocalEntities.DYNAMIC_ITEM dynamicItemRow = (from item in session.Instance.LocalDataHandle.DYNAMIC_ITEM where (int)item.RECNO == Data_index select item).ToList()[0];
 
                 //查看编号相同，描述相同的情况
                 //if ((from item in session.Instance.ONLINEDB.DYNAMIC_ITEMTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.TITLE == dynamicItemRow.TITLE && item.RECNO == dynamicItemRow.RECNO select item).Count() > 0)
@@ -756,18 +790,26 @@ namespace WebToolsBox
         }
 
         //void parseOperationInfo(List<PRDTPOSDB.TRANS_COMMANDSRow> transCommandRows)
-        void parseOperationInfo(List<TRANS_COMMANDS> transCommandRows, ref QueryEntity qEntity)
+        void parseOperationInfo(List<EntityFramework.DataLocalEntities.TRANS_COMMANDS> transCommandRows, ref QueryEntity qEntity)
         {
             List<int> OperInfo = (from item in transCommandRows where item.FUNC_INDEX != 0 select (int)item.FUNC_INDEX).Distinct().ToList();
             OperInfo.Sort();
 
             //List<PRDTPOSDB.OPERATION_INFORow> operationInfoRow = (from item in session.Instance.TPOSDB.OPERATION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && OperInfo.Contains((int)item.OPER_INDEX) && (item.OPER_INDEX != 0) select item).ToList();
 
-            List<OPERATION_INFO> operationInfoRow = (from item in session.Instance.LocalDataHandle.OPERATION_INFO where item.DELETE_FLAG == "0" && OperInfo.Contains((int)item.OPER_INDEX) && (item.OPER_INDEX != 0) select item).ToList();
+            //List<EntityFramework.DataLocalEntities.OPERATION_INFO> operationInfoRow = (from item in session.Instance.LocalDataHandle.OPERATION_INFO where item.DELETE_FLAG == "0" && OperInfo.Contains((int)item.OPER_INDEX) && (item.OPER_INDEX != 0) select item).ToList();
+
+            List<int> operationInfoRow = (from item in session.Instance.LocalDataHandle.OPERATION_INFO where item.DELETE_FLAG == "0" && OperInfo.Contains((int)item.OPER_INDEX) && (item.OPER_INDEX != 0) select (int)item.OPER_INDEX).ToList();
 
             //索引为0，不处理
-            foreach (OPERATION_INFO oiRow in operationInfoRow)
+            foreach (int oiRowi in operationInfoRow)
             {
+                EntityFramework.DataLocalEntities.OPERATION_INFO oiRow = null;
+
+                oiRow = (from item in session.Instance.LocalDataHandle.OPERATION_INFO
+                     where (int)item.OPER_INDEX == oiRowi
+                     select item).First() as EntityFramework.DataLocalEntities.OPERATION_INFO;
+
                 //if ((from item in session.Instance.ONLINEDB.OPERATION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.INFO1 == oiRow.INFO1 && item.OPER_INDEX == oiRow.OPER_INDEX select item).Count() > 0)
                 if ((from item in session.Instance.OnlineDataHandle.OPERATION_INFO where item.DELETE_FLAG == "0" && item.INFO1 == oiRow.INFO1 && item.OPER_INDEX == oiRow.OPER_INDEX select item).Count() > 0)
                 {
@@ -920,7 +962,7 @@ namespace WebToolsBox
             {
                 //PRDTPOSDB.TRANS_DEFRow transDefRow = (from item in session.Instance.TPOSDB.TRANS_DEFTableAdapter.GetData() where item.TRANS_TYPE.ToString() == i_trans_code[i] && (item.DELETE_FLAG == "0") select item).ToList()[0];
                 int trans_type_tmp = i_trans_code[i];
-                WebToolsBox.EntityFramework.TRANS_DEF transDefRow = (from item in session.Instance.LocalDataHandle.TRANS_DEF where item.TRANS_TYPE == trans_type_tmp && (item.DELETE_FLAG == "0") select item).ToList()[0];
+                WebToolsBox.EntityFramework.DataLocalEntities.TRANS_DEF transDefRow = (from item in session.Instance.LocalDataHandle.TRANS_DEF where item.TRANS_TYPE == trans_type_tmp && (item.DELETE_FLAG == "0") select item).ToList()[0];
                 //获取后续交易
                 string next_trans = transDefRow.NEXT_TRANS_CODE;
                 if (transDefRow.NEXT_TRANS_CODE != null && transDefRow.NEXT_TRANS_CODE.Trim() != string.Empty && transDefRow.NEXT_TRANS_CODE.Trim() != "null")
@@ -961,36 +1003,49 @@ namespace WebToolsBox
 
                 trans_type_tmp = i_trans_code[i];
 
-                //List<TRANS_COMMANDS> transCommandRows = (from item in session.Instance.LocalDataHandle.TRANS_COMMANDS.l where item.DELETE_FLAG == "0" && item.TRANS_TYPE == trans_type_tmp select item).ToList();
+                //未解决问题: 编号Q0001
+                //问题描述  ：查询返回故障，当查询同个表的全列多条数据时，返回内容数量相同，但是内容重复成首条内容
+                //暂时方案  ：
+                //              1. 先获取对应交易代码下,删除标记为0数据的 step 和 flag，该数据具备唯一性。
+                //              2. 按照flag，step 的顺序再读取trans_commands 数据
+                //              3. 将获取到的数据重新整合成为list。
+                //List<EntityFramework.DataLocalEntities.TRANS_COMMANDS> transCommandRows = (from item in session.Instance.LocalDataHandle.TRANS_COMMANDS where item.DELETE_FLAG == "0" && item.TRANS_TYPE == trans_type_tmp select item).ToList();
 
-                List<TRANS_COMMANDS> transCommandRows = session.Instance.LocalDataHandle.TRANS_COMMANDS.Where(a => a.DELETE_FLAG == "0" && a.ORGCOMMAND == "30").ToList();
 
-                foreach (var s in transCommandRows)
+
+
+                //step 1:
+                List<commandItem> transItems =
+                    (from item in session.Instance.LocalDataHandle.TRANS_COMMANDS
+                     where item.DELETE_FLAG == "0" && (int)(item.TRANS_TYPE) == trans_type_tmp
+                     select
+                     new commandItem()
+                     {
+                         FLAG = item.FLAG,
+                         STEP = (int)item.STEP
+                     }).ToList();
+           
+                     
+               //step 2 & 3:
+                List<EntityFramework.DataLocalEntities.TRANS_COMMANDS> transCommandRows = new List<EntityFramework.DataLocalEntities.TRANS_COMMANDS>();
+
+                foreach (commandItem comm in transItems)
                 {
-                    s.ToString();
+                    EntityFramework.DataLocalEntities.TRANS_COMMANDS command =
+                        (from item in session.Instance.LocalDataHandle.TRANS_COMMANDS
+                         where item.DELETE_FLAG == "0" && (int)(item.TRANS_TYPE) == trans_type_tmp && item.FLAG == comm.FLAG && item.STEP == comm.STEP
+                         select item).First() as EntityFramework.DataLocalEntities.TRANS_COMMANDS;
+
+
+                    transCommandRows.Add(command);
                 }
 
-                DataLocalEntities entity = new DataLocalEntities();
-
-                var s1 = (from s in entity.TRANS_COMMANDS where s.TRANS_TYPE == trans_type_tmp && s.DELETE_FLAG == "0" select s);
-
-                foreach (var s in s1)
-                {
-                    s.ToString();
-                }
-                
-                List<PRINT_MODULE_GROUP_MEMBER> s3= (from s in session.Instance.LocalDataHandle.PRINT_MODULE_GROUP_MEMBER where s.GROUP_ID == 100 select s).ToList();
-
-                foreach (var s in s3)
-                {
-                    s.ToString();
-                }
 
                 //开始遍历指令之前，先处理提示信息
                 parseOperationInfo(transCommandRows, ref qEntity);
 
                 //foreach (PRDTPOSDB.TRANS_COMMANDSRow row in transCommandRows)
-                foreach (TRANS_COMMANDS row in transCommandRows)
+                foreach (EntityFramework.DataLocalEntities.TRANS_COMMANDS row in transCommandRows)
                 {
                     //对单交易的trans_commands遍历
 

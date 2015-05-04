@@ -190,6 +190,93 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MergeSQLBizController.cs" />
+    <Compile Include="EntityFramework\DataLocalEntities\DataLocalEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataLocalEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataLocalEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataLocalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataLocalEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataLocalEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataOnlineEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataOnlineEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataOnlineEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataOnlineEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DYNAMIC_DETAIL.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DYNAMIC_ITEM.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DYNAMIC_VALID.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\ERROR_CODE.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\ERROR_GROUP.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\ERROR_GROUP_MAPPING.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\FIELD_MESSAGE.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\FUNCTION_INFO.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\OPERATION_INFO.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\PRINT_MODULE_GROUP.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\PRINT_MODULE_GROUP_MEMBER.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TBL_DISP_CONTENT.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TBL_EXCHANGE.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TBL_PRINT_MODULE.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TRANS_AUTO.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TRANS_COMMANDS.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TRANS_DEF.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\TRANS_SPLIT.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\VOID_CONFIG.cs">
+      <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ErrorCode.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -197,9 +284,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MergeSQLBiz\CalCode.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryEntity.cs" />
+    <Compile Include="session.cs" />
     <Compile Include="Test\Test.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +309,40 @@
     <Content Include="js\npm.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="EntityFramework\DataLocalEntities\DataLocalEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataLocalEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\DataLocalEntities\DataLocalEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataLocalEntities.edmx</DependentUpon>
+      <LastGenOutput>DataLocalEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataLocalEntities.edmx.diagram">
+      <DependentUpon>DataLocalEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataLocalEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataLocalEntities.edmx</DependentUpon>
+      <LastGenOutput>DataLocalEntities.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="EntityFramework\DataLocalEntities\DataOnlineEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataOnlineEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\DataLocalEntities\DataOnlineEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
+      <LastGenOutput>DataOnlineEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataOnlineEntities.edmx.diagram">
+      <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataOnlineEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
+      <LastGenOutput>DataOnlineEntities.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -284,8 +407,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="EntityFramework\" />
-    <Folder Include="MergeSQLBiz\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

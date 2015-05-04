@@ -1,0 +1,1520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataOnlineEntities.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DataOnlineEntitiesStoreContainer">
+          <EntitySet Name="DYNAMIC_DETAIL" EntityType="DataOnlineEntities.Store.DYNAMIC_DETAIL" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="DYNAMIC_DETAIL">
+            <DefiningQuery>SELECT 
+      "DYNAMIC_DETAIL"."REC_NO" AS "REC_NO", 
+      "DYNAMIC_DETAIL"."STEP" AS "STEP", 
+      "DYNAMIC_DETAIL"."ITEM_NAME" AS "ITEM_NAME", 
+      "DYNAMIC_DETAIL"."ITEM_VALUE" AS "ITEM_VALUE", 
+      "DYNAMIC_DETAIL"."STATUS" AS "STATUS", 
+      "DYNAMIC_DETAIL"."TRANS_CODE" AS "TRANS_CODE", 
+      "DYNAMIC_DETAIL"."RSV" AS "RSV", 
+      "DYNAMIC_DETAIL"."VERIFIED" AS "VERIFIED", 
+      "DYNAMIC_DETAIL"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "DYNAMIC_DETAIL"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "DYNAMIC_DETAIL"."CREATEDATE" AS "CREATEDATE", 
+      "DYNAMIC_DETAIL"."CREATER" AS "CREATER", 
+      "DYNAMIC_DETAIL"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "DYNAMIC_DETAIL"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "DYNAMIC_DETAIL"."NEED_INPUT" AS "NEED_INPUT"
+      FROM "PRD_TPOSDB"."DYNAMIC_DETAIL" "DYNAMIC_DETAIL"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DYNAMIC_ITEM" EntityType="DataOnlineEntities.Store.DYNAMIC_ITEM" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="DYNAMIC_VALID" EntityType="DataOnlineEntities.Store.DYNAMIC_VALID" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="ERROR_CODE" EntityType="DataOnlineEntities.Store.ERROR_CODE" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="ERROR_GROUP" EntityType="DataOnlineEntities.Store.ERROR_GROUP" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="ERROR_GROUP_MAPPING" EntityType="DataOnlineEntities.Store.ERROR_GROUP_MAPPING" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="FIELD_MESSAGE" EntityType="DataOnlineEntities.Store.FIELD_MESSAGE" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="FIELD_MESSAGE">
+            <DefiningQuery>SELECT 
+      "FIELD_MESSAGE"."TPOS_CODE" AS "TPOS_CODE", 
+      "FIELD_MESSAGE"."FBSKD" AS "FBSKD", 
+      "FIELD_MESSAGE"."FIELD1" AS "FIELD1", 
+      "FIELD_MESSAGE"."FIELD3" AS "FIELD3", 
+      "FIELD_MESSAGE"."FIELD22" AS "FIELD22", 
+      "FIELD_MESSAGE"."FIELD25" AS "FIELD25", 
+      "FIELD_MESSAGE"."FIELD54" AS "FIELD54", 
+      "FIELD_MESSAGE"."FIELD48_REQ" AS "FIELD48_REQ", 
+      "FIELD_MESSAGE"."FIELD48_RESP" AS "FIELD48_RESP", 
+      "FIELD_MESSAGE"."FLAG" AS "FLAG", 
+      "FIELD_MESSAGE"."TRN_TYPE" AS "TRN_TYPE", 
+      "FIELD_MESSAGE"."TRN_NAME" AS "TRN_NAME", 
+      "FIELD_MESSAGE"."MSG_TYPE" AS "MSG_TYPE", 
+      "FIELD_MESSAGE"."MSG48_TYPE" AS "MSG48_TYPE", 
+      "FIELD_MESSAGE"."APP_ID" AS "APP_ID", 
+      "FIELD_MESSAGE"."RESV3" AS "RESV3", 
+      "FIELD_MESSAGE"."SUBFIELD" AS "SUBFIELD", 
+      "FIELD_MESSAGE"."FIELD4" AS "FIELD4", 
+      "FIELD_MESSAGE"."FIELD60" AS "FIELD60", 
+      "FIELD_MESSAGE"."VERIFIED" AS "VERIFIED", 
+      "FIELD_MESSAGE"."DISPINFO" AS "DISPINFO", 
+      "FIELD_MESSAGE"."ZFINFO" AS "ZFINFO", 
+      "FIELD_MESSAGE"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "FIELD_MESSAGE"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "FIELD_MESSAGE"."FILL_FBSKD" AS "FILL_FBSKD", 
+      "FIELD_MESSAGE"."CREATEDATE" AS "CREATEDATE", 
+      "FIELD_MESSAGE"."CREATER" AS "CREATER", 
+      "FIELD_MESSAGE"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "FIELD_MESSAGE"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "FIELD_MESSAGE"."MSG_SPEC_VER" AS "MSG_SPEC_VER", 
+      "FIELD_MESSAGE"."FIELD48_REQ_PREFIX" AS "FIELD48_REQ_PREFIX", 
+      "FIELD_MESSAGE"."FIELD48_REQ_SUFFIX" AS "FIELD48_REQ_SUFFIX", 
+      "FIELD_MESSAGE"."FIELD48_RESP_PREFIX" AS "FIELD48_RESP_PREFIX", 
+      "FIELD_MESSAGE"."FIELD48_RESP_SUFFIX" AS "FIELD48_RESP_SUFFIX", 
+      "FIELD_MESSAGE"."FIELD63_REQ" AS "FIELD63_REQ", 
+      "FIELD_MESSAGE"."FIELD63_RESP" AS "FIELD63_RESP", 
+      "FIELD_MESSAGE"."FIELD57_REQ" AS "FIELD57_REQ", 
+      "FIELD_MESSAGE"."FIELD57_RESP" AS "FIELD57_RESP", 
+      "FIELD_MESSAGE"."FIELD62_REQ" AS "FIELD62_REQ", 
+      "FIELD_MESSAGE"."FIELD62_RESP" AS "FIELD62_RESP", 
+      "FIELD_MESSAGE"."FIELD2" AS "FIELD2", 
+      "FIELD_MESSAGE"."REQ_MIN_BITMAP" AS "REQ_MIN_BITMAP", 
+      "FIELD_MESSAGE"."REQ_MAX_BITMAP" AS "REQ_MAX_BITMAP", 
+      "FIELD_MESSAGE"."RES_MIN_BITMAP" AS "RES_MIN_BITMAP", 
+      "FIELD_MESSAGE"."RES_MAX_BITMAP" AS "RES_MAX_BITMAP", 
+      "FIELD_MESSAGE"."BACK" AS "BACK", 
+      "FIELD_MESSAGE"."PRONAME" AS "PRONAME", 
+      "FIELD_MESSAGE"."PRODETAIL" AS "PRODETAIL", 
+      "FIELD_MESSAGE"."NEED_DIGITAL_SIGN" AS "NEED_DIGITAL_SIGN", 
+      "FIELD_MESSAGE"."TIDCNV_FLAG" AS "TIDCNV_FLAG", 
+      "FIELD_MESSAGE"."CNV_NO" AS "CNV_NO"
+      FROM "PRD_TPOSDB"."FIELD_MESSAGE" "FIELD_MESSAGE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FUNCTION_INFO" EntityType="DataOnlineEntities.Store.FUNCTION_INFO" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="FUNCTION_INFO">
+            <DefiningQuery>SELECT 
+      "FUNCTION_INFO"."FUNC_INDEX" AS "FUNC_INDEX", 
+      "FUNCTION_INFO"."OP_FLAG" AS "OP_FLAG", 
+      "FUNCTION_INFO"."MODULE_NUM" AS "MODULE_NUM", 
+      "FUNCTION_INFO"."INFO1_FORMAT" AS "INFO1_FORMAT", 
+      "FUNCTION_INFO"."INFO1" AS "INFO1", 
+      "FUNCTION_INFO"."INFO2_FORMAT" AS "INFO2_FORMAT", 
+      "FUNCTION_INFO"."INFO2" AS "INFO2", 
+      "FUNCTION_INFO"."INFO3_FORMAT" AS "INFO3_FORMAT", 
+      "FUNCTION_INFO"."INFO3" AS "INFO3", 
+      "FUNCTION_INFO"."UPDATE_DATE" AS "UPDATE_DATE", 
+      "FUNCTION_INFO"."VERIFIED" AS "VERIFIED", 
+      "FUNCTION_INFO"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "FUNCTION_INFO"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "FUNCTION_INFO"."CREATEDATE" AS "CREATEDATE", 
+      "FUNCTION_INFO"."CREATER" AS "CREATER", 
+      "FUNCTION_INFO"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "FUNCTION_INFO"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "PRD_TPOSDB"."FUNCTION_INFO" "FUNCTION_INFO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OPERATION_INFO" EntityType="DataOnlineEntities.Store.OPERATION_INFO" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="OPERATION_INFO">
+            <DefiningQuery>SELECT 
+      "OPERATION_INFO"."OPER_INDEX" AS "OPER_INDEX", 
+      "OPERATION_INFO"."OP_FLAG" AS "OP_FLAG", 
+      "OPERATION_INFO"."MODULE_NUM" AS "MODULE_NUM", 
+      "OPERATION_INFO"."INFO1_FORMAT" AS "INFO1_FORMAT", 
+      "OPERATION_INFO"."INFO1" AS "INFO1", 
+      "OPERATION_INFO"."INFO2_FORMAT" AS "INFO2_FORMAT", 
+      "OPERATION_INFO"."INFO2" AS "INFO2", 
+      "OPERATION_INFO"."INFO3_FORMAT" AS "INFO3_FORMAT", 
+      "OPERATION_INFO"."INFO3" AS "INFO3", 
+      "OPERATION_INFO"."UPDATE_DATE" AS "UPDATE_DATE", 
+      "OPERATION_INFO"."VERIFIED" AS "VERIFIED", 
+      "OPERATION_INFO"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "OPERATION_INFO"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "OPERATION_INFO"."CREATEDATE" AS "CREATEDATE", 
+      "OPERATION_INFO"."CREATER" AS "CREATER", 
+      "OPERATION_INFO"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "OPERATION_INFO"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "PRD_TPOSDB"."OPERATION_INFO" "OPERATION_INFO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRINT_MODULE_GROUP" EntityType="DataOnlineEntities.Store.PRINT_MODULE_GROUP" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="PRINT_MODULE_GROUP_MEMBER" EntityType="DataOnlineEntities.Store.PRINT_MODULE_GROUP_MEMBER" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="TBL_DISP_CONTENT" EntityType="DataOnlineEntities.Store.TBL_DISP_CONTENT" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="TBL_EXCHANGE" EntityType="DataOnlineEntities.Store.TBL_EXCHANGE" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="TBL_PRINT_MODULE" EntityType="DataOnlineEntities.Store.TBL_PRINT_MODULE" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="TBL_PRINT_MODULE">
+            <DefiningQuery>SELECT 
+      "TBL_PRINT_MODULE"."MODULE" AS "MODULE", 
+      "TBL_PRINT_MODULE"."DESCRIBE" AS "DESCRIBE", 
+      "TBL_PRINT_MODULE"."PRINT_NUM" AS "PRINT_NUM", 
+      "TBL_PRINT_MODULE"."TITLE1" AS "TITLE1", 
+      "TBL_PRINT_MODULE"."TITLE2" AS "TITLE2", 
+      "TBL_PRINT_MODULE"."TITLE3" AS "TITLE3", 
+      "TBL_PRINT_MODULE"."SIGN1" AS "SIGN1", 
+      "TBL_PRINT_MODULE"."SIGN2" AS "SIGN2", 
+      "TBL_PRINT_MODULE"."SIGN3" AS "SIGN3", 
+      "TBL_PRINT_MODULE"."REC_NUM" AS "REC_NUM", 
+      "TBL_PRINT_MODULE"."REC_NO" AS "REC_NO", 
+      "TBL_PRINT_MODULE"."VERIFIED" AS "VERIFIED", 
+      "TBL_PRINT_MODULE"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TBL_PRINT_MODULE"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TBL_PRINT_MODULE"."CREATEDATE" AS "CREATEDATE", 
+      "TBL_PRINT_MODULE"."CREATER" AS "CREATER", 
+      "TBL_PRINT_MODULE"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TBL_PRINT_MODULE"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TBL_PRINT_MODULE"."LOGO_FLAG" AS "LOGO_FLAG", 
+      "TBL_PRINT_MODULE"."DEPT_NO" AS "DEPT_NO"
+      FROM "PRD_TPOSDB"."TBL_PRINT_MODULE" "TBL_PRINT_MODULE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TRANS_AUTO" EntityType="DataOnlineEntities.Store.TRANS_AUTO" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="TRANS_COMMANDS" EntityType="DataOnlineEntities.Store.TRANS_COMMANDS" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="TRANS_COMMANDS">
+            <DefiningQuery>SELECT 
+      "TRANS_COMMANDS"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_COMMANDS"."STEP" AS "STEP", 
+      "TRANS_COMMANDS"."FLAG" AS "FLAG", 
+      "TRANS_COMMANDS"."COMMAND" AS "COMMAND", 
+      "TRANS_COMMANDS"."FUNC_INDEX" AS "FUNC_INDEX", 
+      "TRANS_COMMANDS"."ALOG" AS "ALOG", 
+      "TRANS_COMMANDS"."COMMAND_NAME" AS "COMMAND_NAME", 
+      "TRANS_COMMANDS"."ORGCOMMAND" AS "ORGCOMMAND", 
+      "TRANS_COMMANDS"."DATA_INDEX" AS "DATA_INDEX", 
+      "TRANS_COMMANDS"."VERIFIED" AS "VERIFIED", 
+      "TRANS_COMMANDS"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_COMMANDS"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_COMMANDS"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_COMMANDS"."CREATER" AS "CREATER", 
+      "TRANS_COMMANDS"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_COMMANDS"."LASTMODIFIER" AS "LASTMODIFIER"
+      FROM "PRD_TPOSDB"."TRANS_COMMANDS" "TRANS_COMMANDS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TRANS_DEF" EntityType="DataOnlineEntities.Store.TRANS_DEF" store:Type="Tables" store:Schema="PRD_TPOSDB" store:Name="TRANS_DEF">
+            <DefiningQuery>SELECT 
+      "TRANS_DEF"."TRANS_TYPE" AS "TRANS_TYPE", 
+      "TRANS_DEF"."TRANS_CODE" AS "TRANS_CODE", 
+      "TRANS_DEF"."NEXT_TRANS_CODE" AS "NEXT_TRANS_CODE", 
+      "TRANS_DEF"."AUTOVOID" AS "AUTOVOID", 
+      "TRANS_DEF"."PIN_BLOCK" AS "PIN_BLOCK", 
+      "TRANS_DEF"."FUNCTION_INDEX" AS "FUNCTION_INDEX", 
+      "TRANS_DEF"."TRANS_NAME" AS "TRANS_NAME", 
+      "TRANS_DEF"."TELEPHONE_NO" AS "TELEPHONE_NO", 
+      "TRANS_DEF"."DISP_TYPE" AS "DISP_TYPE", 
+      "TRANS_DEF"."NII" AS "NII", 
+      "TRANS_DEF"."SERVER_CODE" AS "SERVER_CODE", 
+      "TRANS_DEF"."VERIFIED" AS "VERIFIED", 
+      "TRANS_DEF"."DEPTNO" AS "DEPTNO", 
+      "TRANS_DEF"."SYNC_STATUS" AS "SYNC_STATUS", 
+      "TRANS_DEF"."DELETE_FLAG" AS "DELETE_FLAG", 
+      "TRANS_DEF"."CREATEDATE" AS "CREATEDATE", 
+      "TRANS_DEF"."CREATER" AS "CREATER", 
+      "TRANS_DEF"."LASTMODIFIED" AS "LASTMODIFIED", 
+      "TRANS_DEF"."LASTMODIFIER" AS "LASTMODIFIER", 
+      "TRANS_DEF"."REMARK" AS "REMARK", 
+      "TRANS_DEF"."CASHIERBILLAD_RECNO" AS "CASHIERBILLAD_RECNO"
+      FROM "PRD_TPOSDB"."TRANS_DEF" "TRANS_DEF"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TRANS_SPLIT" EntityType="DataOnlineEntities.Store.TRANS_SPLIT" store:Type="Tables" Schema="PRD_TPOSDB" />
+          <EntitySet Name="VOID_CONFIG" EntityType="DataOnlineEntities.Store.VOID_CONFIG" store:Type="Tables" Schema="PRD_TPOSDB" />
+        </EntityContainer>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.DYNAMIC_DETAIL”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="DYNAMIC_DETAIL">
+          <Key>
+            <PropertyRef Name="REC_NO" />
+            <PropertyRef Name="STEP" />
+            <PropertyRef Name="ITEM_NAME" />
+            <PropertyRef Name="ITEM_VALUE" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="REC_NO" Type="number" Nullable="false" />
+          <Property Name="STEP" Type="number" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="ITEM_VALUE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="STATUS" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="TRANS_CODE" Type="char" MaxLength="8" />
+          <Property Name="RSV" Type="char" MaxLength="20" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="NEED_INPUT" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DYNAMIC_ITEM">
+          <Key>
+            <PropertyRef Name="RECNO" />
+          </Key>
+          <Property Name="RECNO" Type="number" Nullable="false" />
+          <Property Name="TITLE" Type="char" MaxLength="30" />
+          <Property Name="DESCRIBE" Type="char" MaxLength="40" />
+          <Property Name="ITEM_NUM" Type="number" />
+          <Property Name="DATA_RULE" Type="char" MaxLength="1" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="MARKS" Type="char" MaxLength="2" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="DATA_SCR_TYPE" Type="number" Nullable="false" />
+          <Property Name="VARIABLE" Type="varchar2" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="DYNAMIC_VALID">
+          <Key>
+            <PropertyRef Name="REC_NO" />
+          </Key>
+          <Property Name="REC_NO" Type="number" Nullable="false" />
+          <Property Name="MINLEN" Type="number" />
+          <Property Name="MAXLEN" Type="number" />
+          <Property Name="MINVAL" Type="number" />
+          <Property Name="MAXVAL" Type="number" />
+          <Property Name="INPUT_FLAG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="INPUT_TYPE" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="RSV" Type="char" MaxLength="10" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="ADD_DATE" Type="char" MaxLength="8" />
+          <Property Name="OPTNUM1" Type="number" />
+          <Property Name="OPTNUM2" Type="number" />
+          <Property Name="OPTCODE" Type="char" MaxLength="2" />
+          <Property Name="INPUT_NAME" Type="char" MaxLength="10" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="ERROR_CODE">
+          <Key>
+            <PropertyRef Name="RETURN_CODE" />
+            <PropertyRef Name="ERROR_GRP" />
+          </Key>
+          <Property Name="RETURN_CODE" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="RETURN_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="POS_MSG" Type="varchar2" MaxLength="40" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="ERROR_GRP" Type="number" Nullable="false" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="ERROR_GROUP">
+          <Key>
+            <PropertyRef Name="ERROR_GRP" />
+          </Key>
+          <Property Name="ERROR_GRP" Type="number" Nullable="false" />
+          <Property Name="GROUP_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="ERROR_GROUP_MAPPING">
+          <Key>
+            <PropertyRef Name="TRANS_CODE" />
+          </Key>
+          <Property Name="TRANS_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="ERROR_GRP" Type="number" Nullable="false" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.FIELD_MESSAGE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="FIELD_MESSAGE">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="MSG_SPEC_VER" />
+            <PropertyRef Name="PRONAME" />
+          </Key>
+          <Property Name="TPOS_CODE" Type="number" Precision="15" />
+          <Property Name="FBSKD" Type="varchar2" MaxLength="7" />
+          <Property Name="FIELD1" Type="varchar2" MaxLength="5" />
+          <Property Name="FIELD3" Type="varchar2" MaxLength="7" />
+          <Property Name="FIELD22" Type="varchar2" MaxLength="4" />
+          <Property Name="FIELD25" Type="varchar2" MaxLength="3" />
+          <Property Name="FIELD54" Type="varchar2" MaxLength="4" />
+          <Property Name="FIELD48_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD48_RESP" Type="varchar2" MaxLength="256" />
+          <Property Name="FLAG" Type="number" />
+          <Property Name="TRN_TYPE" Type="varchar2" MaxLength="1" />
+          <Property Name="TRN_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="MSG_TYPE" Type="number" />
+          <Property Name="MSG48_TYPE" Type="varchar2" MaxLength="2" />
+          <Property Name="APP_ID" Type="number" />
+          <Property Name="RESV3" Type="varchar2" MaxLength="100" />
+          <Property Name="SUBFIELD" Type="varchar2" MaxLength="50" />
+          <Property Name="FIELD4" Type="varchar2" MaxLength="2" />
+          <Property Name="FIELD60" Type="varchar2" MaxLength="20" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="DISPINFO" Type="varchar2" MaxLength="20" />
+          <Property Name="ZFINFO" Type="varchar2" MaxLength="4" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="FILL_FBSKD" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="MSG_SPEC_VER" Type="number" Nullable="false" />
+          <Property Name="FIELD48_REQ_PREFIX" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD48_REQ_SUFFIX" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD48_RESP_PREFIX" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD48_RESP_SUFFIX" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD63_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD63_RESP" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD57_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD57_RESP" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD62_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD62_RESP" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD2" Type="varchar2" MaxLength="19" />
+          <Property Name="REQ_MIN_BITMAP" Type="varchar2" MaxLength="32" />
+          <Property Name="REQ_MAX_BITMAP" Type="varchar2" MaxLength="32" />
+          <Property Name="RES_MIN_BITMAP" Type="varchar2" MaxLength="32" />
+          <Property Name="RES_MAX_BITMAP" Type="varchar2" MaxLength="32" />
+          <Property Name="BACK" Type="char" MaxLength="1" />
+          <Property Name="PRONAME" Type="varchar2" Nullable="false" MaxLength="32" />
+          <Property Name="PRODETAIL" Type="varchar2" MaxLength="32" />
+          <Property Name="NEED_DIGITAL_SIGN" Type="char" MaxLength="1" />
+          <Property Name="TIDCNV_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CNV_NO" Type="number" Precision="15" StoreGeneratedPattern="None" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.FUNCTION_INFO”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="FUNCTION_INFO">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="FUNC_INDEX" Type="number" />
+          <Property Name="OP_FLAG" Type="char" MaxLength="1" />
+          <Property Name="MODULE_NUM" Type="number" />
+          <Property Name="INFO1_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO1" Type="char" MaxLength="100" />
+          <Property Name="INFO2_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO2" Type="char" MaxLength="100" />
+          <Property Name="INFO3_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO3" Type="char" MaxLength="100" />
+          <Property Name="UPDATE_DATE" Type="char" MaxLength="8" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.OPERATION_INFO”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="OPERATION_INFO">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="OPER_INDEX" Type="number" />
+          <Property Name="OP_FLAG" Type="char" MaxLength="1" />
+          <Property Name="MODULE_NUM" Type="number" />
+          <Property Name="INFO1_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO1" Type="char" MaxLength="40" />
+          <Property Name="INFO2_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO2" Type="char" MaxLength="40" />
+          <Property Name="INFO3_FORMAT" Type="char" MaxLength="2" />
+          <Property Name="INFO3" Type="char" MaxLength="40" />
+          <Property Name="UPDATE_DATE" Type="char" MaxLength="8" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="PRINT_MODULE_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP_ID" />
+          </Key>
+          <Property Name="GROUP_ID" Type="number" Nullable="false" />
+          <Property Name="GROUP_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="DEPT_NO" Type="varchar2" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="PRINT_MODULE_GROUP_MEMBER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="GROUP_ID" Type="number" />
+          <Property Name="MODULE" Type="number" />
+          <Property Name="RETURN_CODE" Type="varchar2" MaxLength="2" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="STYLUS_PRINTER_FLAG" Type="char" MaxLength="1" />
+          <Property Name="DEPT_NO" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="ID" Type="varchar2" Nullable="false" MaxLength="32" />
+          <Property Name="TMIS_PRINTER_FLAG" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TBL_DISP_CONTENT">
+          <Key>
+            <PropertyRef Name="DATA_INDEX" />
+          </Key>
+          <Property Name="DATA_INDEX" Type="number" Nullable="false" />
+          <Property Name="LINES" Type="varchar2" MaxLength="512" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="VERIFIED" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="TIMEOUT" Type="number" />
+          <Property Name="CTRL_BITMAP" Type="number" Nullable="false" />
+          <Property Name="REFRESH_MODE" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TBL_EXCHANGE">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+          <Property Name="BEFORE" Type="varchar2" MaxLength="1024" />
+          <Property Name="AFTER" Type="varchar2" MaxLength="1024" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.TBL_PRINT_MODULE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="TBL_PRINT_MODULE">
+          <Key>
+            <PropertyRef Name="MODULE" />
+            <PropertyRef Name="VERIFIED" />
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="DEPT_NO" />
+          </Key>
+          <Property Name="MODULE" Type="number" Nullable="false" />
+          <Property Name="DESCRIBE" Type="varchar2" MaxLength="40" />
+          <Property Name="PRINT_NUM" Type="number" />
+          <Property Name="TITLE1" Type="number" />
+          <Property Name="TITLE2" Type="number" />
+          <Property Name="TITLE3" Type="number" />
+          <Property Name="SIGN1" Type="number" />
+          <Property Name="SIGN2" Type="number" />
+          <Property Name="SIGN3" Type="number" />
+          <Property Name="REC_NUM" Type="number" />
+          <Property Name="REC_NO" Type="varchar2" MaxLength="2048" />
+          <Property Name="VERIFIED" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="LOGO_FLAG" Type="char" MaxLength="1" />
+          <Property Name="DEPT_NO" Type="varchar2" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TRANS_AUTO">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+          <Property Name="NEXT_TRANS_TYPE" Type="number" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.TRANS_COMMANDS”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="TRANS_COMMANDS">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" />
+          <Property Name="STEP" Type="number" />
+          <Property Name="FLAG" Type="char" MaxLength="1" />
+          <Property Name="COMMAND" Type="char" MaxLength="4" />
+          <Property Name="FUNC_INDEX" Type="number" />
+          <Property Name="ALOG" Type="char" MaxLength="8" />
+          <Property Name="COMMAND_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="ORGCOMMAND" Type="char" MaxLength="4" />
+          <Property Name="DATA_INDEX" Type="number" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“PRD_TPOSDB.TRANS_DEF”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="TRANS_DEF">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="CASHIERBILLAD_RECNO" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" />
+          <Property Name="TRANS_CODE" Type="char" MaxLength="8" />
+          <Property Name="NEXT_TRANS_CODE" Type="char" MaxLength="8" />
+          <Property Name="AUTOVOID" Type="char" MaxLength="1" />
+          <Property Name="PIN_BLOCK" Type="char" MaxLength="1" />
+          <Property Name="FUNCTION_INDEX" Type="number" />
+          <Property Name="TRANS_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="TELEPHONE_NO" Type="number" />
+          <Property Name="DISP_TYPE" Type="char" MaxLength="1" />
+          <Property Name="NII" Type="char" MaxLength="3" />
+          <Property Name="SERVER_CODE" Type="char" MaxLength="2" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="DEPTNO" Type="varchar2" MaxLength="15" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="80" />
+          <Property Name="CASHIERBILLAD_RECNO" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANS_SPLIT">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+          <Property Name="COND_NEXT_TRANS_TYPES" Type="varchar2" MaxLength="500" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+          <Property Name="FLAG" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="VOID_CONFIG">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+          <Property Name="VERIFIED" Type="char" MaxLength="1" />
+          <Property Name="SYNC_STATUS" Type="number" Nullable="false" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="CREATEDATE" Type="date" Nullable="false" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="80" />
+          <Property Name="LASTMODIFIED" Type="date" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="varchar2" MaxLength="80" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataOnlineEntities" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DataOnlineEntity2" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="DYNAMIC_DETAIL" EntityType="DataOnlineEntities.DYNAMIC_DETAIL" />
+          <EntitySet Name="DYNAMIC_ITEM" EntityType="DataOnlineEntities.DYNAMIC_ITEM" />
+          <EntitySet Name="DYNAMIC_VALID" EntityType="DataOnlineEntities.DYNAMIC_VALID" />
+          <EntitySet Name="ERROR_CODE" EntityType="DataOnlineEntities.ERROR_CODE" />
+          <EntitySet Name="ERROR_GROUP" EntityType="DataOnlineEntities.ERROR_GROUP" />
+          <EntitySet Name="ERROR_GROUP_MAPPING" EntityType="DataOnlineEntities.ERROR_GROUP_MAPPING" />
+          <EntitySet Name="FIELD_MESSAGE" EntityType="DataOnlineEntities.FIELD_MESSAGE" />
+          <EntitySet Name="FUNCTION_INFO" EntityType="DataOnlineEntities.FUNCTION_INFO" />
+          <EntitySet Name="OPERATION_INFO" EntityType="DataOnlineEntities.OPERATION_INFO" />
+          <EntitySet Name="PRINT_MODULE_GROUP" EntityType="DataOnlineEntities.PRINT_MODULE_GROUP" />
+          <EntitySet Name="PRINT_MODULE_GROUP_MEMBER" EntityType="DataOnlineEntities.PRINT_MODULE_GROUP_MEMBER" />
+          <EntitySet Name="TBL_DISP_CONTENT" EntityType="DataOnlineEntities.TBL_DISP_CONTENT" />
+          <EntitySet Name="TBL_EXCHANGE" EntityType="DataOnlineEntities.TBL_EXCHANGE" />
+          <EntitySet Name="TBL_PRINT_MODULE" EntityType="DataOnlineEntities.TBL_PRINT_MODULE" />
+          <EntitySet Name="TRANS_AUTO" EntityType="DataOnlineEntities.TRANS_AUTO" />
+          <EntitySet Name="TRANS_COMMANDS" EntityType="DataOnlineEntities.TRANS_COMMANDS" />
+          <EntitySet Name="TRANS_DEF" EntityType="DataOnlineEntities.TRANS_DEF" />
+          <EntitySet Name="TRANS_SPLIT" EntityType="DataOnlineEntities.TRANS_SPLIT" />
+          <EntitySet Name="VOID_CONFIG" EntityType="DataOnlineEntities.VOID_CONFIG" />
+        </EntityContainer>
+        <EntityType Name="DYNAMIC_DETAIL">
+          <Key>
+            <PropertyRef Name="REC_NO" />
+            <PropertyRef Name="STEP" />
+            <PropertyRef Name="ITEM_NAME" />
+            <PropertyRef Name="ITEM_VALUE" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="REC_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="STEP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ITEM_VALUE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="TRANS_CODE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="RSV" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="NEED_INPUT" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="DYNAMIC_ITEM">
+          <Key>
+            <PropertyRef Name="RECNO" />
+          </Key>
+          <Property Name="RECNO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TITLE" Type="String" MaxLength="30" Unicode="false" FixedLength="true" />
+          <Property Name="DESCRIBE" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="ITEM_NUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DATA_RULE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MARKS" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="DATA_SCR_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="VARIABLE" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DYNAMIC_VALID">
+          <Key>
+            <PropertyRef Name="REC_NO" />
+          </Key>
+          <Property Name="REC_NO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MINLEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXLEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINVAL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXVAL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="INPUT_FLAG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="INPUT_TYPE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="RSV" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ADD_DATE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="OPTNUM1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPTNUM2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPTCODE" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INPUT_NAME" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ERROR_CODE">
+          <Key>
+            <PropertyRef Name="RETURN_CODE" />
+            <PropertyRef Name="ERROR_GRP" />
+          </Key>
+          <Property Name="RETURN_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="RETURN_NAME" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="POS_MSG" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ERROR_GRP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ERROR_GROUP">
+          <Key>
+            <PropertyRef Name="ERROR_GRP" />
+          </Key>
+          <Property Name="ERROR_GRP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="GROUP_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ERROR_GROUP_MAPPING">
+          <Key>
+            <PropertyRef Name="TRANS_CODE" />
+          </Key>
+          <Property Name="TRANS_CODE" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ERROR_GRP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FIELD_MESSAGE">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="MSG_SPEC_VER" />
+            <PropertyRef Name="PRONAME" />
+          </Key>
+          <Property Name="TPOS_CODE" Type="Int64" />
+          <Property Name="FBSKD" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD1" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD3" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD22" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD25" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD54" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FLAG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TRN_TYPE" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRN_NAME" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="MSG_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MSG48_TYPE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="APP_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RESV3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SUBFIELD" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD4" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD60" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DISPINFO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ZFINFO" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FILL_FBSKD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="MSG_SPEC_VER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FIELD48_REQ_PREFIX" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_REQ_SUFFIX" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_RESP_PREFIX" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_RESP_SUFFIX" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD63_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD63_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD57_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD57_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD62_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD62_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD2" Type="String" MaxLength="19" Unicode="false" FixedLength="false" />
+          <Property Name="REQ_MIN_BITMAP" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="REQ_MAX_BITMAP" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="RES_MIN_BITMAP" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="RES_MAX_BITMAP" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="BACK" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PRONAME" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="PRODETAIL" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="NEED_DIGITAL_SIGN" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="TIDCNV_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CNV_NO" Type="Int64" annotation:StoreGeneratedPattern="None" />
+        </EntityType>
+        <EntityType Name="FUNCTION_INFO">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="FUNC_INDEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OP_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MODULE_NUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="INFO1_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO1" Type="String" MaxLength="100" Unicode="false" FixedLength="true" />
+          <Property Name="INFO2_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO2" Type="String" MaxLength="100" Unicode="false" FixedLength="true" />
+          <Property Name="INFO3_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO3" Type="String" MaxLength="100" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATE_DATE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OPERATION_INFO">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="OPER_INDEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OP_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MODULE_NUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="INFO1_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO1" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="INFO2_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO2" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="INFO3_FORMAT" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="INFO3" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATE_DATE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PRINT_MODULE_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP_ID" />
+          </Key>
+          <Property Name="GROUP_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="GROUP_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="DEPT_NO" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PRINT_MODULE_GROUP_MEMBER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="GROUP_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MODULE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RETURN_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="STYLUS_PRINTER_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DEPT_NO" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="TMIS_PRINTER_FLAG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="TBL_DISP_CONTENT">
+          <Key>
+            <PropertyRef Name="DATA_INDEX" />
+          </Key>
+          <Property Name="DATA_INDEX" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="LINES" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="TIMEOUT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CTRL_BITMAP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="REFRESH_MODE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="TBL_EXCHANGE">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="BEFORE" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="AFTER" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_PRINT_MODULE">
+          <Key>
+            <PropertyRef Name="MODULE" />
+            <PropertyRef Name="VERIFIED" />
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="DEPT_NO" />
+          </Key>
+          <Property Name="MODULE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DESCRIBE" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="PRINT_NUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TITLE1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TITLE2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TITLE3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SIGN1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SIGN2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SIGN3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="REC_NUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="REC_NO" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LOGO_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DEPT_NO" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRANS_AUTO">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NEXT_TRANS_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRANS_COMMANDS">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="STEP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="COMMAND" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="FUNC_INDEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ALOG" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="COMMAND_NAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ORGCOMMAND" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="DATA_INDEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRANS_DEF">
+          <Key>
+            <PropertyRef Name="SYNC_STATUS" />
+            <PropertyRef Name="CREATEDATE" />
+            <PropertyRef Name="LASTMODIFIED" />
+            <PropertyRef Name="CASHIERBILLAD_RECNO" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TRANS_CODE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="NEXT_TRANS_CODE" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="AUTOVOID" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PIN_BLOCK" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FUNCTION_INDEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TRANS_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TELEPHONE_NO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DISP_TYPE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="NII" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="SERVER_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DEPTNO" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="REMARK" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CASHIERBILLAD_RECNO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="TRANS_SPLIT">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="COND_NEXT_TRANS_TYPES" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="VOID_CONFIG">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="VERIFIED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SYNC_STATUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="LASTMODIFIED" Type="DateTime" Nullable="false" />
+          <Property Name="LASTMODIFIER" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataOnlineEntitiesStoreContainer" CdmEntityContainer="DataOnlineEntity2">
+          <EntitySetMapping Name="DYNAMIC_DETAIL">
+            <EntityTypeMapping TypeName="DataOnlineEntities.DYNAMIC_DETAIL">
+              <MappingFragment StoreEntitySet="DYNAMIC_DETAIL">
+                <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+                <ScalarProperty Name="STEP" ColumnName="STEP" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_VALUE" ColumnName="ITEM_VALUE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+                <ScalarProperty Name="RSV" ColumnName="RSV" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="NEED_INPUT" ColumnName="NEED_INPUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DYNAMIC_ITEM">
+            <EntityTypeMapping TypeName="DataOnlineEntities.DYNAMIC_ITEM">
+              <MappingFragment StoreEntitySet="DYNAMIC_ITEM">
+                <ScalarProperty Name="RECNO" ColumnName="RECNO" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DESCRIBE" ColumnName="DESCRIBE" />
+                <ScalarProperty Name="ITEM_NUM" ColumnName="ITEM_NUM" />
+                <ScalarProperty Name="DATA_RULE" ColumnName="DATA_RULE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="MARKS" ColumnName="MARKS" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="DATA_SCR_TYPE" ColumnName="DATA_SCR_TYPE" />
+                <ScalarProperty Name="VARIABLE" ColumnName="VARIABLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DYNAMIC_VALID">
+            <EntityTypeMapping TypeName="DataOnlineEntities.DYNAMIC_VALID">
+              <MappingFragment StoreEntitySet="DYNAMIC_VALID">
+                <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+                <ScalarProperty Name="MINLEN" ColumnName="MINLEN" />
+                <ScalarProperty Name="MAXLEN" ColumnName="MAXLEN" />
+                <ScalarProperty Name="MINVAL" ColumnName="MINVAL" />
+                <ScalarProperty Name="MAXVAL" ColumnName="MAXVAL" />
+                <ScalarProperty Name="INPUT_FLAG" ColumnName="INPUT_FLAG" />
+                <ScalarProperty Name="INPUT_TYPE" ColumnName="INPUT_TYPE" />
+                <ScalarProperty Name="RSV" ColumnName="RSV" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="ADD_DATE" ColumnName="ADD_DATE" />
+                <ScalarProperty Name="OPTNUM1" ColumnName="OPTNUM1" />
+                <ScalarProperty Name="OPTNUM2" ColumnName="OPTNUM2" />
+                <ScalarProperty Name="OPTCODE" ColumnName="OPTCODE" />
+                <ScalarProperty Name="INPUT_NAME" ColumnName="INPUT_NAME" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERROR_CODE">
+            <EntityTypeMapping TypeName="DataOnlineEntities.ERROR_CODE">
+              <MappingFragment StoreEntitySet="ERROR_CODE">
+                <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+                <ScalarProperty Name="RETURN_NAME" ColumnName="RETURN_NAME" />
+                <ScalarProperty Name="POS_MSG" ColumnName="POS_MSG" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERROR_GROUP">
+            <EntityTypeMapping TypeName="DataOnlineEntities.ERROR_GROUP">
+              <MappingFragment StoreEntitySet="ERROR_GROUP">
+                <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+                <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERROR_GROUP_MAPPING">
+            <EntityTypeMapping TypeName="DataOnlineEntities.ERROR_GROUP_MAPPING">
+              <MappingFragment StoreEntitySet="ERROR_GROUP_MAPPING">
+                <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+                <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIELD_MESSAGE">
+            <EntityTypeMapping TypeName="DataOnlineEntities.FIELD_MESSAGE">
+              <MappingFragment StoreEntitySet="FIELD_MESSAGE">
+                <ScalarProperty Name="TPOS_CODE" ColumnName="TPOS_CODE" />
+                <ScalarProperty Name="FBSKD" ColumnName="FBSKD" />
+                <ScalarProperty Name="FIELD1" ColumnName="FIELD1" />
+                <ScalarProperty Name="FIELD3" ColumnName="FIELD3" />
+                <ScalarProperty Name="FIELD22" ColumnName="FIELD22" />
+                <ScalarProperty Name="FIELD25" ColumnName="FIELD25" />
+                <ScalarProperty Name="FIELD54" ColumnName="FIELD54" />
+                <ScalarProperty Name="FIELD48_REQ" ColumnName="FIELD48_REQ" />
+                <ScalarProperty Name="FIELD48_RESP" ColumnName="FIELD48_RESP" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="TRN_TYPE" ColumnName="TRN_TYPE" />
+                <ScalarProperty Name="TRN_NAME" ColumnName="TRN_NAME" />
+                <ScalarProperty Name="MSG_TYPE" ColumnName="MSG_TYPE" />
+                <ScalarProperty Name="MSG48_TYPE" ColumnName="MSG48_TYPE" />
+                <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+                <ScalarProperty Name="RESV3" ColumnName="RESV3" />
+                <ScalarProperty Name="SUBFIELD" ColumnName="SUBFIELD" />
+                <ScalarProperty Name="FIELD4" ColumnName="FIELD4" />
+                <ScalarProperty Name="FIELD60" ColumnName="FIELD60" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="DISPINFO" ColumnName="DISPINFO" />
+                <ScalarProperty Name="ZFINFO" ColumnName="ZFINFO" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="FILL_FBSKD" ColumnName="FILL_FBSKD" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="MSG_SPEC_VER" ColumnName="MSG_SPEC_VER" />
+                <ScalarProperty Name="FIELD48_REQ_PREFIX" ColumnName="FIELD48_REQ_PREFIX" />
+                <ScalarProperty Name="FIELD48_REQ_SUFFIX" ColumnName="FIELD48_REQ_SUFFIX" />
+                <ScalarProperty Name="FIELD48_RESP_PREFIX" ColumnName="FIELD48_RESP_PREFIX" />
+                <ScalarProperty Name="FIELD48_RESP_SUFFIX" ColumnName="FIELD48_RESP_SUFFIX" />
+                <ScalarProperty Name="FIELD63_REQ" ColumnName="FIELD63_REQ" />
+                <ScalarProperty Name="FIELD63_RESP" ColumnName="FIELD63_RESP" />
+                <ScalarProperty Name="FIELD57_REQ" ColumnName="FIELD57_REQ" />
+                <ScalarProperty Name="FIELD57_RESP" ColumnName="FIELD57_RESP" />
+                <ScalarProperty Name="FIELD62_REQ" ColumnName="FIELD62_REQ" />
+                <ScalarProperty Name="FIELD62_RESP" ColumnName="FIELD62_RESP" />
+                <ScalarProperty Name="FIELD2" ColumnName="FIELD2" />
+                <ScalarProperty Name="REQ_MIN_BITMAP" ColumnName="REQ_MIN_BITMAP" />
+                <ScalarProperty Name="REQ_MAX_BITMAP" ColumnName="REQ_MAX_BITMAP" />
+                <ScalarProperty Name="RES_MIN_BITMAP" ColumnName="RES_MIN_BITMAP" />
+                <ScalarProperty Name="RES_MAX_BITMAP" ColumnName="RES_MAX_BITMAP" />
+                <ScalarProperty Name="BACK" ColumnName="BACK" />
+                <ScalarProperty Name="PRONAME" ColumnName="PRONAME" />
+                <ScalarProperty Name="PRODETAIL" ColumnName="PRODETAIL" />
+                <ScalarProperty Name="NEED_DIGITAL_SIGN" ColumnName="NEED_DIGITAL_SIGN" />
+                <ScalarProperty Name="TIDCNV_FLAG" ColumnName="TIDCNV_FLAG" />
+                <ScalarProperty Name="CNV_NO" ColumnName="CNV_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FUNCTION_INFO">
+            <EntityTypeMapping TypeName="DataOnlineEntities.FUNCTION_INFO">
+              <MappingFragment StoreEntitySet="FUNCTION_INFO">
+                <ScalarProperty Name="FUNC_INDEX" ColumnName="FUNC_INDEX" />
+                <ScalarProperty Name="OP_FLAG" ColumnName="OP_FLAG" />
+                <ScalarProperty Name="MODULE_NUM" ColumnName="MODULE_NUM" />
+                <ScalarProperty Name="INFO1_FORMAT" ColumnName="INFO1_FORMAT" />
+                <ScalarProperty Name="INFO1" ColumnName="INFO1" />
+                <ScalarProperty Name="INFO2_FORMAT" ColumnName="INFO2_FORMAT" />
+                <ScalarProperty Name="INFO2" ColumnName="INFO2" />
+                <ScalarProperty Name="INFO3_FORMAT" ColumnName="INFO3_FORMAT" />
+                <ScalarProperty Name="INFO3" ColumnName="INFO3" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPERATION_INFO">
+            <EntityTypeMapping TypeName="DataOnlineEntities.OPERATION_INFO">
+              <MappingFragment StoreEntitySet="OPERATION_INFO">
+                <ScalarProperty Name="OPER_INDEX" ColumnName="OPER_INDEX" />
+                <ScalarProperty Name="OP_FLAG" ColumnName="OP_FLAG" />
+                <ScalarProperty Name="MODULE_NUM" ColumnName="MODULE_NUM" />
+                <ScalarProperty Name="INFO1_FORMAT" ColumnName="INFO1_FORMAT" />
+                <ScalarProperty Name="INFO1" ColumnName="INFO1" />
+                <ScalarProperty Name="INFO2_FORMAT" ColumnName="INFO2_FORMAT" />
+                <ScalarProperty Name="INFO2" ColumnName="INFO2" />
+                <ScalarProperty Name="INFO3_FORMAT" ColumnName="INFO3_FORMAT" />
+                <ScalarProperty Name="INFO3" ColumnName="INFO3" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRINT_MODULE_GROUP">
+            <EntityTypeMapping TypeName="DataOnlineEntities.PRINT_MODULE_GROUP">
+              <MappingFragment StoreEntitySet="PRINT_MODULE_GROUP">
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRINT_MODULE_GROUP_MEMBER">
+            <EntityTypeMapping TypeName="DataOnlineEntities.PRINT_MODULE_GROUP_MEMBER">
+              <MappingFragment StoreEntitySet="PRINT_MODULE_GROUP_MEMBER">
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+                <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="STYLUS_PRINTER_FLAG" ColumnName="STYLUS_PRINTER_FLAG" />
+                <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TMIS_PRINTER_FLAG" ColumnName="TMIS_PRINTER_FLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_DISP_CONTENT">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TBL_DISP_CONTENT">
+              <MappingFragment StoreEntitySet="TBL_DISP_CONTENT">
+                <ScalarProperty Name="DATA_INDEX" ColumnName="DATA_INDEX" />
+                <ScalarProperty Name="LINES" ColumnName="LINES" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+                <ScalarProperty Name="CTRL_BITMAP" ColumnName="CTRL_BITMAP" />
+                <ScalarProperty Name="REFRESH_MODE" ColumnName="REFRESH_MODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_EXCHANGE">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TBL_EXCHANGE">
+              <MappingFragment StoreEntitySet="TBL_EXCHANGE">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="BEFORE" ColumnName="BEFORE" />
+                <ScalarProperty Name="AFTER" ColumnName="AFTER" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PRINT_MODULE">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TBL_PRINT_MODULE">
+              <MappingFragment StoreEntitySet="TBL_PRINT_MODULE">
+                <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+                <ScalarProperty Name="DESCRIBE" ColumnName="DESCRIBE" />
+                <ScalarProperty Name="PRINT_NUM" ColumnName="PRINT_NUM" />
+                <ScalarProperty Name="TITLE1" ColumnName="TITLE1" />
+                <ScalarProperty Name="TITLE2" ColumnName="TITLE2" />
+                <ScalarProperty Name="TITLE3" ColumnName="TITLE3" />
+                <ScalarProperty Name="SIGN1" ColumnName="SIGN1" />
+                <ScalarProperty Name="SIGN2" ColumnName="SIGN2" />
+                <ScalarProperty Name="SIGN3" ColumnName="SIGN3" />
+                <ScalarProperty Name="REC_NUM" ColumnName="REC_NUM" />
+                <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="LOGO_FLAG" ColumnName="LOGO_FLAG" />
+                <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_AUTO">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TRANS_AUTO">
+              <MappingFragment StoreEntitySet="TRANS_AUTO">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="NEXT_TRANS_TYPE" ColumnName="NEXT_TRANS_TYPE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_COMMANDS">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TRANS_COMMANDS">
+              <MappingFragment StoreEntitySet="TRANS_COMMANDS">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="STEP" ColumnName="STEP" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="COMMAND" ColumnName="COMMAND" />
+                <ScalarProperty Name="FUNC_INDEX" ColumnName="FUNC_INDEX" />
+                <ScalarProperty Name="ALOG" ColumnName="ALOG" />
+                <ScalarProperty Name="COMMAND_NAME" ColumnName="COMMAND_NAME" />
+                <ScalarProperty Name="ORGCOMMAND" ColumnName="ORGCOMMAND" />
+                <ScalarProperty Name="DATA_INDEX" ColumnName="DATA_INDEX" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_DEF">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TRANS_DEF">
+              <MappingFragment StoreEntitySet="TRANS_DEF">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+                <ScalarProperty Name="NEXT_TRANS_CODE" ColumnName="NEXT_TRANS_CODE" />
+                <ScalarProperty Name="AUTOVOID" ColumnName="AUTOVOID" />
+                <ScalarProperty Name="PIN_BLOCK" ColumnName="PIN_BLOCK" />
+                <ScalarProperty Name="FUNCTION_INDEX" ColumnName="FUNCTION_INDEX" />
+                <ScalarProperty Name="TRANS_NAME" ColumnName="TRANS_NAME" />
+                <ScalarProperty Name="TELEPHONE_NO" ColumnName="TELEPHONE_NO" />
+                <ScalarProperty Name="DISP_TYPE" ColumnName="DISP_TYPE" />
+                <ScalarProperty Name="NII" ColumnName="NII" />
+                <ScalarProperty Name="SERVER_CODE" ColumnName="SERVER_CODE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="DEPTNO" ColumnName="DEPTNO" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="CASHIERBILLAD_RECNO" ColumnName="CASHIERBILLAD_RECNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_SPLIT">
+            <EntityTypeMapping TypeName="DataOnlineEntities.TRANS_SPLIT">
+              <MappingFragment StoreEntitySet="TRANS_SPLIT">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="COND_NEXT_TRANS_TYPES" ColumnName="COND_NEXT_TRANS_TYPES" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VOID_CONFIG">
+            <EntityTypeMapping TypeName="DataOnlineEntities.VOID_CONFIG">
+              <MappingFragment StoreEntitySet="VOID_CONFIG">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+                <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+                <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

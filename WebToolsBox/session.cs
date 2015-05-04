@@ -8,8 +8,8 @@ namespace WebToolsBox
 {
     public class session
     {
-        DataLocalEntities DataLocalObject;
-        DataOnlineEntities DataOnlineObject;
+        EntityFramework.DataLocalEntities.DataLocalEntities DataLocalObject;
+        EntityFramework.DataLocalEntities.DataOnlineEntity2 DataOnlineObject;
 
         private session() { }
         private static readonly session instance = new session();
@@ -25,30 +25,27 @@ namespace WebToolsBox
         /// <summary>
         /// 测试数据库的实例
         /// </summary>
-        public DataLocalEntities LocalDataHandle
+        public EntityFramework.DataLocalEntities.DataLocalEntities LocalDataHandle
         {
             get
             {
-                if (DataLocalObject == null)
-                {
-                    DataLocalObject = new DataLocalEntities();
-                }
-                return DataLocalObject;
+                return new EntityFramework.DataLocalEntities.DataLocalEntities(); 
             }
         }
 
         /// <summary>
         /// 准生产数据库的实例
         /// </summary>
-        public DataOnlineEntities OnlineDataHandle
+        public EntityFramework.DataLocalEntities.DataOnlineEntity2 OnlineDataHandle
         {
             get
             {
-                if (DataOnlineObject == null)
-                {
-                    DataOnlineObject = new DataOnlineEntities();
-                }
-                return DataOnlineObject;
+                //if (DataOnlineObject == null)
+                //{
+                //    DataOnlineObject = new EntityFramework.DataLocalEntities.DataOnlineEntity2();
+                //}
+                //return DataOnlineObject;
+                return new EntityFramework.DataLocalEntities.DataOnlineEntity2();
             }
         }
         
