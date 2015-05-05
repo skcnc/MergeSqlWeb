@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="E:\Project\NET\MergeSqlWeb\WebToolsBox\obj\x86\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

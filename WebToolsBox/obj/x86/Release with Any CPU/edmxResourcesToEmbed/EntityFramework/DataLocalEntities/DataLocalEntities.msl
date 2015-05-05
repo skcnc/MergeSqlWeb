@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataLocalModelStoreContainer" CdmEntityContainer="DataLocalEntities">
+    <EntitySetMapping Name="DYNAMIC_DETAIL">
+      <EntityTypeMapping TypeName="DataLocalModel.DYNAMIC_DETAIL">
+        <MappingFragment StoreEntitySet="DYNAMIC_DETAIL">
+          <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+          <ScalarProperty Name="STEP" ColumnName="STEP" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_VALUE" ColumnName="ITEM_VALUE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+          <ScalarProperty Name="RSV" ColumnName="RSV" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="NEED_INPUT" ColumnName="NEED_INPUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DYNAMIC_ITEM">
+      <EntityTypeMapping TypeName="DataLocalModel.DYNAMIC_ITEM">
+        <MappingFragment StoreEntitySet="DYNAMIC_ITEM">
+          <ScalarProperty Name="RECNO" ColumnName="RECNO" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIBE" ColumnName="DESCRIBE" />
+          <ScalarProperty Name="ITEM_NUM" ColumnName="ITEM_NUM" />
+          <ScalarProperty Name="DATA_RULE" ColumnName="DATA_RULE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="MARKS" ColumnName="MARKS" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="DATA_SCR_TYPE" ColumnName="DATA_SCR_TYPE" />
+          <ScalarProperty Name="VARIABLE" ColumnName="VARIABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DYNAMIC_VALID">
+      <EntityTypeMapping TypeName="DataLocalModel.DYNAMIC_VALID">
+        <MappingFragment StoreEntitySet="DYNAMIC_VALID">
+          <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+          <ScalarProperty Name="MINLEN" ColumnName="MINLEN" />
+          <ScalarProperty Name="MAXLEN" ColumnName="MAXLEN" />
+          <ScalarProperty Name="MINVAL" ColumnName="MINVAL" />
+          <ScalarProperty Name="MAXVAL" ColumnName="MAXVAL" />
+          <ScalarProperty Name="INPUT_FLAG" ColumnName="INPUT_FLAG" />
+          <ScalarProperty Name="INPUT_TYPE" ColumnName="INPUT_TYPE" />
+          <ScalarProperty Name="RSV" ColumnName="RSV" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="ADD_DATE" ColumnName="ADD_DATE" />
+          <ScalarProperty Name="OPTNUM1" ColumnName="OPTNUM1" />
+          <ScalarProperty Name="OPTNUM2" ColumnName="OPTNUM2" />
+          <ScalarProperty Name="OPTCODE" ColumnName="OPTCODE" />
+          <ScalarProperty Name="INPUT_NAME" ColumnName="INPUT_NAME" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERROR_CODE">
+      <EntityTypeMapping TypeName="DataLocalModel.ERROR_CODE">
+        <MappingFragment StoreEntitySet="ERROR_CODE">
+          <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+          <ScalarProperty Name="RETURN_NAME" ColumnName="RETURN_NAME" />
+          <ScalarProperty Name="POS_MSG" ColumnName="POS_MSG" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERROR_GROUP">
+      <EntityTypeMapping TypeName="DataLocalModel.ERROR_GROUP">
+        <MappingFragment StoreEntitySet="ERROR_GROUP">
+          <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERROR_GROUP_MAPPING">
+      <EntityTypeMapping TypeName="DataLocalModel.ERROR_GROUP_MAPPING">
+        <MappingFragment StoreEntitySet="ERROR_GROUP_MAPPING">
+          <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+          <ScalarProperty Name="ERROR_GRP" ColumnName="ERROR_GRP" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIELD_MESSAGE">
+      <EntityTypeMapping TypeName="DataLocalModel.FIELD_MESSAGE">
+        <MappingFragment StoreEntitySet="FIELD_MESSAGE">
+          <ScalarProperty Name="TPOS_CODE" ColumnName="TPOS_CODE" />
+          <ScalarProperty Name="FBSKD" ColumnName="FBSKD" />
+          <ScalarProperty Name="FIELD1" ColumnName="FIELD1" />
+          <ScalarProperty Name="FIELD3" ColumnName="FIELD3" />
+          <ScalarProperty Name="FIELD22" ColumnName="FIELD22" />
+          <ScalarProperty Name="FIELD25" ColumnName="FIELD25" />
+          <ScalarProperty Name="FIELD54" ColumnName="FIELD54" />
+          <ScalarProperty Name="FIELD48_REQ" ColumnName="FIELD48_REQ" />
+          <ScalarProperty Name="FIELD48_RESP" ColumnName="FIELD48_RESP" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="TRN_TYPE" ColumnName="TRN_TYPE" />
+          <ScalarProperty Name="TRN_NAME" ColumnName="TRN_NAME" />
+          <ScalarProperty Name="MSG_TYPE" ColumnName="MSG_TYPE" />
+          <ScalarProperty Name="MSG48_TYPE" ColumnName="MSG48_TYPE" />
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="RESV3" ColumnName="RESV3" />
+          <ScalarProperty Name="SUBFIELD" ColumnName="SUBFIELD" />
+          <ScalarProperty Name="FIELD4" ColumnName="FIELD4" />
+          <ScalarProperty Name="FIELD60" ColumnName="FIELD60" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="DISPINFO" ColumnName="DISPINFO" />
+          <ScalarProperty Name="ZFINFO" ColumnName="ZFINFO" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="FILL_FBSKD" ColumnName="FILL_FBSKD" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="MSG_SPEC_VER" ColumnName="MSG_SPEC_VER" />
+          <ScalarProperty Name="FIELD48_REQ_PREFIX" ColumnName="FIELD48_REQ_PREFIX" />
+          <ScalarProperty Name="FIELD48_REQ_SUFFIX" ColumnName="FIELD48_REQ_SUFFIX" />
+          <ScalarProperty Name="FIELD48_RESP_PREFIX" ColumnName="FIELD48_RESP_PREFIX" />
+          <ScalarProperty Name="FIELD48_RESP_SUFFIX" ColumnName="FIELD48_RESP_SUFFIX" />
+          <ScalarProperty Name="FIELD63_REQ" ColumnName="FIELD63_REQ" />
+          <ScalarProperty Name="FIELD63_RESP" ColumnName="FIELD63_RESP" />
+          <ScalarProperty Name="FIELD57_REQ" ColumnName="FIELD57_REQ" />
+          <ScalarProperty Name="FIELD57_RESP" ColumnName="FIELD57_RESP" />
+          <ScalarProperty Name="FIELD62_REQ" ColumnName="FIELD62_REQ" />
+          <ScalarProperty Name="FIELD62_RESP" ColumnName="FIELD62_RESP" />
+          <ScalarProperty Name="FIELD2" ColumnName="FIELD2" />
+          <ScalarProperty Name="REQ_MIN_BITMAP" ColumnName="REQ_MIN_BITMAP" />
+          <ScalarProperty Name="REQ_MAX_BITMAP" ColumnName="REQ_MAX_BITMAP" />
+          <ScalarProperty Name="RES_MIN_BITMAP" ColumnName="RES_MIN_BITMAP" />
+          <ScalarProperty Name="RES_MAX_BITMAP" ColumnName="RES_MAX_BITMAP" />
+          <ScalarProperty Name="PRONAME" ColumnName="PRONAME" />
+          <ScalarProperty Name="PRODETAIL" ColumnName="PRODETAIL" />
+          <ScalarProperty Name="BACK" ColumnName="BACK" />
+          <ScalarProperty Name="NEED_DIGITAL_SIGN" ColumnName="NEED_DIGITAL_SIGN" />
+          <ScalarProperty Name="TIDCNV_FLAG" ColumnName="TIDCNV_FLAG" />
+          <ScalarProperty Name="CNV_NO" ColumnName="CNV_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FUNCTION_INFO">
+      <EntityTypeMapping TypeName="DataLocalModel.FUNCTION_INFO">
+        <MappingFragment StoreEntitySet="FUNCTION_INFO">
+          <ScalarProperty Name="FUNC_INDEX" ColumnName="FUNC_INDEX" />
+          <ScalarProperty Name="OP_FLAG" ColumnName="OP_FLAG" />
+          <ScalarProperty Name="MODULE_NUM" ColumnName="MODULE_NUM" />
+          <ScalarProperty Name="INFO1_FORMAT" ColumnName="INFO1_FORMAT" />
+          <ScalarProperty Name="INFO1" ColumnName="INFO1" />
+          <ScalarProperty Name="INFO2_FORMAT" ColumnName="INFO2_FORMAT" />
+          <ScalarProperty Name="INFO2" ColumnName="INFO2" />
+          <ScalarProperty Name="INFO3_FORMAT" ColumnName="INFO3_FORMAT" />
+          <ScalarProperty Name="INFO3" ColumnName="INFO3" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERATION_INFO">
+      <EntityTypeMapping TypeName="DataLocalModel.OPERATION_INFO">
+        <MappingFragment StoreEntitySet="OPERATION_INFO">
+          <ScalarProperty Name="OPER_INDEX" ColumnName="OPER_INDEX" />
+          <ScalarProperty Name="OP_FLAG" ColumnName="OP_FLAG" />
+          <ScalarProperty Name="MODULE_NUM" ColumnName="MODULE_NUM" />
+          <ScalarProperty Name="INFO1_FORMAT" ColumnName="INFO1_FORMAT" />
+          <ScalarProperty Name="INFO1" ColumnName="INFO1" />
+          <ScalarProperty Name="INFO2_FORMAT" ColumnName="INFO2_FORMAT" />
+          <ScalarProperty Name="INFO2" ColumnName="INFO2" />
+          <ScalarProperty Name="INFO3_FORMAT" ColumnName="INFO3_FORMAT" />
+          <ScalarProperty Name="INFO3" ColumnName="INFO3" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_MODULE_GROUP">
+      <EntityTypeMapping TypeName="DataLocalModel.PRINT_MODULE_GROUP">
+        <MappingFragment StoreEntitySet="PRINT_MODULE_GROUP">
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_MODULE_GROUP_MEMBER">
+      <EntityTypeMapping TypeName="DataLocalModel.PRINT_MODULE_GROUP_MEMBER">
+        <MappingFragment StoreEntitySet="PRINT_MODULE_GROUP_MEMBER">
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+          <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+          <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="STYLUS_PRINTER_FLAG" ColumnName="STYLUS_PRINTER_FLAG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="TMIS_PRINTER_FLAG" ColumnName="TMIS_PRINTER_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_DISP_CONTENT">
+      <EntityTypeMapping TypeName="DataLocalModel.TBL_DISP_CONTENT">
+        <MappingFragment StoreEntitySet="TBL_DISP_CONTENT">
+          <ScalarProperty Name="DATA_INDEX" ColumnName="DATA_INDEX" />
+          <ScalarProperty Name="LINES" ColumnName="LINES" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+          <ScalarProperty Name="CTRL_BITMAP" ColumnName="CTRL_BITMAP" />
+          <ScalarProperty Name="REFRESH_MODE" ColumnName="REFRESH_MODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_EXCHANGE">
+      <EntityTypeMapping TypeName="DataLocalModel.TBL_EXCHANGE">
+        <MappingFragment StoreEntitySet="TBL_EXCHANGE">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="BEFORE" ColumnName="BEFORE" />
+          <ScalarProperty Name="AFTER" ColumnName="AFTER" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_PRINT_MODULE">
+      <EntityTypeMapping TypeName="DataLocalModel.TBL_PRINT_MODULE">
+        <MappingFragment StoreEntitySet="TBL_PRINT_MODULE">
+          <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+          <ScalarProperty Name="DESCRIBE" ColumnName="DESCRIBE" />
+          <ScalarProperty Name="PRINT_NUM" ColumnName="PRINT_NUM" />
+          <ScalarProperty Name="TITLE1" ColumnName="TITLE1" />
+          <ScalarProperty Name="TITLE2" ColumnName="TITLE2" />
+          <ScalarProperty Name="TITLE3" ColumnName="TITLE3" />
+          <ScalarProperty Name="SIGN1" ColumnName="SIGN1" />
+          <ScalarProperty Name="SIGN2" ColumnName="SIGN2" />
+          <ScalarProperty Name="SIGN3" ColumnName="SIGN3" />
+          <ScalarProperty Name="REC_NUM" ColumnName="REC_NUM" />
+          <ScalarProperty Name="REC_NO" ColumnName="REC_NO" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="LOGO_FLAG" ColumnName="LOGO_FLAG" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_AUTO">
+      <EntityTypeMapping TypeName="DataLocalModel.TRANS_AUTO">
+        <MappingFragment StoreEntitySet="TRANS_AUTO">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="NEXT_TRANS_TYPE" ColumnName="NEXT_TRANS_TYPE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_COMMANDS">
+      <EntityTypeMapping TypeName="DataLocalModel.TRANS_COMMANDS">
+        <MappingFragment StoreEntitySet="TRANS_COMMANDS">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="STEP" ColumnName="STEP" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="COMMAND" ColumnName="COMMAND" />
+          <ScalarProperty Name="FUNC_INDEX" ColumnName="FUNC_INDEX" />
+          <ScalarProperty Name="ALOG" ColumnName="ALOG" />
+          <ScalarProperty Name="COMMAND_NAME" ColumnName="COMMAND_NAME" />
+          <ScalarProperty Name="ORGCOMMAND" ColumnName="ORGCOMMAND" />
+          <ScalarProperty Name="DATA_INDEX" ColumnName="DATA_INDEX" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_DEF">
+      <EntityTypeMapping TypeName="DataLocalModel.TRANS_DEF">
+        <MappingFragment StoreEntitySet="TRANS_DEF">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+          <ScalarProperty Name="NEXT_TRANS_CODE" ColumnName="NEXT_TRANS_CODE" />
+          <ScalarProperty Name="AUTOVOID" ColumnName="AUTOVOID" />
+          <ScalarProperty Name="PIN_BLOCK" ColumnName="PIN_BLOCK" />
+          <ScalarProperty Name="FUNCTION_INDEX" ColumnName="FUNCTION_INDEX" />
+          <ScalarProperty Name="TRANS_NAME" ColumnName="TRANS_NAME" />
+          <ScalarProperty Name="TELEPHONE_NO" ColumnName="TELEPHONE_NO" />
+          <ScalarProperty Name="DISP_TYPE" ColumnName="DISP_TYPE" />
+          <ScalarProperty Name="NII" ColumnName="NII" />
+          <ScalarProperty Name="SERVER_CODE" ColumnName="SERVER_CODE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="DEPTNO" ColumnName="DEPTNO" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CASHIERBILLAD_RECNO" ColumnName="CASHIERBILLAD_RECNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_SPLIT">
+      <EntityTypeMapping TypeName="DataLocalModel.TRANS_SPLIT">
+        <MappingFragment StoreEntitySet="TRANS_SPLIT">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="COND_NEXT_TRANS_TYPES" ColumnName="COND_NEXT_TRANS_TYPES" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOID_CONFIG">
+      <EntityTypeMapping TypeName="DataLocalModel.VOID_CONFIG">
+        <MappingFragment StoreEntitySet="VOID_CONFIG">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SYNC_STATUS" ColumnName="SYNC_STATUS" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+          <ScalarProperty Name="LASTMODIFIED" ColumnName="LASTMODIFIED" />
+          <ScalarProperty Name="LASTMODIFIER" ColumnName="LASTMODIFIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -43,8 +43,11 @@
         {
             <div class="tab-pane fade active in" id="home">
             <div>
+                <br />
+                <br />
                 @if (Model.DynamicDetailQuery.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_DETAIL表操作--</p><br />
                     foreach (string str in Model.DynamicDetailQuery)
                     {
                     <p>@str</p>
@@ -54,6 +57,7 @@
 
                 @if (Model.DynamicItemQuery.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_ITEM 表操作--</p><br />
                     foreach (string str in Model.DynamicItemQuery)
                     {
                     <p>@str</p>
@@ -63,6 +67,7 @@
 
                 @if (Model.DynamicValidQuery.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_VALID 表操作--</p><br />
                     foreach (string str in Model.DynamicValidQuery)
                     {
                     <p>@str</p>
@@ -72,6 +77,8 @@
 
                 @if (Model.FieldMessageQuery.Count() > 0)
                 {
+                    <br /><p>--FIELD_MESSAGE 表操作</p><br />
+                    
                     foreach (string str in Model.FieldMessageQuery)
                     {
                     <p>@str</p>
@@ -81,6 +88,8 @@
 
                 @if (Model.FunctionInfoQuery.Count() > 0)
                 {
+                    <br /><p>--FUNCTION_INFO 表操作</p><br />
+                    
                     foreach (string str in Model.FunctionInfoQuery)
                     {
                     <p>@str</p>
@@ -90,6 +99,8 @@
 
                 @if (Model.OperationInfoQuery.Count() > 0)
                 {
+                    <br /><p>--OPERATION_INFO 表操作</p><br />
+                    
                     foreach (string str in Model.OperationInfoQuery)
                     {
                     <p>@str</p>
@@ -99,6 +110,8 @@
 
                 @if (Model.PrintModuleGroupMemberQuery.Count() > 0)
                 {
+                    <br /><p>--PRINT_MODULE_GROUP_MEMBER 表操作</p><br />
+                    
                     foreach (string str in Model.PrintModuleGroupMemberQuery)
                     {
                     <p>@str</p>
@@ -108,6 +121,8 @@
 
                 @if (Model.PrintModuleGroupQuery.Count() > 0)
                 {
+                    <br /><p>--PRINT_MODULE_GROUP 表操作</p><br />
+                    
                     foreach (string str in Model.PrintModuleGroupQuery)
                     {
                     <p>@str</p>
@@ -117,6 +132,8 @@
 
                 @if (Model.TblDispContentQuery.Count() > 0)
                 {
+                    <br /><p>--TBL_DISP_CONTENT 表操作</p><br />
+                    
                     foreach (string str in Model.TblDispContentQuery)
                     {
                     <p>@str</p>
@@ -126,6 +143,8 @@
 
                 @if (Model.TblExchangeQuery.Count() > 0)
                 {
+                    <br /><p>--TBL_EXCHANGE 表操作</p><br />
+                    
                     foreach (string str in Model.TblExchangeQuery)
                     {
                     <p>@str</p>
@@ -135,6 +154,8 @@
 
                 @if (Model.TBLPrintModuleQuery.Count() > 0)
                 {
+                    <br /><p>--TBL_PRINT_MODULE 表操作</p><br />
+                    
                     foreach (string str in Model.TBLPrintModuleQuery)
                     {
                     <p>@str</p>
@@ -144,6 +165,8 @@
 
                 @if (Model.TransAutoQuery.Count() > 0)
                 {
+                    <br /><p>--TRANS_AUTO 表操作</p><br />
+                    
                     foreach (string str in Model.TransAutoQuery)
                     {
                     <p>@str</p>
@@ -153,6 +176,8 @@
 
                 @if (Model.TransDefQuerys.Count() > 0)
                 {
+                    <br /><p>--TRANS_DEF 表操作</p><br />
+                    
                     foreach (string str in Model.TransDefQuerys)
                     {
                     <p>@str</p>
@@ -162,6 +187,8 @@
 
                 @if (Model.TransSplitQuery.Count() > 0)
                 {
+                    <br /><p>--TRANS_SPLIT 表操作</p><br />
+                    
                     foreach (string str in Model.TransSplitQuery)
                     {
                     <p>@str</p>
@@ -171,11 +198,23 @@
 
                 @if (Model.VoidConfigQuery.Count() > 0)
                 {
+                    <br /><p>--VOID_CONFIG 表操作</p><br />
+                    
                     foreach (string str in Model.VoidConfigQuery)
                     {
                     <p>@str</p>
                     <br />
                }
+                }
+
+                @if (Model.TransCommandsQuery.Count() > 0)
+                {
+                    <br /><p>--TRANS_COMMANDS 表操作</p><br />
+                    foreach (string str in Model.TransCommandsQuery)
+                    {
+                        <p>@str</p>
+                        <br />
+                    }
                 }
             </div>
         </div>
@@ -183,6 +222,8 @@
             <div>
                 @if (Model.DynamicDetailAddRecord.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_DETAIL 表操作</p><br />
+                    
                     foreach (string str in Model.DynamicDetailAddRecord)
                     {
                     <p>@str</p>
@@ -192,6 +233,8 @@
 
                 @if (Model.DynamicItemAddRecord.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_ITEM 表操作</p><br />
+                    
                     foreach (string str in Model.DynamicItemAddRecord)
                     {
                     <p>@str</p>
@@ -201,6 +244,8 @@
 
                 @if (Model.DynamicValidAddRecord.Count() > 0)
                 {
+                    <br /><p>--DYNAMIC_VALID 表操作</p><br />
+                    
                     foreach (string str in Model.DynamicValidAddRecord)
                     {
                     <p>@str</p>
@@ -210,6 +255,8 @@
 
                 @if (Model.FieldMessageAddRecord.Count() > 0)
                 {
+                    <br /><p>--FIELD_MESSAGE 表操作</p><br />
+                    
                     foreach (string str in Model.FieldMessageAddRecord)
                     {
                     <p>@str</p>
@@ -219,6 +266,8 @@
 
                 @if (Model.FunctionInfoAddRecord.Count() > 0)
                 {
+                    <br /><p>--FUNCTION_INFO 表操作</p><br />
+                    
                     foreach (string str in Model.FunctionInfoAddRecord)
                     {
                     <p>@str</p>
@@ -228,6 +277,8 @@
 
                 @if (Model.OperationInfoAddRecord.Count() > 0)
                 {
+                    <br /><p>--OPERATION_INFO 表操作</p><br />
+                    
                     foreach (string str in Model.OperationInfoAddRecord)
                     {
                     <p>@str</p>
@@ -237,6 +288,8 @@
 
                 @if (Model.PrintModuleGroupMemberAddRecord.Count() > 0)
                 {
+                    <br /><p>--PRINT_MODULE_GROUP_MEMBER 表操作</p><br />
+                    
                     foreach (string str in Model.PrintModuleGroupMemberAddRecord)
                     {
                     <p>@str</p>
@@ -246,6 +299,8 @@
 
                 @if (Model.PrintModuleGroupAddRecord.Count() > 0)
                 {
+                    <br /><p>--PRINT_MODULE_GROUP 表操作</p><br />
+                    
                     foreach (string str in Model.PrintModuleGroupAddRecord)
                     {
                     <p>@str</p>
@@ -255,6 +310,8 @@
 
                 @if (Model.TblDispContentAddRecord.Count() > 0)
                 {
+                    <br /><p>--TBL_DISP_CONTENT 表操作</p><br />
+                    
                     foreach (string str in Model.TblDispContentAddRecord)
                     {
                     <p>@str</p>
@@ -264,6 +321,7 @@
 
                 @if (Model.TblExchangeAddRecord.Count() > 0)
                 {
+                    <br /><p>--TBL_EXCHANGE 表操作</p><br />
                     foreach (string str in Model.TblExchangeAddRecord)
                     {
                     <p>@str</p>
@@ -273,6 +331,7 @@
 
                 @if (Model.TBLPrintModuleAddRecord.Count() > 0)
                 {
+                    <br /><p>--TBL_PRINT_MODULE 表操作</p><br />
                     foreach (string str in Model.TBLPrintModuleAddRecord)
                     {
                     <p>@str</p>
@@ -282,6 +341,7 @@
 
                 @if (Model.TransAutoAddRecord.Count() > 0)
                 {
+                    <br /><p>--TRANS_AUTO 表操作</p><br />
                     foreach (string str in Model.TransAutoAddRecord)
                     {
                     <p>@str</p>
@@ -292,6 +352,8 @@
            
                 @if (Model.TransSplitAddRecord.Count() > 0)
                 {
+                    <br /><p>--TRANS_SPLIT 表操作</p><br />
+                
                     foreach (string str in Model.TransSplitAddRecord)
                     {
                     <p>@str</p>
@@ -301,6 +363,8 @@
 
                 @if (Model.VoidConfigAddRecord.Count() > 0)
                 {
+                    <br /><p>--VOID_CONFIG 表操作</p><br />
+                    
                     foreach (string str in Model.VoidConfigAddRecord)
                     {
                     <p>@str</p>

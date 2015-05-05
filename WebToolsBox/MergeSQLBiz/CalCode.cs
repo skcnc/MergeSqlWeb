@@ -40,7 +40,7 @@ namespace WebToolsBox
         /// <summary>
         /// tbl_print_module 表生成最小值索引，用来避免与分公司添加模版冲突。
         /// </summary>
-        public static int PRINTMODULEMIN = 1500;
+        public static int PRINTMODULEMIN = 1600;
     }
 
     public class CalCode
@@ -99,21 +99,41 @@ namespace WebToolsBox
             }
 
             unavailiable_fi.Sort();
-
-            for (int k = 0; k < unavailiable_fi.Count - 1; k++)
+            int new_fi_tmp = 0;
+            if (unavailiable_fi.Count <= 1)
             {
-                if (Math.Abs(unavailiable_fi[k + 1] - unavailiable_fi[k]) > 1)
+                //说明当前索引是当前数据库中的最大值
+                //一马平川 =_=
+                new_fi_tmp = unavailiable_fi[0] + 1;
+                //int new_fi = unavailiable_fi[0] + 1;
+                //qEntity.FunctionInfoAddRecord.Add("Z" + new_fi + "F" + func_index.ToString());
+                //qEntity.FunctionInfoQuery.Add(TransQuery.FunctionInfoQuery(new_fi.ToString(), fiRow.OP_FLAG, fiRow.MODULE_NUM.ToString(), fiRow.INFO1_FORMAT, fiRow.INFO1, fiRow.INFO2_FORMAT, fiRow.INFO2, fiRow.INFO3_FORMAT, fiRow.INFO3));
+
+                //return ErrorCode.Instance.GetStatement(0000, new List<string> { new_fi_tmp.ToString() });
+            }
+            else
+            {
+                for (int k = 0; k < unavailiable_fi.Count - 1; k++)
                 {
-                    int new_fi = unavailiable_fi[k] + 1;
+                    if (Math.Abs(unavailiable_fi[k + 1] - unavailiable_fi[k]) > 1)
+                    {
+                        int new_fi = unavailiable_fi[k] + 1;
 
-                    qEntity.FunctionInfoAddRecord.Add("Z" + new_fi + "F" + func_index.ToString());
-                    qEntity.FunctionInfoQuery.Add(TransQuery.FunctionInfoQuery(new_fi.ToString(), fiRow.OP_FLAG, fiRow.MODULE_NUM.ToString(), fiRow.INFO1_FORMAT, fiRow.INFO1, fiRow.INFO2_FORMAT, fiRow.INFO2, fiRow.INFO3_FORMAT, fiRow.INFO3));
+                        //qEntity.FunctionInfoAddRecord.Add("Z" + new_fi + "F" + func_index.ToString());
+                        //qEntity.FunctionInfoQuery.Add(TransQuery.FunctionInfoQuery(new_fi.ToString(), fiRow.OP_FLAG, fiRow.MODULE_NUM.ToString(), fiRow.INFO1_FORMAT, fiRow.INFO1, fiRow.INFO2_FORMAT, fiRow.INFO2, fiRow.INFO3_FORMAT, fiRow.INFO3));
 
-                    return ErrorCode.Instance.GetStatement(0000, new List<string> { new_fi.ToString() });
+                        //return ErrorCode.Instance.GetStatement(0000, new List<string> { new_fi.ToString() });
+                    }
+                }
+                if (new_fi_tmp == 0)
+                {
+                    new_fi_tmp = unavailiable_fi[unavailiable_fi.Count - 1] + 1;
                 }
             }
+            qEntity.FunctionInfoAddRecord.Add("Z" + new_fi_tmp + "F" + func_index.ToString());
+            qEntity.FunctionInfoQuery.Add(TransQuery.FunctionInfoQuery(new_fi_tmp.ToString(), fiRow.OP_FLAG, fiRow.MODULE_NUM.ToString(), fiRow.INFO1_FORMAT, fiRow.INFO1, fiRow.INFO2_FORMAT, fiRow.INFO2, fiRow.INFO3_FORMAT, fiRow.INFO3));
 
-            return ErrorCode.Instance.GetStatement(0000, new List<string> { "0" });
+            return ErrorCode.Instance.GetStatement(0000, new List<string> { new_fi_tmp.ToString() });
 
 
             #region 备份代码
@@ -144,10 +164,6 @@ namespace WebToolsBox
             #endregion
         }
 
-        void parseTransDef(string Origin_trans_type, string New_trans_type, ref QueryEntity qEntity)
-        {
-
-        }
 
         void parseFieldMessage(int Origin_trans_type, int New_trans_type, ref QueryEntity qEntity)
         {
@@ -281,20 +297,40 @@ namespace WebToolsBox
             }
 
             unavailiable_tdc.Sort();
-
-            for (int k = 0; k < unavailiable_tdc.Count - 1; k++)
+            int new_tdc_tmp = 0;
+            if (unavailiable_tdc.Count <= 1)
             {
-                if (Math.Abs(unavailiable_tdc[k + 1] - unavailiable_tdc[k]) > 1)
+                //一马平川
+                new_tdc_tmp = unavailiable_tdc[0] + 1;
+                //int new_tdc = unavailiable_tdc[0] + 1;
+
+                //qEntity.TblDispContentAddRecord.Add("Z" + new_tdc + "F" + tdcRow.DATA_INDEX.ToString());
+                //qEntity.TblDispContentQuery.Add(TransQuery.TblDispContentQuery(new_tdc.ToString(), tdcRow.LINES, tdcRow.TIMEOUT.ToString(), tdcRow.CTRL_BITMAP.ToString(), tdcRow.REFRESH_MODE));
+
+                //return;
+            }
+            else
+            {
+                for (int k = 0; k < unavailiable_tdc.Count - 1; k++)
                 {
-                    int new_tdc = unavailiable_tdc[k] + 1;
+                    if (Math.Abs(unavailiable_tdc[k + 1] - unavailiable_tdc[k]) > 1)
+                    {
+                        new_tdc_tmp = unavailiable_tdc[k] + 1;
+                        //int new_tdc = unavailiable_tdc[k] + 1;
+                        //qEntity.TblDispContentAddRecord.Add("Z" + new_tdc + "F" + tdcRow.DATA_INDEX.ToString());
+                        //qEntity.TblDispContentQuery.Add(TransQuery.TblDispContentQuery(new_tdc.ToString(), tdcRow.LINES, tdcRow.TIMEOUT.ToString(), tdcRow.CTRL_BITMAP.ToString(), tdcRow.REFRESH_MODE));
+                        //return;
+                    }
+                }
 
-                    qEntity.TblDispContentAddRecord.Add("Z" + new_tdc + "F" + tdcRow.DATA_INDEX.ToString());
-                    qEntity.DynamicValidQuery.Add(TransQuery.TblDispContentQuery(new_tdc.ToString(), tdcRow.LINES, tdcRow.TIMEOUT.ToString(), tdcRow.CTRL_BITMAP.ToString(), tdcRow.REFRESH_MODE));
-
-                    return;
+                if (new_tdc_tmp == 0)
+                {
+                    new_tdc_tmp = unavailiable_tdc[unavailiable_tdc.Count - 1] + 1;
                 }
             }
 
+            qEntity.TblDispContentAddRecord.Add("Z" + new_tdc_tmp + "F" + tdcRow.DATA_INDEX.ToString());
+            qEntity.TblDispContentQuery.Add(TransQuery.TblDispContentQuery(new_tdc_tmp.ToString(), tdcRow.LINES, tdcRow.TIMEOUT.ToString(), tdcRow.CTRL_BITMAP.ToString(), tdcRow.REFRESH_MODE));
         }
 
         void parseDynamicValid(int Data_index, ref QueryEntity qEntity)
@@ -343,20 +379,53 @@ namespace WebToolsBox
 
             List<int> unavailiable_dv = (from item in session.Instance.OnlineDataHandle.DYNAMIC_VALID select (int)item.REC_NO).Distinct().ToList();
 
-            unavailiable_dv.Sort();
-
-            for (int k = 0; k < unavailiable_dv.Count - 1; k++)
+            foreach (string s in qEntity.DynamicValidAddRecord)
             {
-                if (Math.Abs(unavailiable_dv[k + 1] - unavailiable_dv[k]) > 1)
-                {
-                    int new_dv = unavailiable_dv[k] + 1;
-
-                    qEntity.DynamicValidAddRecord.Add("Z" + new_dv + "F" + dvRow.REC_NO.ToString());
-                    qEntity.DynamicValidQuery.Add(TransQuery.DynamicValidQuery(new_dv.ToString(), dvRow.MINLEN.ToString(), dvRow.MAXLEN.ToString(), dvRow.MINVAL.ToString(), dvRow.MAXVAL.ToString(), dvRow.INPUT_FLAG, dvRow.INPUT_TYPE, dvRow.RSV, dvRow.OPTNUM1.ToString(), dvRow.OPTNUM2.ToString(), dvRow.OPTCODE, dvRow.INPUT_NAME));
-
-                    return;
-                }
+                unavailiable_dv.Add(int.Parse(s.Split('F')[0].Substring(1)));
             }
+
+            unavailiable_dv.Sort();
+            int new_dv_tmp = 0;
+            if (unavailiable_dv.Count <= 1)
+            {
+                //一马平川
+
+                new_dv_tmp = unavailiable_dv[0] + 1;
+
+                //int new_dv = unavailiable_dv[0] + 1;
+
+                //qEntity.DynamicValidAddRecord.Add("Z" + new_dv + "F" + dvRow.REC_NO.ToString());
+                //qEntity.DynamicValidQuery.Add(TransQuery.DynamicValidQuery(new_dv.ToString(), dvRow.MINLEN.ToString(), dvRow.MAXLEN.ToString(), dvRow.MINVAL.ToString(), dvRow.MAXVAL.ToString(), dvRow.INPUT_FLAG, dvRow.INPUT_TYPE, dvRow.RSV, dvRow.OPTNUM1.ToString(), dvRow.OPTNUM2.ToString(), dvRow.OPTCODE, dvRow.INPUT_NAME));
+
+                //return;
+            }
+            else
+            {
+                for (int k = 0; k < unavailiable_dv.Count - 1; k++)
+                {
+                    if (Math.Abs(unavailiable_dv[k + 1] - unavailiable_dv[k]) > 1)
+                    {
+                        new_dv_tmp = unavailiable_dv[k] + 1;
+                        //int new_dv = unavailiable_dv[k] + 1;
+
+                        //qEntity.DynamicValidAddRecord.Add("Z" + new_dv + "F" + dvRow.REC_NO.ToString());
+                        //qEntity.DynamicValidQuery.Add(TransQuery.DynamicValidQuery(new_dv.ToString(), dvRow.MINLEN.ToString(), dvRow.MAXLEN.ToString(), dvRow.MINVAL.ToString(), dvRow.MAXVAL.ToString(), dvRow.INPUT_FLAG, dvRow.INPUT_TYPE, dvRow.RSV, dvRow.OPTNUM1.ToString(), dvRow.OPTNUM2.ToString(), dvRow.OPTCODE, dvRow.INPUT_NAME));
+
+                        break;
+                    }
+                }
+
+                if (new_dv_tmp == 0)
+                {
+                    new_dv_tmp = unavailiable_dv[unavailiable_dv.Count - 1] + 1;
+                }
+
+
+
+            }
+
+            qEntity.DynamicValidAddRecord.Add("Z" + new_dv_tmp + "F" + dvRow.REC_NO.ToString());
+            qEntity.DynamicValidQuery.Add(TransQuery.DynamicValidQuery(new_dv_tmp.ToString(), dvRow.MINLEN.ToString(), dvRow.MAXLEN.ToString(), dvRow.MINVAL.ToString(), dvRow.MAXVAL.ToString(), dvRow.INPUT_FLAG, dvRow.INPUT_TYPE, dvRow.RSV, dvRow.OPTNUM1.ToString(), dvRow.OPTNUM2.ToString(), dvRow.OPTCODE, dvRow.INPUT_NAME));
 
         }
 
@@ -395,6 +464,12 @@ namespace WebToolsBox
             }
         }
 
+        /// <summary>
+        /// Void_Config 表同步
+        /// </summary>
+        /// <param name="Origin_trans_type"></param>
+        /// <param name="New_trans_type"></param>
+        /// <param name="qEntity"></param>
         void parseVoidConfig(int Origin_trans_type, int New_trans_type, ref QueryEntity qEntity)
         {
             //if ((from item in session.Instance.TPOSDB.VOID_CONFIGTableAdapter.GetData() where item.TRANS_TYPE.ToString() == Origin_trans_type && item.DELETE_FLAG == "0" select item).Count() > 0)
@@ -407,7 +482,9 @@ namespace WebToolsBox
                 qEntity.VoidConfigAddRecord.Add("A" + New_trans_type);
             }
         }
+
         /// <summary>
+        /// Print_Module_Group Print_Module_Group_Member Tbl_Print_Module 同步
         /// 不处理情况：
         /// 1. 以上线打印模版组中，新增返回码对应打印模版
         /// </summary>
@@ -465,7 +542,7 @@ namespace WebToolsBox
                 // group id 从 ParameterClass.PRINTGROUPMIN 开始添加
                 // tbl_print_module 从 ParameterClass.PRINTMODULEMIN 开始
                 //List<int> unavailiable_pmg = (from item in session.Instance.ONLINEDB.PRINT_MODULE_GROUPTableAdapter.GetData() where (int)item.GROUP_ID > ParameterClass.PRINTGROUPMIN select (int)item.GROUP_ID).ToList();
-                List<int> unavailiable_pmg = (from item in session.Instance.OnlineDataHandle.PRINT_MODULE_GROUP where (int)item.GROUP_ID > ParameterClass.PRINTGROUPMIN select (int)item.GROUP_ID).ToList();
+                List<int> unavailiable_pmg = (from item in session.Instance.OnlineDataHandle.PRINT_MODULE_GROUP where (int)item.GROUP_ID >= ParameterClass.PRINTGROUPMIN select (int)item.GROUP_ID).ToList();
 
                 foreach (string s in qEntity.PrintModuleGroupAddRecord)
                 {
@@ -476,21 +553,43 @@ namespace WebToolsBox
                 }
 
                 unavailiable_pmg.Sort();
+                int new_print_module_group_tmp = 0;
 
-                for (int j = 0; j < unavailiable_pmg.Count - 1; j++)
+                if (unavailiable_pmg.Count <= 1)
                 {
-                    if (Math.Abs(unavailiable_pmg[j + 1] - unavailiable_pmg[j]) > 1)
+                    if (unavailiable_pmg.Count == 0)
                     {
-                        new_print_module_group = unavailiable_pmg[j] + 1;
+                        unavailiable_pmg.Add(ParameterClass.PRINTGROUPMIN);
+                    }
+                    //一马平川
+                    new_print_module_group_tmp = unavailiable_pmg[0] + 1;
+                }
+                else
+                {
+                    for (int j = 0; j < unavailiable_pmg.Count - 1; j++)
+                    {
+                        if (Math.Abs(unavailiable_pmg[j + 1] - unavailiable_pmg[j]) > 1)
+                        {
+                            new_print_module_group_tmp = unavailiable_pmg[j] + 1;
+                            break;
 
-                        qEntity.PrintModuleGroupAddRecord.Add("Z" + new_print_module_group + "F" + origin_print_module_group);
-                        qEntity.PrintModuleGroupQuery.Add(TransQuery.PrintModuleGroupQuery(new_print_module_group.ToString(), pmgRow.GROUP_NAME, pmgRow.DEPT_NO));
+                        }
+                    }
 
-                        break;
-
+                    if (new_print_module_group_tmp == 0)
+                    {
+                        new_print_module_group_tmp = unavailiable_pmg[unavailiable_pmg.Count - 1] + 1;
                     }
                 }
 
+                if (new_print_module_group_tmp != 0)
+                {
+
+                    new_print_module_group = new_print_module_group_tmp;
+
+                    qEntity.PrintModuleGroupAddRecord.Add("Z" + new_print_module_group + "F" + origin_print_module_group);
+                    qEntity.PrintModuleGroupQuery.Add(TransQuery.PrintModuleGroupQuery(new_print_module_group.ToString(), pmgRow.GROUP_NAME, pmgRow.DEPT_NO));
+                }
 
             }
 
@@ -521,7 +620,8 @@ namespace WebToolsBox
             for (int k = 0; k < origin_tbl_print_module.Count; k++)
             {
                 //PRDTPOSDB.TBL_PRINT_MODULERow tpmRow = (from item in session.Instance.TPOSDB.TBL_PRINT_MODULETableAdapter.GetData() where (int)item.MODULE == origin_tbl_print_module[k] select item).ToList()[0];
-                EntityFramework.DataLocalEntities.TBL_PRINT_MODULE tpmRow = (from item in session.Instance.LocalDataHandle.TBL_PRINT_MODULE where (int)item.MODULE == origin_tbl_print_module[k] select item).ToList()[0];
+                int moduleId = origin_tbl_print_module[k];
+                EntityFramework.DataLocalEntities.TBL_PRINT_MODULE tpmRow = (from item in session.Instance.LocalDataHandle.TBL_PRINT_MODULE where (int)item.MODULE == moduleId select item).ToList()[0];
 
                 //if ((from item in session.Instance.ONLINEDB.TBL_PRINT_MODULETableAdapter.GetData() where item.MODULE == tpmRow.MODULE && item.DESCRIBE == tpmRow.DESCRIBE && item.DELETE_FLAG == "0" select item).Count() > 0)
                 if ((from item in session.Instance.OnlineDataHandle.TBL_PRINT_MODULE where item.MODULE == tpmRow.MODULE && item.DESCRIBE == tpmRow.DESCRIBE && item.DELETE_FLAG == "0" select item).Count() > 0)
@@ -551,7 +651,7 @@ namespace WebToolsBox
                     //说明该模版暂时不存在，需要进一步添加
                     //List<int> unavailiable_tpm = (from item in session.Instance.ONLINEDB.TBL_PRINT_MODULETableAdapter.GetData() where (int)item.MODULE > ParameterClass.PRINTMODULEMIN select (int)item.MODULE).ToList();
 
-                    List<int> unavailiable_tpm = (from item in session.Instance.OnlineDataHandle.TBL_PRINT_MODULE where (int)item.MODULE > ParameterClass.PRINTMODULEMIN select (int)item.MODULE).ToList();
+                    List<int> unavailiable_tpm = (from item in session.Instance.OnlineDataHandle.TBL_PRINT_MODULE where (int)item.MODULE >= ParameterClass.PRINTMODULEMIN select (int)item.MODULE).ToList();
 
                     foreach (string s in qEntity.TBLPrintModuleAddRecord)
                     {
@@ -559,19 +659,50 @@ namespace WebToolsBox
                     }
 
                     unavailiable_tpm.Sort();
+                    int new_tbl_print_module_tmp = 0;
 
-                    for (int j = 0; j < unavailiable_tpm.Count - 1; j++)
+                    if (unavailiable_tpm.Count <= 1)
                     {
-                        if (Math.Abs(unavailiable_tpm[j + 1] - unavailiable_tpm[j]) > 1)
+                        //一马平川
+                        if (unavailiable_tpm.Count == 0)
                         {
-                            new_tbl_print_module[k] = unavailiable_tpm[j] + 1;
+                            unavailiable_tpm.Add(ParameterClass.PRINTMODULEMIN);
+                        }
+                        new_tbl_print_module_tmp = unavailiable_tpm[0] + 1;
+                        //new_tbl_print_module[k] = unavailiable_tpm[0] + 1;
 
-                            qEntity.TBLPrintModuleAddRecord.Add("Z" + new_tbl_print_module[k].ToString() + "F" + origin_tbl_print_module[k]);
-                            qEntity.TBLPrintModuleQuery.Add(TransQuery.TblPrintModuleQuery(new_tbl_print_module[k].ToString(), tpmRow.DESCRIBE, tpmRow.PRINT_NUM.ToString(), tpmRow.TITLE1.ToString(), tpmRow.TITLE2.ToString(), tpmRow.TITLE3.ToString(), tpmRow.SIGN1.ToString(), tpmRow.SIGN2.ToString(), tpmRow.SIGN3.ToString(), tpmRow.REC_NUM.ToString(), tpmRow.REC_NO, tpmRow.LOGO_FLAG, tpmRow.DEPT_NO));
+                        //qEntity.TBLPrintModuleAddRecord.Add("Z" + new_tbl_print_module[k].ToString() + "F" + origin_tbl_print_module[k]);
+                        //qEntity.TBLPrintModuleQuery.Add(TransQuery.TblPrintModuleQuery(new_tbl_print_module[k].ToString(), tpmRow.DESCRIBE, tpmRow.PRINT_NUM.ToString(), tpmRow.TITLE1.ToString(), tpmRow.TITLE2.ToString(), tpmRow.TITLE3.ToString(), tpmRow.SIGN1.ToString(), tpmRow.SIGN2.ToString(), tpmRow.SIGN3.ToString(), tpmRow.REC_NUM.ToString(), tpmRow.REC_NO, tpmRow.LOGO_FLAG, tpmRow.DEPT_NO));
 
-                            break;
+                        //continue;
+
+                    }
+                    else
+                    {
+                        for (int j = 0; j < unavailiable_tpm.Count - 1; j++)
+                        {
+                            if (Math.Abs(unavailiable_tpm[j + 1] - unavailiable_tpm[j]) > 1)
+                            {
+                                new_tbl_print_module_tmp = unavailiable_tpm[j] + 1;
+                                //new_tbl_print_module[k] = unavailiable_tpm[j] + 1;
+
+                                //qEntity.TBLPrintModuleAddRecord.Add("Z" + new_tbl_print_module[k].ToString() + "F" + origin_tbl_print_module[k]);
+                                //qEntity.TBLPrintModuleQuery.Add(TransQuery.TblPrintModuleQuery(new_tbl_print_module[k].ToString(), tpmRow.DESCRIBE, tpmRow.PRINT_NUM.ToString(), tpmRow.TITLE1.ToString(), tpmRow.TITLE2.ToString(), tpmRow.TITLE3.ToString(), tpmRow.SIGN1.ToString(), tpmRow.SIGN2.ToString(), tpmRow.SIGN3.ToString(), tpmRow.REC_NUM.ToString(), tpmRow.REC_NO, tpmRow.LOGO_FLAG, tpmRow.DEPT_NO));
+
+                                break;
+                            }
+                        }
+
+                        if (new_tbl_print_module_tmp == 0)
+                        {
+                            new_tbl_print_module_tmp = unavailiable_tpm[unavailiable_tpm.Count - 1] + 1;
                         }
                     }
+
+                    new_tbl_print_module[k] = new_tbl_print_module_tmp;
+
+                    qEntity.TBLPrintModuleAddRecord.Add("Z" + new_tbl_print_module[k].ToString() + "F" + origin_tbl_print_module[k]);
+                    qEntity.TBLPrintModuleQuery.Add(TransQuery.TblPrintModuleQuery(new_tbl_print_module[k].ToString(), tpmRow.DESCRIBE, tpmRow.PRINT_NUM.ToString(), tpmRow.TITLE1.ToString(), tpmRow.TITLE2.ToString(), tpmRow.TITLE3.ToString(), tpmRow.SIGN1.ToString(), tpmRow.SIGN2.ToString(), tpmRow.SIGN3.ToString(), tpmRow.REC_NUM.ToString(), tpmRow.REC_NO, tpmRow.LOGO_FLAG, tpmRow.DEPT_NO));
 
                 }
 
@@ -736,10 +867,20 @@ namespace WebToolsBox
             //}
         }
 
+        /// <summary>
+        /// Dynamic_Item Dynamic_Detail 表同步
+        /// </summary>
+        /// <param name="Data_index"></param>
+        /// <param name="qEntity"></param>
         void parseDynamic(int Data_index, ref QueryEntity qEntity)
         {
             //至少DB数据要存在
             //if ((from item in session.Instance.TPOSDB.DYNAMIC_ITEMTableAdapter.GetData() where (int)item.RECNO == Data_index select item).Count() > 0)
+            if (Data_index == 0)
+            {
+                return;
+            }
+
             if ((from item in session.Instance.LocalDataHandle.DYNAMIC_ITEM where (int)item.RECNO == Data_index select item).Count() > 0)
             {
                 //PRDTPOSDB.DYNAMIC_ITEMRow dynamicItemRow = (from item in session.Instance.TPOSDB.DYNAMIC_ITEMTableAdapter.GetData() where (int)item.RECNO == Data_index select item).ToList()[0];
@@ -773,23 +914,63 @@ namespace WebToolsBox
 
                     List<int> unavailiableRecno = (from item in session.Instance.OnlineDataHandle.DYNAMIC_ITEM select (int)item.RECNO).ToList();
 
+                    foreach (string s in qEntity.DynamicItemAddRecord)
+                    {
+                        unavailiableRecno.Add(int.Parse(s.Split('F')[0].Substring(1)));
+                    }
+
                     unavailiableRecno.Sort();
 
-                    for (int k = 0; k < unavailiableRecno.Count - 1; k++)
+                    if (unavailiableRecno.Count <= 1)
                     {
-                        if (Math.Abs(unavailiableRecno[k + 1] - unavailiableRecno[k]) > 1)
+                        NewRecno = unavailiableRecno[0] + 1;
+                        //qEntity.DynamicItemAddRecord.Add("Z" + NewRecno.ToString() + "F" + OriginRecno.ToString());
+                        //qEntity.DynamicItemQuery.Add(TransQuery.DynamicItemQuery(NewRecno.ToString(), dynamicItemRow.TITLE, dynamicItemRow.DESCRIBE, dynamicItemRow.ITEM_NUM.ToString(), dynamicItemRow.DATA_RULE, dynamicItemRow.MARKS, dynamicItemRow.DATA_SCR_TYPE.ToString(), dynamicItemRow.VARIABLE));
+                    }
+                    else
+                    {
+                        for (int k = 0; k < unavailiableRecno.Count - 1; k++)
                         {
-                            NewRecno = unavailiableRecno[k] + 1;
-                            qEntity.DynamicItemAddRecord.Add("Z" + NewRecno.ToString() + "F" + OriginRecno.ToString());
-                            qEntity.DynamicItemQuery.Add(TransQuery.DynamicItemQuery(NewRecno.ToString(), dynamicItemRow.TITLE, dynamicItemRow.DESCRIBE, dynamicItemRow.ITEM_NUM.ToString(), dynamicItemRow.DATA_RULE, dynamicItemRow.MARKS, dynamicItemRow.DATA_SCR_TYPE.ToString(), dynamicItemRow.VARIABLE));
-                            break;
+                            if (Math.Abs(unavailiableRecno[k + 1] - unavailiableRecno[k]) > 1)
+                            {
+                                NewRecno = unavailiableRecno[k] + 1;
+                                //qEntity.DynamicItemAddRecord.Add("Z" + NewRecno.ToString() + "F" + OriginRecno.ToString());
+                                //qEntity.DynamicItemQuery.Add(TransQuery.DynamicItemQuery(NewRecno.ToString(), dynamicItemRow.TITLE, dynamicItemRow.DESCRIBE, dynamicItemRow.ITEM_NUM.ToString(), dynamicItemRow.DATA_RULE, dynamicItemRow.MARKS, dynamicItemRow.DATA_SCR_TYPE.ToString(), dynamicItemRow.VARIABLE));
+                                break;
+                            }
+
+
+                        }
+
+                        if (NewRecno == 0)
+                        {
+                            NewRecno = unavailiableRecno[unavailiableRecno.Count - 1] + 1;
+                        }
+                    }
+
+                    qEntity.DynamicItemAddRecord.Add("Z" + NewRecno.ToString() + "F" + OriginRecno.ToString());
+                    qEntity.DynamicItemQuery.Add(TransQuery.DynamicItemQuery(NewRecno.ToString(), dynamicItemRow.TITLE, dynamicItemRow.DESCRIBE, dynamicItemRow.ITEM_NUM.ToString(), dynamicItemRow.DATA_RULE, dynamicItemRow.MARKS, dynamicItemRow.DATA_SCR_TYPE.ToString(), dynamicItemRow.VARIABLE));
+
+                    List<int> details = (from item in session.Instance.LocalDataHandle.DYNAMIC_DETAIL where (int)item.REC_NO == OriginRecno select (int)item.STEP).ToList();
+
+                    if (details.Count != 0)
+                    {
+                        foreach (int step in details)
+                        {
+                            EntityFramework.DataLocalEntities.DYNAMIC_DETAIL dynamicDetailRow = (from item in session.Instance.LocalDataHandle.DYNAMIC_DETAIL where (int)item.REC_NO == OriginRecno && (int)item.STEP == step select item).First();
+                            qEntity.DynamicDetailAddRecord.Add("AR" + NewRecno.ToString() + "W" + step.ToString());
+                            qEntity.DynamicDetailQuery.Add(TransQuery.DynamicDetailQuery(NewRecno.ToString(), step.ToString(), dynamicDetailRow.ITEM_NAME, dynamicDetailRow.ITEM_VALUE, dynamicDetailRow.STATUS, dynamicDetailRow.TRANS_CODE, dynamicDetailRow.RSV, dynamicDetailRow.NEED_INPUT));
                         }
                     }
                 }
             }
         }
 
-        //void parseOperationInfo(List<PRDTPOSDB.TRANS_COMMANDSRow> transCommandRows)
+        /// <summary>
+        /// Operation_Info 表同步
+        /// </summary>
+        /// <param name="transCommandRows"></param>
+        /// <param name="qEntity"></param>
         void parseOperationInfo(List<EntityFramework.DataLocalEntities.TRANS_COMMANDS> transCommandRows, ref QueryEntity qEntity)
         {
             List<int> OperInfo = (from item in transCommandRows where item.FUNC_INDEX != 0 select (int)item.FUNC_INDEX).Distinct().ToList();
@@ -847,24 +1028,77 @@ namespace WebToolsBox
                 }
 
                 unavailiabe_oper_index.Sort();
+                int new_oi2 = 0;
 
-
-
-                for (int k = 0; k < unavailiabe_oper_index.Count - 1; k++)
+                if (unavailiabe_oper_index.Count == 1)
                 {
-                    if (Math.Abs(unavailiabe_oper_index[k + 1] - unavailiabe_oper_index[k]) > 1)
+                    new_oi2 = (int)(unavailiabe_oper_index[0] + 1);
+                    //qEntity.OperationInfoAddRecord.Add("Z" + new_oi.ToString() + "F" + oiRow.OPER_INDEX.ToString());
+                    //qEntity.OperationInfoQuery.Add(TransQuery.OperationInfoQuery(new_oi.ToString(), oiRow.OP_FLAG, oiRow.MODULE_NUM.ToString(), oiRow.INFO1_FORMAT, oiRow.INFO1, oiRow.INFO2_FORMAT, oiRow.INFO2, oiRow.INFO3_FORMAT, oiRow.INFO3));
+                }
+                else
+                {
+                    for (int k = 0; k < unavailiabe_oper_index.Count - 1; k++)
                     {
-                        int new_oi = (int)(unavailiabe_oper_index[k] + 1);
 
-                        qEntity.OperationInfoAddRecord.Add("Z" + new_oi.ToString() + "F" + oiRow.OPER_INDEX.ToString());
+                        if (Math.Abs(unavailiabe_oper_index[k + 1] - unavailiabe_oper_index[k]) > 1)
+                        {
+                            new_oi2 = (int)(unavailiabe_oper_index[k] + 1);
 
-                        qEntity.OperationInfoQuery.Add(TransQuery.OperationInfoQuery(new_oi.ToString(), oiRow.OP_FLAG, oiRow.MODULE_NUM.ToString(), oiRow.INFO1_FORMAT, oiRow.INFO1, oiRow.INFO2_FORMAT, oiRow.INFO2, oiRow.INFO3_FORMAT, oiRow.INFO3));
-                        break;
+                            //qEntity.OperationInfoAddRecord.Add("Z" + new_oi.ToString() + "F" + oiRow.OPER_INDEX.ToString());
+
+                            //qEntity.OperationInfoQuery.Add(TransQuery.OperationInfoQuery(new_oi.ToString(), oiRow.OP_FLAG, oiRow.MODULE_NUM.ToString(), oiRow.INFO1_FORMAT, oiRow.INFO1, oiRow.INFO2_FORMAT, oiRow.INFO2, oiRow.INFO3_FORMAT, oiRow.INFO3));
+                            break;
+                        }
+                    }
+
+                    if (new_oi2 == 0)
+                    {
+                        new_oi2 = unavailiabe_oper_index[unavailiabe_oper_index.Count - 1] + 1;
                     }
                 }
 
+                qEntity.OperationInfoAddRecord.Add("Z" + new_oi2.ToString() + "F" + oiRow.OPER_INDEX.ToString());
 
+                qEntity.OperationInfoQuery.Add(TransQuery.OperationInfoQuery(new_oi2.ToString(), oiRow.OP_FLAG, oiRow.MODULE_NUM.ToString(), oiRow.INFO1_FORMAT, oiRow.INFO1, oiRow.INFO2_FORMAT, oiRow.INFO2, oiRow.INFO3_FORMAT, oiRow.INFO3));
             }
+        }
+
+        /// <summary>
+        /// Error_Code , Error_Group 表同步
+        /// </summary>
+        /// <param name="Data_index"></param>
+        /// <param name="qEntity"></param>
+        void parseErrorInfo(int Data_index, ref QueryEntity qEntity)
+        {
+            if (Data_index == 0)
+            {
+                return;
+            }
+
+            if ((from item in session.Instance.LocalDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == Data_index && item.DELETE_FLAG == "0" select item).Count() > 0)
+            {
+                EntityFramework.DataLocalEntities.ERROR_GROUP errorGroupRow = (from item in session.Instance.LocalDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == Data_index && item.DELETE_FLAG == "0" select item).First();
+
+                if ((from item in session.Instance.OnlineDataHandle.ERROR_GROUP where item.DELETE_FLAG == "0" && item.GROUP_NAME == errorGroupRow.GROUP_NAME select item).Count() > 0)
+                {
+                    //准生产环境中已经包含了同名错误码分组
+                    //查看是否需要添加新的错误码
+                    EntityFramework.DataLocalEntities.ERROR_GROUP errorGroupRowInONLINE = (from item in session.Instance.OnlineDataHandle.ERROR_GROUP where item.DELETE_FLAG == "0" && item.GROUP_NAME == errorGroupRow.GROUP_NAME select item).First();
+                    int new_error_grp_id = (int)errorGroupRow.ERROR_GRP;
+                    if (errorGroupRow.ERROR_GRP != errorGroupRowInONLINE.ERROR_GRP)
+                    {
+                        new_error_grp_id = (int)errorGroupRowInONLINE.ERROR_GRP;
+                        qEntity.ErrorGroupAddRecord.Add("Z" + new_error_grp_id + "F" + Data_index);
+                        qEntity.ErrorGroupQuery.Add(TransQuery.ErrorGroupQuery(new_error_grp_id.ToString(), errorGroupRow.GROUP_NAME));
+                    }
+
+                   
+
+
+                }
+            }
+
         }
 
         KeyValuePair<int, string> MergeSQLFunc(string ori_string, ref QueryEntity qEntity)
@@ -970,6 +1204,7 @@ namespace WebToolsBox
                     for (int j = 0; j < i_trans_code.Count(); j++)
                     {
                         if (i_trans_code[j] == int.Parse(transDefRow.NEXT_TRANS_CODE))
+
                         {
                             next_trans = i_trans_code_real[j].ToString().PadLeft(8, '0');
                             break;
