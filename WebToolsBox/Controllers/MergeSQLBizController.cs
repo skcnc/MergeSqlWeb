@@ -22,6 +22,7 @@ namespace WebToolsBox.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [OutputCache(Duration=120)]
         public ActionResult Index(string boo)
         {
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))

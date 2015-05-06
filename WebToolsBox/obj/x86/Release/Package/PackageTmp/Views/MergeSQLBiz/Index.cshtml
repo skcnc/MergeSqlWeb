@@ -45,6 +45,37 @@
             <div>
                 <br />
                 <br />
+
+                @if (Model.ErrorCodeQuery.Count > 0)
+                {
+                    <br /><p>--Error_Code 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorCodeQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupQuery.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupMappingQuery.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupMappingQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
                 @if (Model.DynamicDetailQuery.Count() > 0)
                 {
                     <br /><p>--DYNAMIC_DETAIL表操作--</p><br />
@@ -206,10 +237,50 @@
                     <br />
                }
                 }
+
+                @if (Model.TransCommandsQuery.Count() > 0)
+                {
+                    <br /><p>--TRANS_COMMANDS 表操作</p><br />
+                    foreach (string str in Model.TransCommandsQuery)
+                    {
+                        <p>@str</p>
+                        <br />
+                    }
+                }
             </div>
         </div>
             <div class="tab-pane fade" id="profile">
             <div>
+                @if (Model.ErrorCodeAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Code 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorCodeAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupMappingAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupMappingAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+
                 @if (Model.DynamicDetailAddRecord.Count() > 0)
                 {
                     <br /><p>--DYNAMIC_DETAIL 表操作</p><br />
@@ -311,6 +382,7 @@
 
                 @if (Model.TblExchangeAddRecord.Count() > 0)
                 {
+                    <br /><p>--TBL_EXCHANGE 表操作</p><br />
                     foreach (string str in Model.TblExchangeAddRecord)
                     {
                     <p>@str</p>
@@ -320,6 +392,7 @@
 
                 @if (Model.TBLPrintModuleAddRecord.Count() > 0)
                 {
+                    <br /><p>--TBL_PRINT_MODULE 表操作</p><br />
                     foreach (string str in Model.TBLPrintModuleAddRecord)
                     {
                     <p>@str</p>
@@ -329,6 +402,7 @@
 
                 @if (Model.TransAutoAddRecord.Count() > 0)
                 {
+                    <br /><p>--TRANS_AUTO 表操作</p><br />
                     foreach (string str in Model.TransAutoAddRecord)
                     {
                     <p>@str</p>
@@ -339,6 +413,8 @@
            
                 @if (Model.TransSplitAddRecord.Count() > 0)
                 {
+                    <br /><p>--TRANS_SPLIT 表操作</p><br />
+                
                     foreach (string str in Model.TransSplitAddRecord)
                     {
                     <p>@str</p>
@@ -348,6 +424,8 @@
 
                 @if (Model.VoidConfigAddRecord.Count() > 0)
                 {
+                    <br /><p>--VOID_CONFIG 表操作</p><br />
+                    
                     foreach (string str in Model.VoidConfigAddRecord)
                     {
                     <p>@str</p>

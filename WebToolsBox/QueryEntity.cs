@@ -8,6 +8,9 @@ namespace WebToolsBox
     public class QueryEntity
     {
         #region Entitys
+        public List<string> ErrorLogs;
+        public List<string> InfoLogs;
+        public List<string> WarningLogs;
 
         public List<string> TransDefQuerys;
         public List<string> FunctionInfoQuery;
@@ -66,6 +69,9 @@ namespace WebToolsBox
 
         public void CleanQuerys()
         {
+            ErrorLogs.Clear();
+            InfoLogs.Clear();
+            WarningLogs.Clear();
 
             TransDefQuerys.Clear();
             FunctionInfoAddRecord.Clear();
@@ -125,6 +131,10 @@ namespace WebToolsBox
 
         public QueryEntity()
         {
+            ErrorLogs = new List<string>();
+            InfoLogs = new List<string>();
+            WarningLogs = new List<string>();
+
             TransDefQuerys = new List<string>();
 
             FunctionInfoAddRecord = new List<string>();
@@ -460,7 +470,7 @@ namespace WebToolsBox
 
         public static string ErrorGroupMappingQuery(string iERRORGRP, string sTRANSCODE)
         {
-            if (sTRANSCODE != "null") sTRANSCODE = "'" + sTRANSCODE + "'";
+            if (sTRANSCODE != "null") sTRANSCODE = "'" + sTRANSCODE.ToString().PadLeft(8, '0') + "'";
 
             string query =
                 "insert into error_group_mapping (TRANS_CODE, ERROR_GRP, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + sTRANSCODE + "," + iERRORGRP + ", 'T', 0, '0', to_date('19-06-2013 14:44:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('19-06-2013 14:45:56', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]')";

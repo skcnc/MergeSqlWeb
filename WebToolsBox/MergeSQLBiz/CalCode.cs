@@ -50,6 +50,7 @@ namespace WebToolsBox
             //值为0，不处理
             if (func_index == 0)
             {
+                qEntity.WarningLogs.Add("Func_Info : func_index = " + func_index + " , 请检查数据准确性");
                 return ErrorCode.Instance.GetStatement(0000, new List<string> { "0" });
             }
 
@@ -57,6 +58,7 @@ namespace WebToolsBox
             if ((from item in session.Instance.LocalDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == func_index select item).Count() == 0)
             {
                 //DB上不存在该数据，直接不处理
+                qEntity.WarningLogs.Add("Func_Info : func_index = " + func_index + " ,DB 上不存在该数据，请检查数据有效性");
                 return ErrorCode.Instance.GetStatement(9003, new List<string> { func_index.ToString() });
             }
 
@@ -64,7 +66,14 @@ namespace WebToolsBox
             EntityFramework.DataLocalEntities.FUNCTION_INFO fiRow = (from item in session.Instance.LocalDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == func_index select item).ToList()[0];
 
             //if ((from item in session.Instance.ONLINEDB.FUNCTION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.FUNC_INDEX == fiRow.FUNC_INDEX && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
-            if ((from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.FUNC_INDEX == fiRow.FUNC_INDEX && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
+
+            int ifunc_index = (int)fiRow.FUNC_INDEX;
+            string sInfo1 = fiRow.INFO1;
+            string sInfo2 = fiRow.INFO2;
+            string sInfo3 = fiRow.INFO3;
+
+
+            if ((from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && (int)item.FUNC_INDEX == ifunc_index && item.INFO1 == sInfo1 && item.INFO2 == sInfo2 && item.INFO3 == sInfo3 select item).Count() > 0)
             {
                 //联机数据库中已经包含该条目，不处理
                 return ErrorCode.Instance.GetStatement(0000, new List<string> { fiRow.FUNC_INDEX.ToString() });
@@ -79,11 +88,11 @@ namespace WebToolsBox
             }
 
             //if ((from item in session.Instance.ONLINEDB.FUNCTION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
-            if ((from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select item).Count() > 0)
+            if ((from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.INFO1 == sInfo1 && item.INFO2 == sInfo2 && item.INFO3 == sInfo3 select item).Count() > 0)
             {
                 //生产数据库中已经包含该条目，只是索引不同
                 //int new_fi = (from item in session.Instance.ONLINEDB.FUNCTION_INFOTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select (int)item.FUNC_INDEX).ToList()[0];
-                int new_fi = (from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.INFO1 == fiRow.INFO1 && item.INFO2 == fiRow.INFO2 && item.INFO3 == fiRow.INFO3 select (int)item.FUNC_INDEX).ToList()[0];
+                int new_fi = (from item in session.Instance.OnlineDataHandle.FUNCTION_INFO where item.DELETE_FLAG == "0" && item.INFO1 == sInfo1 && item.INFO2 == sInfo2 && item.INFO3 == sInfo3 select (int)item.FUNC_INDEX).ToList()[0];
 
                 qEntity.FunctionInfoAddRecord.Add("Z" + new_fi.ToString() + "F" + func_index.ToString());
                 return ErrorCode.Instance.GetStatement(0000, new List<string> { new_fi.ToString() });
@@ -199,6 +208,10 @@ namespace WebToolsBox
 
                 qEntity.TransSplitAddRecord.Add("Z" + New_trans_type + "F" + Origin_trans_type);
             }
+            else
+            {
+                qEntity.InfoLogs.Add("交易 ： " + Origin_trans_type + " 无后续拆分");
+            }
         }
 
         //void parseTransCommands(string new_trans_type, List<string> AddRecord, PRDTPOSDB.TRANS_COMMANDSRow commandsRow)
@@ -247,6 +260,7 @@ namespace WebToolsBox
             //值为0，不处理
             if (Data_index == 0)
             {
+                qEntity.WarningLogs.Add("Tbl_Disp_Content : 不存在 Data_Index = " + Data_index + " 的数据");
                 return;
             }
 
@@ -254,14 +268,18 @@ namespace WebToolsBox
             if ((from item in session.Instance.LocalDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).Count() == 0)
             {
                 //DB上不存在该数据，直接不处理
+                qEntity.ErrorLogs.Add("Tbl_Disp_Content : 不存在 Data_Index = " + Data_index + " 的数据");
                 return;
             }
 
             //PRDTPOSDB.TBL_DISP_CONTENTRow tdcRow = (from item in session.Instance.TPOSDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).ToList()[0];
             EntityFramework.DataLocalEntities.TBL_DISP_CONTENT tdcRow = (from item in session.Instance.LocalDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == Data_index select item).ToList()[0];
 
+            int idata_index = (int)tdcRow.DATA_INDEX;
+            string slines = tdcRow.LINES;
+
             //if ((from item in session.Instance.ONLINEDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.DATA_INDEX == tdcRow.DATA_INDEX && item.LINES == tdcRow.LINES select item).Count() > 0)
-            if ((from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.DATA_INDEX == tdcRow.DATA_INDEX && item.LINES == tdcRow.LINES select item).Count() > 0)
+            if ((from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && (int)item.DATA_INDEX == idata_index && item.LINES == slines select item).Count() > 0)
             {
                 //联机数据库中已经包含该条目，不处理
                 return;
@@ -274,11 +292,11 @@ namespace WebToolsBox
             }
 
             //if ((from item in session.Instance.ONLINEDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.LINES == tdcRow.LINES select item).Count() > 0)
-            if ((from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.LINES == tdcRow.LINES select item).Count() > 0)
+            if ((from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.LINES == slines select item).Count() > 0)
             {
                 //生产数据库中已经包含该条目，只是索引不同
                 //int new_tdc = (from item in session.Instance.ONLINEDB.TBL_DISP_CONTENTTableAdapter.GetData() where item.DELETE_FLAG == "0" && item.LINES == tdcRow.LINES select (int)item.DATA_INDEX).ToList()[0];
-                int new_tdc = (from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.LINES == tdcRow.LINES select (int)item.DATA_INDEX).ToList()[0];
+                int new_tdc = (from item in session.Instance.OnlineDataHandle.TBL_DISP_CONTENT where item.DELETE_FLAG == "0" && item.LINES == slines select (int)item.DATA_INDEX).ToList()[0];
 
                 qEntity.TblDispContentAddRecord.Add("Z" + new_tdc + "F" + tdcRow.DATA_INDEX.ToString());
                 return;
@@ -337,7 +355,9 @@ namespace WebToolsBox
         {
             //值为0，不处理
             if (Data_index == 0)
+            {
                 return;
+            }
 
             //if ((from item in session.Instance.TPOSDB.DYNAMIC_VALIDTableAdapter.GetData() where item.DELETE_FLAG == "0" && (int)item.REC_NO == Data_index select item).Count() == 0)
             if ((from item in session.Instance.LocalDataHandle.DYNAMIC_VALID where item.DELETE_FLAG == "0" && (int)item.REC_NO == Data_index select item).Count() == 0)
@@ -1069,15 +1089,19 @@ namespace WebToolsBox
         /// </summary>
         /// <param name="Data_index"></param>
         /// <param name="qEntity"></param>
-        void parseErrorInfo(int Data_index, ref QueryEntity qEntity)
+        void parseErrorGroup(int Data_index, ref QueryEntity qEntity)
         {
             if (Data_index == 0)
             {
                 return;
             }
 
+            
+            int new_error_grp_id = 20; //设定默认的Error_Group 是20 多渠道返回码
+
             if ((from item in session.Instance.LocalDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == Data_index && item.DELETE_FLAG == "0" select item).Count() > 0)
             {
+                //存在该条error_grp
                 EntityFramework.DataLocalEntities.ERROR_GROUP errorGroupRow = (from item in session.Instance.LocalDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == Data_index && item.DELETE_FLAG == "0" select item).First();
 
                 if ((from item in session.Instance.OnlineDataHandle.ERROR_GROUP where item.DELETE_FLAG == "0" && item.GROUP_NAME == errorGroupRow.GROUP_NAME select item).Count() > 0)
@@ -1085,19 +1109,166 @@ namespace WebToolsBox
                     //准生产环境中已经包含了同名错误码分组
                     //查看是否需要添加新的错误码
                     EntityFramework.DataLocalEntities.ERROR_GROUP errorGroupRowInONLINE = (from item in session.Instance.OnlineDataHandle.ERROR_GROUP where item.DELETE_FLAG == "0" && item.GROUP_NAME == errorGroupRow.GROUP_NAME select item).First();
-                    int new_error_grp_id = (int)errorGroupRow.ERROR_GRP;
+                    new_error_grp_id = (int)errorGroupRow.ERROR_GRP;
                     if (errorGroupRow.ERROR_GRP != errorGroupRowInONLINE.ERROR_GRP)
                     {
+                        //测试和生产的error_grp索引不同
+                        //需要添加error_grp
                         new_error_grp_id = (int)errorGroupRowInONLINE.ERROR_GRP;
                         qEntity.ErrorGroupAddRecord.Add("Z" + new_error_grp_id + "F" + Data_index);
-                        qEntity.ErrorGroupQuery.Add(TransQuery.ErrorGroupQuery(new_error_grp_id.ToString(), errorGroupRow.GROUP_NAME));
                     }
 
-                   
-
+                    
+                    parseErrorCode((int)errorGroupRow.ERROR_GRP, new_error_grp_id, ref qEntity);
 
                 }
+                else
+                {
+                    //准生产环境中不包含同名的错误码分组
+
+                    //筛选新的分组索引
+                    List<int> unavailiable_error_grp_index = (from item in session.Instance.OnlineDataHandle.ERROR_GROUP where item.DELETE_FLAG == "0" select (int)item.ERROR_GRP).ToList();
+
+                    foreach (string s in qEntity.ErrorGroupAddRecord)
+                    {
+                        unavailiable_error_grp_index.Add(int.Parse(s.Split('F')[0].Substring(1)));
+                    }
+
+                    unavailiable_error_grp_index.Sort();
+
+                    int new_grp = 0;
+
+                    for (int k = 0; k < unavailiable_error_grp_index.Count - 1; k++)
+                    {
+
+                        if (Math.Abs(unavailiable_error_grp_index[k + 1] - unavailiable_error_grp_index[k]) > 1)
+                        {
+                            new_grp = (int)(unavailiable_error_grp_index[k] + 1);
+                            break;
+                        }
+                    }
+
+                    if (new_grp == 0)
+                    {
+                        new_grp = unavailiable_error_grp_index[unavailiable_error_grp_index.Count - 1] + 1;
+                    }
+
+                    qEntity.ErrorGroupAddRecord.Add("Z" + new_grp + "F" + Data_index);
+                    qEntity.ErrorGroupQuery.Add(TransQuery.ErrorGroupQuery(new_grp.ToString(),errorGroupRow.GROUP_NAME));
+
+                    parseErrorCode((int)errorGroupRow.ERROR_GRP, new_grp, ref qEntity);
+                
+                }
+
+
             }
+
+
+
+        }
+
+        /// <summary>
+        /// Error_Code 表同步
+        /// </summary>
+        /// <param name="origin_error_grp"></param>
+        /// <param name="new_error_grp"></param>
+        /// <param name="qEntity"></param>
+        void parseErrorCode(int origin_error_grp, int new_error_grp, ref QueryEntity qEntity)
+        {
+
+            if ((from item in session.Instance.OnlineDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == new_error_grp select item).Count() > 0)
+            {
+                //在已经存在error_code上添加新值
+                //需要判断存在性
+
+                List<string> existReturnCode = (from item in session.Instance.OnlineDataHandle.ERROR_CODE where (int)item.ERROR_GRP == new_error_grp select item.RETURN_CODE).ToList();
+
+                List<string> newReturnCode = (from item in session.Instance.LocalDataHandle.ERROR_CODE where (int)item.ERROR_GRP == origin_error_grp select item.RETURN_CODE).ToList();
+
+                foreach (string code in newReturnCode)
+                {
+                    if (!existReturnCode.Contains(code.Trim()))
+                    {
+                        EntityFramework.DataLocalEntities.ERROR_CODE errorCodeRow =
+                            (from item in session.Instance.LocalDataHandle.ERROR_CODE
+                             where item.RETURN_CODE == code && (int)item.ERROR_GRP == origin_error_grp && item.DELETE_FLAG == "0"
+                             select item).First();
+
+                        qEntity.ErrorCodeAddRecord.Add("A" + code);
+                        qEntity.ErrorCodeQuery.Add(TransQuery.ErrorCodeQuery(new_error_grp.ToString(), code, errorCodeRow.POS_MSG, errorCodeRow.RETURN_NAME));
+                    }
+                }
+
+            }
+            else
+            {
+                //无须判断是否存在
+
+                List<string> newReturnCode = (from item in session.Instance.LocalDataHandle.ERROR_CODE where (int)item.ERROR_GRP == origin_error_grp select item.RETURN_CODE).ToList();
+
+                foreach (string code in newReturnCode)
+                {
+                    EntityFramework.DataLocalEntities.ERROR_CODE errorCodeRow =
+                            (from item in session.Instance.LocalDataHandle.ERROR_CODE
+                             where item.RETURN_CODE == code && (int)item.ERROR_GRP == origin_error_grp && item.DELETE_FLAG == "0"
+                             select item).First();
+
+                    qEntity.ErrorCodeAddRecord.Add("A" + code);
+                    qEntity.ErrorCodeQuery.Add(TransQuery.ErrorCodeQuery(new_error_grp.ToString(), code, errorCodeRow.POS_MSG, errorCodeRow.RETURN_NAME));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Error_Group_Mapping 表同步
+        /// 调用parseErrorGroup函数
+        /// </summary>
+        /// <param name="origin_trans_type"></param>
+        /// <param name="new_trans_type"></param>
+        /// <param name="qEntity"></param>
+        void parseErrorGroupMapping(int origin_type, int new_type, ref QueryEntity qEntity)
+        {
+            string origin_trans_type = origin_type.ToString().PadLeft(8,'0');
+            string new_trans_type = new_type.ToString().PadLeft(8, '0');
+
+            if ((from item in session.Instance.OnlineDataHandle.ERROR_GROUP_MAPPING where item.DELETE_FLAG == "0" && item.TRANS_CODE == new_trans_type select item).Count() > 0)
+            {
+                qEntity.WarningLogs.Add("Error_Code_Mapping 已经包含 trans_type = " + new_trans_type + " 的交易");
+            }
+            else
+            {
+                int error_grp = 20;
+                if ((from item in session.Instance.LocalDataHandle.ERROR_GROUP_MAPPING where item.DELETE_FLAG == "0" && item.TRANS_CODE == origin_trans_type select item).Count() == 0)
+                {
+                    qEntity.WarningLogs.Add("Error_Code_Mapping : 不存在 trans_type = " + new_trans_type + " 的数据，将会默认添加返回分组20");
+
+                }
+                else
+                {
+                    EntityFramework.DataLocalEntities.ERROR_GROUP_MAPPING errorGroupMappingRow =
+                        (from item in session.Instance.LocalDataHandle.ERROR_GROUP_MAPPING where item.DELETE_FLAG == "0" && item.TRANS_CODE == origin_trans_type select item).First();
+
+                    error_grp = (int)errorGroupMappingRow.ERROR_GRP;
+                         
+                }
+
+                parseErrorGroup(error_grp, ref qEntity);
+
+                string sErrorGrp = "20";
+                foreach (string log in qEntity.ErrorGroupAddRecord)
+                {
+                    if (log.Split('F')[1].Trim() == error_grp.ToString())
+                    {
+                        sErrorGrp = log.Split('F')[0].Substring(1).Trim();
+                        break;
+                    }
+                }
+
+                qEntity.ErrorGroupMappingAddRecord.Add("A" + new_trans_type + "W" + sErrorGrp);
+                qEntity.ErrorGroupMappingQuery.Add(TransQuery.ErrorGroupMappingQuery(sErrorGrp, new_trans_type));
+
+            }
+
 
         }
 
@@ -1219,6 +1390,9 @@ namespace WebToolsBox
                 //添加trans_def语句
                 qEntity.TransDefQuerys.Add(TransQuery.TransDefQuery(i_trans_code_real[i].ToString(), i_trans_code_real[i].ToString().PadLeft(8, '0'), next_trans, transDefRow.AUTOVOID, transDefRow.PIN_BLOCK, new_function_info, transDefRow.TRANS_NAME, transDefRow.TELEPHONE_NO.ToString(), transDefRow.DISP_TYPE, transDefRow.SERVER_CODE, transDefRow.DEPTNO, transDefRow.REMARK, transDefRow.CASHIERBILLAD_RECNO.ToString(), transDefRow.NII));
 
+                //添加error_grp, error_code 语句
+                parseErrorGroupMapping(i_trans_code[i], i_trans_code_real[i], ref qEntity);
+
                 //添加field_message语句
                 parseFieldMessage(i_trans_code[i], i_trans_code_real[i], ref qEntity);
 
@@ -1288,35 +1462,73 @@ namespace WebToolsBox
                     {
                         case "21":
                             {
-                                int Data_index21 = (int)row.DATA_INDEX;
+                                int Data_index21 = 0;
+                                if (row.DATA_INDEX == null)
+                                {
+                                    Data_index21 = 2;
+                                }
+                                else
+                                {
+                                    Data_index21 = (int)row.DATA_INDEX;
+                                }
                                 parsePrint(Data_index21, ref qEntity);
                                 parseTransCommands(i_trans_code_real[i], qEntity.PrintModuleGroupAddRecord, row, ref qEntity);
                                 break;
                             }
                         case "69":
                             {
-                                int Data_index69 = (int)row.DATA_INDEX;
+                                int Data_index69 = 0;
+                                if (row.DATA_INDEX == null)
+                                {
+                                    //发现为空，默认为第2号模版
+                                    Data_index69 = 2;
+                                }
+                                else
+                                {
+                                    Data_index69 = (int)row.DATA_INDEX;
+                                }
                                 parsePrint(Data_index69, ref qEntity);
                                 parseTransCommands(i_trans_code_real[i], qEntity.PrintModuleGroupAddRecord, row, ref qEntity);
                                 break;
                             }
                         case "41":
                             {
-                                int Data_index41 = (int)row.DATA_INDEX;
+                                int Data_index41 = 0;
+
+                                if (row.DATA_INDEX != null)
+                                {
+                                    Data_index41 = (int)row.DATA_INDEX;
+                                }
+
                                 parseDynamic(Data_index41, ref  qEntity);
                                 parseTransCommands(i_trans_code_real[i], qEntity.DynamicItemQuery, row, ref  qEntity);
                                 break;
                             }
                         case "40":
                             {
-                                int Data_index40 = (int)row.DATA_INDEX;
+                                int Data_index40 = 0;
+                                if (row.DATA_INDEX != null)
+                                {
+                                    Data_index40 = (int)row.DATA_INDEX;
+                                }
+
                                 parseDynamicValid(Data_index40, ref qEntity);
                                 parseTransCommands(i_trans_code_real[i], qEntity.DynamicValidQuery, row, ref qEntity);
                                 break;
                             }
                         case "22":
                             {
-                                int Data_index22 = (int)row.DATA_INDEX;
+                                int Data_index22 = 0;
+
+                                if (row.DATA_INDEX == null)
+                                {
+                                    Data_index22 = 216;
+                                }
+                                else
+                                {
+                                    Data_index22 = (int)row.DATA_INDEX;
+                                }
+                                
                                 parseTblDispContent(Data_index22, ref qEntity);
                                 parseTransCommands(i_trans_code_real[i], qEntity.TblDispContentAddRecord, row, ref qEntity);
                                 break;

@@ -20,7 +20,7 @@
 
                 <div class="col-sm-10">
                     <label class="sr-only" for="code_input">请输入查询交易代码（'|'分割）</label>
-                    <input type="text" name="searchText" class="form-control" id="code_input" placeholder="请输入查询交易代码（'|'分割）">
+                    <input type="text" name="searchText" class="form-control" id="code_input" placeholder="请输入查询交易代码（'|'分割）" value="@Request.Form["searchText"]">
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn btn-primary">
@@ -45,6 +45,37 @@
             <div>
                 <br />
                 <br />
+
+                @if (Model.ErrorCodeQuery.Count > 0)
+                {
+                    <br /><p>--Error_Code 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorCodeQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupQuery.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupMappingQuery.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupMappingQuery)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
                 @if (Model.DynamicDetailQuery.Count() > 0)
                 {
                     <br /><p>--DYNAMIC_DETAIL表操作--</p><br />
@@ -220,6 +251,36 @@
         </div>
             <div class="tab-pane fade" id="profile">
             <div>
+                @if (Model.ErrorCodeAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Code 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorCodeAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+                
+                @if (Model.ErrorGroupMappingAddRecord.Count > 0)
+                {
+                    <br /><p>--Error_Group 表操作</p><br />
+                    
+                    foreach (string str in Model.ErrorGroupMappingAddRecord)
+                    {
+                    <p>@str</p>
+                    <br />}
+                }
+
                 @if (Model.DynamicDetailAddRecord.Count() > 0)
                 {
                     <br /><p>--DYNAMIC_DETAIL 表操作</p><br />
