@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataUms0Entity.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DataUms0EntityStoreContainer">
+          <EntitySet Name="SCRIPT_FIELD" EntityType="DataUms0Entity.Store.SCRIPT_FIELD" store:Type="Tables" Schema="UMS0" />
+        </EntityContainer>
+        <EntityType Name="SCRIPT_FIELD">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+          <Property Name="FIELD3" Type="varchar2" MaxLength="6" />
+          <Property Name="FBSKD" Type="varchar2" MaxLength="8" />
+          <Property Name="FIELD48_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD48_RESP" Type="varchar2" MaxLength="256" />
+          <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+          <Property Name="MSG_TYPE" Type="char" MaxLength="1" />
+          <Property Name="FIELD48_TLV_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD63_REQ" Type="varchar2" MaxLength="256" />
+          <Property Name="FIELD63_RESP" Type="varchar2" MaxLength="256" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataUms0Entity" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DataUmsEntity" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="SCRIPT_FIELD" EntityType="DataUms0Entity.SCRIPT_FIELD" />
+        </EntityContainer>
+        <EntityType Name="SCRIPT_FIELD">
+          <Key>
+            <PropertyRef Name="TRANS_TYPE" />
+          </Key>
+          <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FIELD3" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FBSKD" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD48_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MSG_TYPE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FIELD48_TLV_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD63_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FIELD63_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataUms0EntityStoreContainer" CdmEntityContainer="DataUmsEntity">
+          <EntitySetMapping Name="SCRIPT_FIELD">
+            <EntityTypeMapping TypeName="DataUms0Entity.SCRIPT_FIELD">
+              <MappingFragment StoreEntitySet="SCRIPT_FIELD">
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="FIELD3" ColumnName="FIELD3" />
+                <ScalarProperty Name="FBSKD" ColumnName="FBSKD" />
+                <ScalarProperty Name="FIELD48_REQ" ColumnName="FIELD48_REQ" />
+                <ScalarProperty Name="FIELD48_RESP" ColumnName="FIELD48_RESP" />
+                <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+                <ScalarProperty Name="MSG_TYPE" ColumnName="MSG_TYPE" />
+                <ScalarProperty Name="FIELD48_TLV_REQ" ColumnName="FIELD48_TLV_REQ" />
+                <ScalarProperty Name="FIELD63_REQ" ColumnName="FIELD63_REQ" />
+                <ScalarProperty Name="FIELD63_RESP" ColumnName="FIELD63_RESP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

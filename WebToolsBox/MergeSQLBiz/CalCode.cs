@@ -1272,6 +1272,23 @@ namespace WebToolsBox
 
         }
 
+        /// <summary>
+        /// Script_Field 表同步
+        /// </summary>
+        /// <param name="origin_type"></param>
+        /// <param name="new_type"></param>
+        /// <param name="qEntity"></param>
+        void parseScriptField(int origin_type, int new_type, ref QueryEntity qEntity)
+        {
+            if ((from item in session.Instance.UmsDataHandle.SCRIPT_FIELD where (int)item.TRANS_TYPE == origin_type && item.DELETE_FLAG == "0" select item).Count() > 0)
+            {
+                EntityFramework.DataLocalEntities.SCRIPT_FIELD scriptFieldRow = (from item in session.Instance.UmsDataHandle.SCRIPT_FIELD where (int)item.TRANS_TYPE == origin_type && item.DELETE_FLAG == "0" select item).First();
+
+                qEntity.ScriptFieldAddRecord.Add("A" + new_type.ToString());
+                qEntity.ScriptFieldQuery.Add(TransQuery.ScriptFieldQuery(new_type, scriptFieldRow.FIELD3, scriptFieldRow.FBSKD, scriptFieldRow.FIELD48_REQ, scriptFieldRow.FIELD48_RESP, scriptFieldRow.MSG_TYPE, scriptFieldRow.FIELD48_TLV_REQ, scriptFieldRow.FIELD63_REQ, scriptFieldRow.FIELD63_RESP));
+            }
+        }
+
         KeyValuePair<int, string> MergeSQLFunc(string ori_string, ref QueryEntity qEntity)
         {
             qEntity.CleanQuerys();
@@ -1389,6 +1406,9 @@ namespace WebToolsBox
 
                 //添加trans_def语句
                 qEntity.TransDefQuerys.Add(TransQuery.TransDefQuery(i_trans_code_real[i].ToString(), i_trans_code_real[i].ToString().PadLeft(8, '0'), next_trans, transDefRow.AUTOVOID, transDefRow.PIN_BLOCK, new_function_info, transDefRow.TRANS_NAME, transDefRow.TELEPHONE_NO.ToString(), transDefRow.DISP_TYPE, transDefRow.SERVER_CODE, transDefRow.DEPTNO, transDefRow.REMARK, transDefRow.CASHIERBILLAD_RECNO.ToString(), transDefRow.NII));
+
+                //添加script_field 语句
+                parseScriptField(i_trans_code[i], i_trans_code_real[i], ref qEntity);
 
                 //添加error_grp, error_code 语句
                 parseErrorGroupMapping(i_trans_code[i], i_trans_code_real[i], ref qEntity);

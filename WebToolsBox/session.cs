@@ -21,13 +21,24 @@ namespace WebToolsBox
         }
 
         /// <summary>
-        /// 测试数据库的实例
+        /// 测试DB数据库的实例
         /// </summary>
         public EntityFramework.DataLocalEntities.DataLocalEntities LocalDataHandle
         {
             get
             {
                 return new EntityFramework.DataLocalEntities.DataLocalEntities(); 
+            }
+        }
+
+        /// <summary>
+        /// 测试联机数据库的实例
+        /// </summary>
+        public EntityFramework.DataLocalEntities.DataUmsEntity UmsDataHandle
+        {
+            get
+            {
+                return new EntityFramework.DataLocalEntities.DataUmsEntity();
             }
         }
 
@@ -46,6 +57,8 @@ namespace WebToolsBox
                 return new EntityFramework.DataLocalEntities.DataOnlineEntity2();
             }
         }
+
+
         
     }
 }

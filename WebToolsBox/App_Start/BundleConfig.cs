@@ -7,6 +7,12 @@ namespace WebToolsBox
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/cheng").Include(
+                 "~/Scripts/jquery-{version}.js",
+                 "~/Scripts/jquery-ui-{version}.min.js",
+                 "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                 "~/Scripts/jquery.validate.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

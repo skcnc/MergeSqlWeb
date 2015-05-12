@@ -33,19 +33,45 @@ namespace WebToolsBox.Controllers
             // 如果我们进行到这一步时某个地方出错，则重新显示表单
             //ModelState.AddModelError("", "提供的用户名或密码不正确。");
 
-            QueryEntity model = new QueryEntity();
+            
+            if (Request.IsAjaxRequest())
+            {
+                QueryEntity model = new QueryEntity();
+                CalCode caculator = new CalCode();
 
-            CalCode caculator = new CalCode();
-            if (caculator.GetSQL(Request.Form["searchText"], ref model).Key == 0)
-            {
-                return View(model);
+                if (caculator.GetSQL(Request.Form["searchText"], ref model).Key == 0)
+                {
+                    return PartialView("_SearchResultParialView", model);
+                }
             }
-            else
-            {
-                return View();
-            }
+
+            return View();
+            //if (caculator.GetSQL(Request.Form["searchText"], ref model).Key == 0)
+            //{
+            //    return View(model);
+            //}
+            //else
+            //{
+            //    return View();
+            //}
 
         }
+
+        //[HttpPost]
+        //public ActionResult Search(string boo)
+        //{
+        //    QueryEntity model = new QueryEntity();
+        //    CalCode caculator = new CalCode();
+
+        //    if (caculator.GetSQL(Request.Form["searchText"], ref model).Key == 0)
+        //    {
+        //        return PartialView("_SearchResultParialView", model);
+        //    }
+        //    else
+        //    {
+        //        return PartialView("_SearchResultParialView");
+        //    }
+        //}
 
     }
 }

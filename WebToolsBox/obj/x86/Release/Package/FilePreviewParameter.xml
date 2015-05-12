@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="webtools" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site\Webtools" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp$" />
   </parameter>
@@ -10,7 +10,13 @@
   <parameter name="DataOnlineEntity2-Web.config Connection String" description="" value="metadata=res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.csdl|res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.ssdl|res://*/EntityFramework.DataLocalEntities.DataOnlineEntities.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;data source=std_tpos;password=prd_tposdb;persist security info=True;user id=PRD_TPOSDB&quot;" tags="">
     <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataOnlineEntity2']/@connectionString" />
   </parameter>
+  <parameter name="DataUmsEntity-Web.config Connection String" description="" value="metadata=res://*/EntityFramework.DataLocalEntities.DataUmsEntity.csdl|res://*/EntityFramework.DataLocalEntities.DataUmsEntity.ssdl|res://*/EntityFramework.DataLocalEntities.DataUmsEntity.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;data source=tpos_ums85;password=tpscu752;persist security info=True;user id=UMS0&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataUmsEntity']/@connectionString" />
+  </parameter>
   <parameter name="DefaultConnection-Web.config Connection String" description="" value="DefaultConnection_ConnectionString" tags="">
     <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Entities-Web.config Connection String" description="Entities 由应用程序在 web.config 中用来访问数据库的连接字符串。" value="metadata=res://*/EntityFramework.DataLocalEntities.DataUms0Entity.csdl|res://*/EntityFramework.DataLocalEntities.DataUms0Entity.ssdl|res://*/EntityFramework.DataLocalEntities.DataUms0Entity.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;data source=tpos_ums85;password=tpscu752;user id=UMS0&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\NET\\MergeSqlWeb\\WebToolsBox\\obj\\x86\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
   </parameter>
 </parameters>

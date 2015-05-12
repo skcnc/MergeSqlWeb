@@ -266,6 +266,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataUmsEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataUmsEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataUmsEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataUmsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\DataUmsEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataUmsEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\DataLocalEntities\DYNAMIC_DETAIL.cs">
       <DependentUpon>DataOnlineEntities.tt</DependentUpon>
     </Compile>
@@ -298,6 +313,9 @@
     </Compile>
     <Compile Include="EntityFramework\DataLocalEntities\PRINT_MODULE_GROUP_MEMBER.cs">
       <DependentUpon>DataOnlineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataLocalEntities\SCRIPT_FIELD.cs">
+      <DependentUpon>DataUmsEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DataLocalEntities\TBL_DISP_CONTENT.cs">
       <DependentUpon>DataOnlineEntities.tt</DependentUpon>
@@ -350,6 +368,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Icon.png" />
+    <Content Include="Images\gears_animated.gif" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
@@ -388,6 +407,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataOnlineEntities.edmx</DependentUpon>
       <LastGenOutput>DataOnlineEntities.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="EntityFramework\DataLocalEntities\DataUmsEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataUmsEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\DataLocalEntities\DataUmsEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataUmsEntity.edmx</DependentUpon>
+      <LastGenOutput>DataUmsEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataUmsEntity.edmx.diagram">
+      <DependentUpon>DataUmsEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntityFramework\DataLocalEntities\DataUmsEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataUmsEntity.edmx</DependentUpon>
+      <LastGenOutput>DataUmsEntity.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -451,6 +487,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\MergeSQLBiz\Index.cshtml" />
+    <Content Include="Views\MergeSQLBiz\_SearchResultParialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -65,6 +65,10 @@ namespace WebToolsBox
 
         public List<string> ErrorGroupMappingAddRecord;
         public List<string> ErrorGroupMappingQuery;
+
+        public List<string> ScriptFieldAddRecord;
+        public List<string> ScriptFieldQuery;
+
         #endregion
 
         public void CleanQuerys()
@@ -127,6 +131,8 @@ namespace WebToolsBox
             ErrorGroupMappingAddRecord.Clear();
             ErrorGroupAddRecord.Clear();
 
+            ScriptFieldAddRecord.Clear();
+            ScriptFieldQuery.Clear();
         }
 
         public QueryEntity()
@@ -189,6 +195,9 @@ namespace WebToolsBox
 
             ErrorGroupMappingAddRecord = new List<string>();
             ErrorGroupMappingQuery = new List<string>();
+
+            ScriptFieldAddRecord = new List<string>();
+            ScriptFieldQuery = new List<string>();
         }
     }
 
@@ -211,7 +220,7 @@ namespace WebToolsBox
 
             string query =
                 "insert into trans_def  (TRANS_TYPE, TRANS_CODE, NEXT_TRANS_CODE, AUTOVOID, PIN_BLOCK, FUNCTION_INDEX, TRANS_NAME, TELEPHONE_NO, DISP_TYPE, NII, SERVER_CODE, VERIFIED, SYNC_STATUS, DEPTNO, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, REMARK, CASHIERBILLAD_RECNO)" +
-"values (" + sTRANSTYPE + ", " + sTRANSCODE + ", " + sNEXTTRANSCODE + ", " + sAUTOVOID + ", " + sPINBLOCK + ", " + sFUNCTIONINDEX + ", " + sTRANSNAME + ", " + sTELEPHONENO + ", " + sDISPTYPE + "," + sNII + ", " + sSERVERCODE + ", 'T', 0, " + sDEPTNO + ", '0', to_date('16-11-2012 16:31:03', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:08:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sREMARK + ", " + sCASHIERBILLADRECNO + ");";
+"\r\nvalues (" + sTRANSTYPE + ", " + sTRANSCODE + ", " + sNEXTTRANSCODE + ", " + sAUTOVOID + ", " + sPINBLOCK + ", " + sFUNCTIONINDEX + ", " + sTRANSNAME + ", " + sTELEPHONENO + ", " + sDISPTYPE + "," + sNII + ", " + sSERVERCODE + ", 'T', 0, " + sDEPTNO + ", '0', to_date('16-11-2012 16:31:03', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:08:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sREMARK + ", " + sCASHIERBILLADRECNO + ");";
 
             return query;
 
@@ -227,7 +236,7 @@ namespace WebToolsBox
 
             string query =
                 "insert into trans_commands  (TRANS_TYPE, STEP, FLAG, COMMAND, FUNC_INDEX, ALOG, COMMAND_NAME, ORGCOMMAND, DATA_INDEX, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER)" +
-"values (" + sTRANSTYPE + ", " + iSTEP + ", " + sFLAG + ", " + sCOMMAND + ", " + iFUNCINDEX + ", " + sALOG + ", " + sCOMMANDNAME + ", " + sORGCOMMAND + ", " + iDATAINDEX + ",  'T', 0, '0', to_date('05-01-2015 11:08:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:08:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+"\r\nvalues (" + sTRANSTYPE + ", " + iSTEP + ", " + sFLAG + ", " + sCOMMAND + ", " + iFUNCINDEX + ", " + sALOG + ", " + sCOMMANDNAME + ", " + sORGCOMMAND + ", " + iDATAINDEX + ",  'T', 0, '0', to_date('05-01-2015 11:08:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:08:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
         }
@@ -272,10 +281,12 @@ namespace WebToolsBox
             if (sBACK != "null") sBACK = "'" + sBACK + "'";
             if (sNEEDDIGITALSIGN != "null") sNEEDDIGITALSIGN = "'" + sNEEDDIGITALSIGN + "'";
             if (sTIDCNVFLAG != "null") sTIDCNVFLAG = "'" + sTIDCNVFLAG + "'";
+            if (iCNVNO == null) iCNVNO = "0";
+            
 
 
             string query =
-                "insert into field_message  (TPOS_CODE, FBSKD, FIELD1, FIELD3, FIELD22, FIELD25, FIELD54, FIELD48_REQ, FIELD48_RESP, FLAG, TRN_TYPE, TRN_NAME, MSG_TYPE, MSG48_TYPE, APP_ID, RESV3, SUBFIELD, FIELD4, FIELD60, VERIFIED, SYNC_STATUS, DISPINFO, ZFINFO, DELETE_FLAG, FILL_FBSKD, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, MSG_SPEC_VER, FIELD48_REQ_PREFIX, FIELD48_REQ_SUFFIX, FIELD48_RESP_PREFIX, FIELD48_RESP_SUFFIX, FIELD63_REQ, FIELD63_RESP, FIELD57_REQ, FIELD57_RESP, FIELD62_REQ, FIELD62_RESP, FIELD2, REQ_MIN_BITMAP, REQ_MAX_BITMAP, RES_MIN_BITMAP, RES_MAX_BITMAP, PRONAME, PRODETAIL, BACK, NEED_DIGITAL_SIGN, TIDCNV_FLAG, CNV_NO) values (" + iTPOSCODE + ", " + sFBSKD + ", " + sFIELD1 + ", " + sFIELD3 + ", " + sFIELD22 + ", " + sFIELD25 + ", " + sFIELD54 + ", " + sFIELD48REQ + ", " + sFIELD48RESP + ", " + iFLAG + ", " + sTRNTYPE + ", " + sTRNNAME + ", " + iMSGTYPE + ", " + sMSG48TYPE + ", " + iAPPID + ", " + sRESV3 + ", " + sSUBFIELD + ", " + sFIELD4 + ",  " + sFIELD60 + ",  'T', 0, " + sDISPINFO + ", " + sZFINFO + " , '0', " + sFILLFBSKD + ", to_date('16-11-2012 17:28:02', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:14:22', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + iMSGSPECVER + ", " + sFIELD48REQPREFIX + "," + sFIELD48REQSUFFIX + ", " + sFIELD48RESPPREFIX + ", " + sFIELD48RESPSUFFIX + ", " + sFIELD63REQ + ", " + sFIELD63RESP + ", " + sFIELD57REQ + ", " + sFIELD57RESP + ", " + sFIELD62REQ + ", " + sFIELD62RESP + ", " + sFIELD2 + ", " + sREQMINBITMAP + ", " + sREQMAXBITMAP + ", " + sRESMINBITMAP + "," + sRESMAXBITMAP + ", " + sPRONAME + ", " + sPRODETAIL + ", " + sBACK + ", " + sNEEDDIGITALSIGN + ", " + sTIDCNVFLAG + ", " + iCNVNO + ");";
+                "insert into field_message  (TPOS_CODE, FBSKD, FIELD1, FIELD3, FIELD22, FIELD25, FIELD54, FIELD48_REQ, FIELD48_RESP, FLAG, TRN_TYPE, TRN_NAME, MSG_TYPE, MSG48_TYPE, APP_ID, RESV3, SUBFIELD, FIELD4, FIELD60, VERIFIED, SYNC_STATUS, DISPINFO, ZFINFO, DELETE_FLAG, FILL_FBSKD, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, MSG_SPEC_VER, FIELD48_REQ_PREFIX, FIELD48_REQ_SUFFIX, FIELD48_RESP_PREFIX, FIELD48_RESP_SUFFIX, FIELD63_REQ, FIELD63_RESP, FIELD57_REQ, FIELD57_RESP, FIELD62_REQ, FIELD62_RESP, FIELD2, REQ_MIN_BITMAP, REQ_MAX_BITMAP, RES_MIN_BITMAP, RES_MAX_BITMAP, PRONAME, PRODETAIL, BACK, NEED_DIGITAL_SIGN, TIDCNV_FLAG, CNV_NO) \r\nvalues (" + iTPOSCODE + ", " + sFBSKD + ", " + sFIELD1 + ", " + sFIELD3 + ", " + sFIELD22 + ", " + sFIELD25 + ", " + sFIELD54 + ", " + sFIELD48REQ + ", " + sFIELD48RESP + ", " + iFLAG + ", " + sTRNTYPE + ", " + sTRNNAME + ", " + iMSGTYPE + ", " + sMSG48TYPE + ", " + iAPPID + ", " + sRESV3 + ", " + sSUBFIELD + ", " + sFIELD4 + ",  " + sFIELD60 + ",  'T', 0, " + sDISPINFO + ", " + sZFINFO + " , '0', " + sFILLFBSKD + ", to_date('16-11-2012 17:28:02', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('05-01-2015 11:14:22', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + iMSGSPECVER + ", " + sFIELD48REQPREFIX + "," + sFIELD48REQSUFFIX + ", " + sFIELD48RESPPREFIX + ", " + sFIELD48RESPSUFFIX + ", " + sFIELD63REQ + ", " + sFIELD63RESP + ", " + sFIELD57REQ + ", " + sFIELD57RESP + ", " + sFIELD62REQ + ", " + sFIELD62RESP + ", " + sFIELD2 + ", " + sREQMINBITMAP + ", " + sREQMAXBITMAP + ", " + sRESMINBITMAP + "," + sRESMAXBITMAP + ", " + sPRONAME + ", " + sPRODETAIL + ", " + sBACK + ", " + sNEEDDIGITALSIGN + ", " + sTIDCNVFLAG + ", " + iCNVNO + ");";
 
             return query;
         }
@@ -287,7 +298,7 @@ namespace WebToolsBox
             if (sTRANSNAME != "null") sTRANSNAME = "'" + sTRANSNAME + "'";
 
             string query =
-            "insert into trans_split (TRANS_TYPE, COND_NEXT_TRANS_TYPES, VERIFIED, DELETE_FLAG, SYNC_STATUS, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, FLAG) values (" + iTRANSTYPE + "," + sCONDNEXTTRANSTYPES + ",'T', '0', 0, to_date('02-11-2012 16:17:58', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 16:17:58', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sFLAG + ");";
+            "insert into trans_split (TRANS_TYPE, COND_NEXT_TRANS_TYPES, VERIFIED, DELETE_FLAG, SYNC_STATUS, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, FLAG) \r\nvalues (" + iTRANSTYPE + "," + sCONDNEXTTRANSTYPES + ",'T', '0', 0, to_date('02-11-2012 16:17:58', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 16:17:58', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sFLAG + ");";
 
             return query;
         }
@@ -298,7 +309,7 @@ namespace WebToolsBox
             if (sAFTER != "null") sAFTER = "'" + sAFTER + "'";
 
             string query =
-                "insert into tbl_exchange (TRANS_TYPE, BEFORE, AFTER, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iTRANSTYPE + ", " + sBEFORE + ", " + sAFTER + ", 'T', 0, '0', to_date('25-02-2014 09:50:57', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('25-02-2014 09:50:57', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into tbl_exchange (TRANS_TYPE, BEFORE, AFTER, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iTRANSTYPE + ", " + sBEFORE + ", " + sAFTER + ", 'T', 0, '0', to_date('25-02-2014 09:50:57', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('25-02-2014 09:50:57', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
         }
@@ -306,7 +317,7 @@ namespace WebToolsBox
         public static string TransAutoQuery(int iTRANSTYPE, int iNEXTTRANSTYPE)
         {
             string query =
-                "insert into trans_auto (TRANS_TYPE, NEXT_TRANS_TYPE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iTRANSTYPE + ", " + iNEXTTRANSTYPE + ", 'T', 0, '0', to_date('16-10-2013 14:15:54', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('16-10-2013 14:15:54', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into trans_auto (TRANS_TYPE, NEXT_TRANS_TYPE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iTRANSTYPE + ", " + iNEXTTRANSTYPE + ", 'T', 0, '0', to_date('16-10-2013 14:15:54', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('16-10-2013 14:15:54', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
         }
@@ -314,7 +325,7 @@ namespace WebToolsBox
         public static string VoidConfigQuery(int iTRANSTYPE)
         {
             string query =
-                "insert into void_config (TRANS_TYPE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iTRANSTYPE + ", 'T', 0, '0', to_date('12-10-2013 12:30:53', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('25-10-2013 10:55:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into void_config (TRANS_TYPE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iTRANSTYPE + ", 'T', 0, '0', to_date('12-10-2013 12:30:53', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('25-10-2013 10:55:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
         }
@@ -325,7 +336,7 @@ namespace WebToolsBox
             if (sDEPTNO != "null") sDEPTNO = "'" + sDEPTNO + "'";
 
             string query =
-                "insert into print_module_group (GROUP_ID, GROUP_NAME, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DEPT_NO) values (" + iGROUPID + ", " + sGROUPNAME + ", 'T', 0, '0', to_date('02-11-2012 13:22:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sDEPTNO + ");";
+                "insert into print_module_group (GROUP_ID, GROUP_NAME, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DEPT_NO) \r\nvalues (" + iGROUPID + ", " + sGROUPNAME + ", 'T', 0, '0', to_date('02-11-2012 13:22:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:19', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sDEPTNO + ");";
 
             return query;
         }
@@ -338,7 +349,7 @@ namespace WebToolsBox
             if (sDEPTNO != "null") sDEPTNO = "'" + sDEPTNO + "'";
             if (sTMISPRINTERFLAG != "null") sTMISPRINTERFLAG = "'" + sTMISPRINTERFLAG + "'";
             string query =
-                "insert into print_module_group_member (GROUP_ID, MODULE, RETURN_CODE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, STYLUS_PRINTER_FLAG, ID, DEPT_NO, TMIS_PRINTER_FLAG) values (" + iGROUPID + ", " + iMODULE + ", " + sRETURNCODE + ", 'T', 0, '0', to_date('02-11-2012 13:22:20', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:20', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sSTYLUSPRINTERFLAG + ", " + sID + ", " + sDEPTNO + ", " + sTMISPRINTERFLAG + ");";
+                "insert into print_module_group_member (GROUP_ID, MODULE, RETURN_CODE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, STYLUS_PRINTER_FLAG, ID, DEPT_NO, TMIS_PRINTER_FLAG) \r\nvalues (" + iGROUPID + ", " + iMODULE + ", " + sRETURNCODE + ", 'T', 0, '0', to_date('02-11-2012 13:22:20', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:20', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', " + sSTYLUSPRINTERFLAG + ", " + sID + ", " + sDEPTNO + ", " + sTMISPRINTERFLAG + ");";
 
             return query;
         }
@@ -351,7 +362,7 @@ namespace WebToolsBox
             if (sDEPTNO != "null") sDEPTNO = "'" + sDEPTNO + "'";
 
             string query =
-                "insert into Tbl_print_module (MODULE, DESCRIBE, PRINT_NUM, TITLE1, TITLE2, TITLE3, SIGN1, SIGN2, SIGN3, REC_NUM, REC_NO, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, LOGO_FLAG, DEPT_NO) values (" + iMODULE + "," + sDESCRIBE + "," + iPRINT_NUM + "," + iTITLE1 + "," + iTITLE2 + "," + iTITLE3 + "," + iSIGN1 + "," + iSIGN2 + "," + iSIGN3 + "," + iREC_NUM + "," + sREC_NO + ",'T', 0, '0', to_date('09-10-2012 16:53:13', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('18-11-2013 10:12:09', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sLOGOFLAG + "," + sDEPTNO + ");";
+                "insert into Tbl_print_module (MODULE, DESCRIBE, PRINT_NUM, TITLE1, TITLE2, TITLE3, SIGN1, SIGN2, SIGN3, REC_NUM, REC_NO, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, LOGO_FLAG, DEPT_NO) \r\nvalues (" + iMODULE + "," + sDESCRIBE + "," + iPRINT_NUM + "," + iTITLE1 + "," + iTITLE2 + "," + iTITLE3 + "," + iSIGN1 + "," + iSIGN2 + "," + iSIGN3 + "," + iREC_NUM + "," + sREC_NO + ",'T', 0, '0', to_date('09-10-2012 16:53:13', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('18-11-2013 10:12:09', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sLOGOFLAG + "," + sDEPTNO + ");";
 
             return query;
         }
@@ -367,7 +378,7 @@ namespace WebToolsBox
             if (sINFO3 != "null") sINFO3 = "'" + sINFO3 + "'";
 
             string query =
-                "insert into function_info (FUNC_INDEX, OP_FLAG, MODULE_NUM, INFO1_FORMAT, INFO1, INFO2_FORMAT, INFO2, INFO3_FORMAT, INFO3, UPDATE_DATE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iFUNCINDEX + "," + sOPFLAG + "," + iMODULENUM + "," + sINFO1FORMAT + "," + sINFO1 + "," + sINFO2FORMAT + "," + sINFO2 + "," + sINFO3_FORMAT + "," + sINFO3 + ",'20120523', 'T', 0, '0', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into function_info (FUNC_INDEX, OP_FLAG, MODULE_NUM, INFO1_FORMAT, INFO1, INFO2_FORMAT, INFO2, INFO3_FORMAT, INFO3, UPDATE_DATE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iFUNCINDEX + "," + sOPFLAG + "," + iMODULENUM + "," + sINFO1FORMAT + "," + sINFO1 + "," + sINFO2FORMAT + "," + sINFO2 + "," + sINFO3_FORMAT + "," + sINFO3 + ",'20120523', 'T', 0, '0', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
 
@@ -382,7 +393,7 @@ namespace WebToolsBox
             if (sVARIABLE != "null") sVARIABLE = "'" + sVARIABLE + "'";
 
             string query =
-                "insert into dynamic_item (RECNO, TITLE, DESCRIBE, ITEM_NUM, DATA_RULE, VERIFIED, MARKS, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DATA_SCR_TYPE, VARIABLE) values (" + iRECNO + "," + sTITLE + "," + sDESCRIBE + "," + iITEMNUM + "," + sDATARULE + ", 'T'+," + sMARKS + ",0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + iDATASCRTYPE + "," + sVARIABLE + ");";
+                "insert into dynamic_item (RECNO, TITLE, DESCRIBE, ITEM_NUM, DATA_RULE, VERIFIED, MARKS, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DATA_SCR_TYPE, VARIABLE) \r\nvalues (" + iRECNO + "," + sTITLE + "," + sDESCRIBE + "," + iITEMNUM + "," + sDATARULE + ", 'T'+," + sMARKS + ",0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + iDATASCRTYPE + "," + sVARIABLE + ");";
 
             return query;
         }
@@ -397,7 +408,7 @@ namespace WebToolsBox
             if (sNEEDINPUT != "null") sNEEDINPUT = "'" + sNEEDINPUT + "'";
 
             string query =
-            "insert into dynamic_detail (REC_NO, STEP, ITEM_NAME, ITEM_VALUE, STATUS, TRANS_CODE, RSV, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, NEED_INPUT) values (" + iRECNO + "," + iSTEP + "," + sITEMNAME + "," + sITEMVALUE + "," + sSTATUS + "," + sTRANSCODE + "," + sRSV + ", 'T', 0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sNEEDINPUT + ");";
+            "insert into dynamic_detail (REC_NO, STEP, ITEM_NAME, ITEM_VALUE, STATUS, TRANS_CODE, RSV, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, NEED_INPUT) \r\nvalues (" + iRECNO + "," + iSTEP + "," + sITEMNAME + "," + sITEMVALUE + "," + sSTATUS + "," + sTRANSCODE + "," + sRSV + ", 'T', 0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + sNEEDINPUT + ");";
 
             return query;
         }
@@ -411,7 +422,7 @@ namespace WebToolsBox
             if (sINPUT_NAME != "null") sINPUT_NAME = "'" + sINPUT_NAME + "'";
 
             string query =
-                "insert into Dynamic_valid (REC_NO, MINLEN, MAXLEN, MINVAL, MAXVAL, INPUT_FLAG, INPUT_TYPE, RSV, VERIFIED, ADD_DATE, OPTNUM1, OPTNUM2, OPTCODE, INPUT_NAME, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iRECNO + "," + iMINLEN + "," + iMAXLEN + "," + iMINVAL + "," + iMAXVAL + "," + sINPUTFLAG + "," + sINPUTTYPE + "," + sRSV + ",'T', '20110819'," + iOPTNUM1 + "," + iOPTNUM2 + "," + sOPTCODE + "," + sINPUT_NAME + ", 0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('26-08-2013 15:54:39', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into Dynamic_valid (REC_NO, MINLEN, MAXLEN, MINVAL, MAXVAL, INPUT_FLAG, INPUT_TYPE, RSV, VERIFIED, ADD_DATE, OPTNUM1, OPTNUM2, OPTCODE, INPUT_NAME, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iRECNO + "," + iMINLEN + "," + iMAXLEN + "," + iMINVAL + "," + iMAXVAL + "," + sINPUTFLAG + "," + sINPUTTYPE + "," + sRSV + ",'T', '20110819'," + iOPTNUM1 + "," + iOPTNUM2 + "," + sOPTCODE + "," + sINPUT_NAME + ", 0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('26-08-2013 15:54:39', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
 
@@ -423,7 +434,7 @@ namespace WebToolsBox
             if (sREFRESHMODE != "null") sREFRESHMODE = "'" + sREFRESHMODE + "'";
 
             string query =
-                "insert into tbl_disp_content (DATA_INDEX, LINES, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, VERIFIED, TIMEOUT, CTRL_BITMAP, REFRESH_MODE) values (" + iDATAINDEX + "," + sLINES + ", 0, '0', to_date('17-04-2013 13:43:15', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('23-08-2013 12:46:47', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', 'T'," + iTIMEOUT + "," + iCTRLBITMAP + "," + sREFRESHMODE + ");";
+                "insert into tbl_disp_content (DATA_INDEX, LINES, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, VERIFIED, TIMEOUT, CTRL_BITMAP, REFRESH_MODE) \r\nvalues (" + iDATAINDEX + "," + sLINES + ", 0, '0', to_date('17-04-2013 13:43:15', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('23-08-2013 12:46:47', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', 'T'," + iTIMEOUT + "," + iCTRLBITMAP + "," + sREFRESHMODE + ");";
 
             return query;
 
@@ -440,7 +451,7 @@ namespace WebToolsBox
             if (sINFO3 != "null") sINFO3 = "'" + sINFO3 + "'";
 
             string query =
-                "insert into Operation_info (OPER_INDEX, OP_FLAG, MODULE_NUM, INFO1_FORMAT, INFO1, INFO2_FORMAT, INFO2, INFO3_FORMAT, INFO3, UPDATE_DATE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + iOPERINDEX + "," + sOPFLAG + "," + iMODULENUM + "," + sINFO1FORMAT + "," + sINFO1 + "," + sINFO2FORMAT + "," + sINFO2 + "," + sINFO3FORMAT + "," + sINFO3 + ", '20110916', 'T', 0, '0', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
+                "insert into Operation_info (OPER_INDEX, OP_FLAG, MODULE_NUM, INFO1_FORMAT, INFO1, INFO2_FORMAT, INFO2, INFO3_FORMAT, INFO3, UPDATE_DATE, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) \r\nvalues (" + iOPERINDEX + "," + sOPFLAG + "," + iMODULENUM + "," + sINFO1FORMAT + "," + sINFO1 + "," + sINFO2FORMAT + "," + sINFO2 + "," + sINFO3FORMAT + "," + sINFO3 + ", '20110916', 'T', 0, '0', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('09-10-2012 16:53:12', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
             return query;
         }
@@ -473,9 +484,28 @@ namespace WebToolsBox
             if (sTRANSCODE != "null") sTRANSCODE = "'" + sTRANSCODE.ToString().PadLeft(8, '0') + "'";
 
             string query =
-                "insert into error_group_mapping (TRANS_CODE, ERROR_GRP, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + sTRANSCODE + "," + iERRORGRP + ", 'T', 0, '0', to_date('19-06-2013 14:44:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('19-06-2013 14:45:56', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]')";
+                "insert into error_group_mapping (TRANS_CODE, ERROR_GRP, VERIFIED, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER)  values (" + sTRANSCODE + "," + iERRORGRP + ", 'T', 0, '0', to_date('19-06-2013 14:44:26', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('19-06-2013 14:45:56', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 ;
             return query;
+        }
+
+        public static string ScriptFieldQuery(int iTRANSTYPE, string sFIELD3, string sFBSKD, string SFIELD48REQ, string SFIELD48RESP, string sMSGTYPE, string sFIELD48TLVREQ, string sFIELD63REQ, string SFIELD63RESP)
+        {
+            if (sFIELD3 != "null") sFIELD3 = "'" + sFIELD3 + "'";
+            if (sFBSKD != "null") sFBSKD = "'" + sFBSKD + "'";
+            if (SFIELD48REQ != "null") SFIELD48REQ = "'" + SFIELD48REQ + "'";
+            if (SFIELD48RESP != "null") SFIELD48RESP = "'" + SFIELD48RESP + "'";
+            if (sMSGTYPE != "null") sMSGTYPE = "'" + sMSGTYPE + "'";
+            if (sFIELD48TLVREQ != "null") sFIELD48TLVREQ = "'" + sFIELD48TLVREQ + "'";
+            if (sFIELD63REQ != "null") sFIELD63REQ = "'" + sFIELD63REQ + "'";
+            if (SFIELD63RESP != "null") SFIELD63RESP = "'" + SFIELD63RESP + "'";
+
+            string query =
+            "insert into script_field (TRANS_TYPE, FIELD3, FBSKD, FIELD48_REQ, FIELD48_RESP, DELETE_FLAG, MSG_TYPE, FIELD48_TLV_REQ, FIELD63_REQ, FIELD63_RESP) \r\n values (" + iTRANSTYPE + "," + sFIELD3 + "," + sFBSKD + "," + SFIELD48REQ + "," + SFIELD48RESP + ", '0'," + sMSGTYPE + "," + sFIELD48TLVREQ + "," + sFIELD63REQ + "," + SFIELD63RESP + ");";
+
+            return query;
+
+
         }
     }
 }
