@@ -1183,6 +1183,11 @@ namespace WebToolsBox
 
                 List<string> existReturnCode = (from item in session.Instance.OnlineDataHandle.ERROR_CODE where (int)item.ERROR_GRP == new_error_grp select item.RETURN_CODE).ToList();
 
+                foreach (string s in qEntity.ErrorCodeAddRecord)
+                {
+                    existReturnCode.Add(s.Substring(1));
+                }
+
                 List<string> newReturnCode = (from item in session.Instance.LocalDataHandle.ERROR_CODE where (int)item.ERROR_GRP == origin_error_grp select item.RETURN_CODE).ToList();
 
                 foreach (string code in newReturnCode)
@@ -1521,7 +1526,7 @@ namespace WebToolsBox
                                 }
 
                                 parseDynamic(Data_index41, ref  qEntity);
-                                parseTransCommands(i_trans_code_real[i], qEntity.DynamicItemQuery, row, ref  qEntity);
+                                parseTransCommands(i_trans_code_real[i], qEntity.DynamicItemAddRecord, row, ref  qEntity);
                                 break;
                             }
                         case "40":
@@ -1533,7 +1538,7 @@ namespace WebToolsBox
                                 }
 
                                 parseDynamicValid(Data_index40, ref qEntity);
-                                parseTransCommands(i_trans_code_real[i], qEntity.DynamicValidQuery, row, ref qEntity);
+                                parseTransCommands(i_trans_code_real[i], qEntity.DynamicValidAddRecord, row, ref qEntity);
                                 break;
                             }
                         case "22":

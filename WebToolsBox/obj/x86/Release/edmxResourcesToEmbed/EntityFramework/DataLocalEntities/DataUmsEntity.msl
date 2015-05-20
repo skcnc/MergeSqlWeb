@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataUms0EntityStoreContainer" CdmEntityContainer="DataUmsEntity">
+    <EntitySetMapping Name="SCRIPT_FIELD">
+      <EntityTypeMapping TypeName="DataUms0Entity.SCRIPT_FIELD">
+        <MappingFragment StoreEntitySet="SCRIPT_FIELD">
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="FIELD3" ColumnName="FIELD3" />
+          <ScalarProperty Name="FBSKD" ColumnName="FBSKD" />
+          <ScalarProperty Name="FIELD48_REQ" ColumnName="FIELD48_REQ" />
+          <ScalarProperty Name="FIELD48_RESP" ColumnName="FIELD48_RESP" />
+          <ScalarProperty Name="DELETE_FLAG" ColumnName="DELETE_FLAG" />
+          <ScalarProperty Name="MSG_TYPE" ColumnName="MSG_TYPE" />
+          <ScalarProperty Name="FIELD48_TLV_REQ" ColumnName="FIELD48_TLV_REQ" />
+          <ScalarProperty Name="FIELD63_REQ" ColumnName="FIELD63_REQ" />
+          <ScalarProperty Name="FIELD63_RESP" ColumnName="FIELD63_RESP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

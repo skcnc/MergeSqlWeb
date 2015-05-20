@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataUms0Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="SCRIPT_FIELD" EntityType="DataUms0Model.SCRIPT_FIELD" />
+  </EntityContainer>
+  <EntityType Name="SCRIPT_FIELD">
+    <Key>
+      <PropertyRef Name="TRANS_TYPE" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FIELD3" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="FBSKD" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="FIELD48_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="FIELD48_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="DELETE_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="MSG_TYPE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="FIELD48_TLV_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="FIELD63_REQ" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="FIELD63_RESP" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

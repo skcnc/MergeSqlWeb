@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataUms0Entity.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataUms0EntityStoreContainer">
+    <EntitySet Name="SCRIPT_FIELD" EntityType="DataUms0Entity.Store.SCRIPT_FIELD" store:Type="Tables" Schema="UMS0" />
+  </EntityContainer>
+  <EntityType Name="SCRIPT_FIELD">
+    <Key>
+      <PropertyRef Name="TRANS_TYPE" />
+    </Key>
+    <Property Name="TRANS_TYPE" Type="number" Nullable="false" />
+    <Property Name="FIELD3" Type="varchar2" MaxLength="6" />
+    <Property Name="FBSKD" Type="varchar2" MaxLength="8" />
+    <Property Name="FIELD48_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD48_RESP" Type="varchar2" MaxLength="256" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" />
+    <Property Name="MSG_TYPE" Type="char" MaxLength="1" />
+    <Property Name="FIELD48_TLV_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD63_REQ" Type="varchar2" MaxLength="256" />
+    <Property Name="FIELD63_RESP" Type="varchar2" MaxLength="256" />
+  </EntityType>
+</Schema>

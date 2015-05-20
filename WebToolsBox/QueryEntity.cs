@@ -281,7 +281,7 @@ namespace WebToolsBox
             if (sBACK != "null") sBACK = "'" + sBACK + "'";
             if (sNEEDDIGITALSIGN != "null") sNEEDDIGITALSIGN = "'" + sNEEDDIGITALSIGN + "'";
             if (sTIDCNVFLAG != "null") sTIDCNVFLAG = "'" + sTIDCNVFLAG + "'";
-            if (iCNVNO == null) iCNVNO = "0";
+            if (iCNVNO == "null" || iCNVNO == string.Empty) iCNVNO = "0";
             
 
 
@@ -393,7 +393,7 @@ namespace WebToolsBox
             if (sVARIABLE != "null") sVARIABLE = "'" + sVARIABLE + "'";
 
             string query =
-                "insert into dynamic_item (RECNO, TITLE, DESCRIBE, ITEM_NUM, DATA_RULE, VERIFIED, MARKS, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DATA_SCR_TYPE, VARIABLE) \r\nvalues (" + iRECNO + "," + sTITLE + "," + sDESCRIBE + "," + iITEMNUM + "," + sDATARULE + ", 'T'+," + sMARKS + ",0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + iDATASCRTYPE + "," + sVARIABLE + ");";
+                "insert into dynamic_item (RECNO, TITLE, DESCRIBE, ITEM_NUM, DATA_RULE, VERIFIED, MARKS, SYNC_STATUS, DELETE_FLAG, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER, DATA_SCR_TYPE, VARIABLE) values (" + iRECNO + "," + sTITLE + "," + sDESCRIBE + "," + iITEMNUM + "," + sDATARULE + ", 'T'," + sMARKS + ",0, '0', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('02-11-2012 13:22:23', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]'," + iDATASCRTYPE + "," + sVARIABLE + ");";
 
             return query;
         }
@@ -415,6 +415,13 @@ namespace WebToolsBox
 
         public static string DynamicValidQuery(string iRECNO, string iMINLEN, string iMAXLEN, string iMINVAL, string iMAXVAL, string sINPUTFLAG, string sINPUTTYPE, string sRSV, string iOPTNUM1, string iOPTNUM2, string sOPTCODE, string sINPUT_NAME)
         {
+            if (iMINLEN == "null" || iMINLEN == string.Empty) iMINLEN = "null";
+            if (iMAXLEN == "null" || iMAXLEN == string.Empty) iMAXLEN = "null";
+            if (iMINVAL == "null" || iMINVAL == string.Empty) iMINVAL = "null";
+            if (iMAXVAL == "null" || iMAXVAL == string.Empty) iMAXVAL = "null";
+            if (iOPTNUM1 == "null" || iOPTNUM1 == string.Empty) iOPTNUM1 = "null";
+            if (iOPTNUM2 == "null" || iOPTNUM2 == string.Empty) iOPTNUM2 = "null";
+
             if (sINPUTFLAG != "null") sINPUTFLAG = "'" + sINPUTFLAG + "'";
             if (sINPUTTYPE != "null") sINPUTTYPE = "'" + sINPUTTYPE + "'";
             if (sRSV != "null") sRSV = "'" + sRSV + "'";
@@ -473,7 +480,7 @@ namespace WebToolsBox
             if (sRETURNNAME != "null") sRETURNNAME = "'" + sRETURNNAME + "'";
 
             string query =
-                "insert into error_code (RETURN_CODE, RETURN_NAME, POS_MSG, VERIFIED, SYNC_STATUS, DELETE_FLAG, ERROR_GRP, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + sRETURNCODE + "," + sRETURNNAME + "," + sPOSMSG + ", 'T', 0, '0', " + iERRORGRP + ", to_date('02-11-2012 15:08:10', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('27-06-2014 12:27:45', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]')";
+                "insert into error_code (RETURN_CODE, RETURN_NAME, POS_MSG, VERIFIED, SYNC_STATUS, DELETE_FLAG, ERROR_GRP, CREATEDATE, CREATER, LASTMODIFIED, LASTMODIFIER) values (" + sRETURNCODE + "," + sRETURNNAME + "," + sPOSMSG + ", 'T', 0, '0', " + iERRORGRP + ", to_date('02-11-2012 15:08:10', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]', to_date('27-06-2014 12:27:45', 'dd-mm-yyyy hh24:mi:ss'), '自动化生成工具[000003]');";
 
 
             return query;
