@@ -1056,6 +1056,10 @@ namespace WebToolsBox
                     //qEntity.OperationInfoAddRecord.Add("Z" + new_oi.ToString() + "F" + oiRow.OPER_INDEX.ToString());
                     //qEntity.OperationInfoQuery.Add(TransQuery.OperationInfoQuery(new_oi.ToString(), oiRow.OP_FLAG, oiRow.MODULE_NUM.ToString(), oiRow.INFO1_FORMAT, oiRow.INFO1, oiRow.INFO2_FORMAT, oiRow.INFO2, oiRow.INFO3_FORMAT, oiRow.INFO3));
                 }
+                else if (unavailiabe_oper_index.Count == 0)
+                {
+                    new_oi2 = (int)oiRow.OPER_INDEX;
+                }
                 else
                 {
                     for (int k = 0; k < unavailiabe_oper_index.Count - 1; k++)
@@ -1097,7 +1101,20 @@ namespace WebToolsBox
             }
 
             
-            int new_error_grp_id = 20; //设定默认的Error_Group 是20 多渠道返回码
+            int new_error_grp_id = 1; //设定默认的Error_Group 是20 多渠道返回码
+
+            //判断error_group 是否已经在前面的检索中添加，如果已经添加，说明error_group 或者error_code 都已经添加了。只需要处理error_group_mapping 即可。
+            List<int> added_grp = new List<int>();
+            foreach (string s in qEntity.ErrorGroupAddRecord)
+            {
+                added_grp.Add(int.Parse(s.Split('F')[0].Substring(1)));
+            }
+
+            if (added_grp.Contains(Data_index))
+            {
+                //说明之前的检索已经添加该分组
+                return;
+            }
 
             if ((from item in session.Instance.LocalDataHandle.ERROR_GROUP where (int)item.ERROR_GRP == Data_index && item.DELETE_FLAG == "0" select item).Count() > 0)
             {
@@ -1332,7 +1349,6 @@ namespace WebToolsBox
                 ex.ToString();
                 return ErrorCode.Instance.GetStatement(9001,null);
             }
-
             if (t != i_trans_code.Count())
             {
                 //MessageBox.Show("包含DB所不存在的交易代码");
@@ -1345,14 +1361,20 @@ namespace WebToolsBox
             {
                 int code = i_trans_code[i];
                 //if ((from item in session.Instance.ONLINEDB.TRANS_DEFTableAdapter.GetData() where item.TRANS_TYPE.ToString() == code && (item.DELETE_FLAG == "0") select item).Count() != 0)
-                if ((from item in session.Instance.OnlineDataHandle.TRANS_DEF where item.TRANS_TYPE == code && (item.DELETE_FLAG == "0") select item).Count() != 0)
+                if ((from item in session.Instance.OnlineDataHandle.TRANS_DEF where item.TRANS_TYPE == code select item).Count() != 0)
                 {
 
                     //出现交易代码冲突
-                    List<int> unavailiable_code = (from item in session.Instance.OnlineDataHandle.TRANS_DEF where (item.TRANS_TYPE > code && (item.TRANS_TYPE < code + 1000) && (item.DELETE_FLAG == "0")) select (int)item.TRANS_TYPE).ToList();
+                    int start_search_code = (code / 10000) * 10000;
+                    List<int> unavailiable_code = (from item in session.Instance.OnlineDataHandle.TRANS_DEF where (item.TRANS_TYPE > start_search_code && (item.TRANS_TYPE < start_search_code + 10000)) select (int)item.TRANS_TYPE).ToList();
 
                     foreach (int s in i_trans_code_real)
                     {
+                        if (s < start_search_code || s > start_search_code + 10000)
+                        {
+                            continue;
+                        }
+
                         if (!unavailiable_code.Contains(s))
                         {
                             unavailiable_code.Add(s);
